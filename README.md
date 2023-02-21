@@ -19,7 +19,8 @@ The plugin will be available soon as a Python package in PyPI and can be install
 
 	$ pip3 install nautobot-plugin-ixia
 
-To ensure the nautobot-plugin-ixia is automatically re-installed during the future upgrades, create a file named **local_requirements.txt** (if not already existing) in the Nautobot root directory ( alongside **requirements.txt**) and list the nautobot-plugin-ixia packages :
+	
+To ensure the nautobot-plugin-ixia is automatically re-installed during the future upgrades, create a file named *local_requirements.txt* (if not already existing) in the Nautobot root directory ( alongside **requirements.txt**) and list the nautobot-plugin-ixia packages :
 
 	$ echo nautobot-plugin-ixia >> local_requirements.txt
 
