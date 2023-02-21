@@ -42,6 +42,14 @@ Once cloned, start the development environment
 	$ invoke build debug
 	
 ### Screenshots
+**Verification of Nautobot Plugin Installation**
+
+![plugin-install](images/installed-plugin.png)
+
+**Nautobot UI Additional Navigation Menu**
+
+
+![UI-view](images/additional-nav.png)
 
 
 ### Useful Commands 
@@ -53,7 +61,7 @@ Once cloned, start the development environment
 	$ doker volume rm <name_of_process_to_remove>
 	$ docker ps
 	$ docker ps -a 
-	$ docker prume 
+	$ docker prune 
 
 	# stop exiting redis and postgresql service 
 	$ sudo service redis-server stop

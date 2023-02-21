@@ -14,7 +14,7 @@ from nautobot.core.models.generics import PrimaryModel
 from django.urls import reverse
 
 # Ixia row 24 Models
-class IxiaRowModel24(PrimaryModel):
+class IxiaRow24(PrimaryModel):
     """Model representing Ixia devices and other information"""
     module = models.CharField(max_length=200, help_text ="Module Name eg Module1")
     slug = AutoSlugField(populate_from="module")
@@ -26,14 +26,14 @@ class IxiaRowModel24(PrimaryModel):
     # method to calculate the canonical URL for an object
     # string to refer object over HTTP
     def get_absolute_url(self):
-        return reverse("plugins:nautobot_plugin_ixia:ixiarowmodel24", args=[self.slug])
+        return reverse("plugins:nautobot_plugin_ixia:ixiarow24", args=[self.slug])
 
     # __str__ representation of object, to view in shell_plus
     def __str__(self):
         return self.name
     
 # Ixia Row 14 Model 
-class IxiaRowModel14(PrimaryModel):
+class IxiaRow14(PrimaryModel):
     """Model representing Ixia devices and other information"""
     module = models.CharField(max_length=200, help_text ="Module Name eg Module1")
     slug = AutoSlugField(populate_from="module")
@@ -45,10 +45,25 @@ class IxiaRowModel14(PrimaryModel):
     # method to calculate the canonical URL for an object
     # string to refer object over HTTP
     def get_absolute_url(self):
-        return reverse("plugins:nautobot_plugin_ixia:ixiarowmodel24", args=[self.slug])
+        return reverse("plugins:nautobot_plugin_ixia:ixiarow14", args=[self.slug])
     
     # __str__ representation of object, to view in shell_plus
     def __str__(self):
         return self.name
 
 # Ixia App Server Credentials 
+class IxiaAppServer(PrimaryModel):
+    """Model representing Ixia App server Credentials and user"""
+    username = models.CharField(max_length=200, help_text ="@username")
+    slug = AutoSlugField(populate_from="username")
+    password = models.CharField(max_length=200, help_text="@password")
+    tenant = models.CharField(max_length=200, help_text="@user using it")
+    
+    # method to calculate the canonical URL for an object
+    # string to refer object over HTTP
+    def get_absolute_url(self):
+        return reverse("plugins:nautobot_plugin_ixia:ixiaappserver", args=[self.slug])
+
+    # __str__ representation of object, to view in shell_plus
+    def __str__(self):
+        return self.name
