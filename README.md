@@ -44,12 +44,14 @@ Once cloned, start the development environment
 ### Screenshots
 **Verification of Nautobot Plugin Installation**
 
-![plugin-install](images/installed-plugin.png)
+| ![plugin-install](images/installed-plugin.png) |
+|-|
 
 **Nautobot UI Additional Navigation Menu**
 
 
-![UI-view](images/additional-nav.png)
+| ![UI-view](images/additional-nav.png) |
+|-|
 
 **Ixia Row 24 Page View** 
 
