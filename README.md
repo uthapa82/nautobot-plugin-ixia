@@ -51,6 +51,31 @@ Once cloned, start the development environment
 
 ![UI-view](images/additional-nav.png)
 
+**Ixia Row 24 Page View** 
+
+| ![row24Page](images/row24view.png) |
+|-|
+
+**Ixia Row 14 Page View**
+
+| ![row14Page](images/row14view.png) |
+|-|
+
+**Ixia AppServer Information Page View**
+
+| ![appserver](images/appserverview.png) |
+|-|
+
+### Known Issue
+
+| ![known-issue](images/known-issue.png) |
+|-|
+
+Need to resolve this warning, this seems to be a bug in Poetry itself, [Poetry-Issue-Github](https://github.com/python-poetry/poetry/issues/7211)
+
+Temporary Solution: 
+	`$ poetry  lock --no-update`
+
 
 ### Useful Commands 
 * Docker Status and troubleshooting commands
