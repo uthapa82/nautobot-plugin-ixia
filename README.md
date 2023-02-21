@@ -24,7 +24,7 @@ To ensure the nautobot-plugin-ixia is automatically re-installed during the futu
 
 	$ echo nautobot-plugin-ixia >> local_requirements.txt
 
-Once installed teh **nautobot_config.py** needs to be updated with following:
+Once installed the **nautobot_config.py** needs to be updated with following:
 
 	PLUGINS = ["nautobot-plugin-ixia"]
 
