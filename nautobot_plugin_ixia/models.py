@@ -50,3 +50,5 @@ class IxiaRowModel14(PrimaryModel):
     # __str__ representation of object, to view in shell_plus
     def __str__(self):
         return self.name
+
+# Ixia App Server Credentials 
