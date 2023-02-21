@@ -10,6 +10,7 @@
 <a href="https://www.postgresql.org/" target="_blank">![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)</a> <a href="https://www.djangoproject.com/" target="_blank">![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)</a> <a href="https://www.python.org" target="_blank">![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)</a> <a href="https://docs.docker.com/get-docker/" target="_blank">![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)</a> <a href="https://python-poetry.org/" target="_blank"><img src="https://img.shields.io/badge/packaging-poetry-cyan.svg" height="28"/> </a> <a href="https://redis.io/" target="_blank">![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white) <a href="https://code.visualstudio.com/" target="_blank">![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)</a>
 
 </p>
+
 ### Overview
 A nautobot plugin for Ixia XGS12 Chassis Platform. The goal of this plugin is to have separate view for Ixia chassis with attributes like modules, tenat, status, port and description.
 
@@ -18,7 +19,8 @@ The plugin will be available soon as a Python package in PyPI and can be install
 
 	$ pip3 install nautobot-plugin-ixia
 
-To ensure the nautobot-plugin-ixia is automatically re-installed during the future upgrades, create a file named **local_requirements.txt** (if not already existing) in the Nautobot root directory ( alongside **requirements.txt**) and list the nautobot-plugin-ixia packages :
+	
+To ensure the nautobot-plugin-ixia is automatically re-installed during the future upgrades, create a file named *local_requirements.txt* (if not already existing) in the Nautobot root directory ( alongside **requirements.txt**) and list the nautobot-plugin-ixia packages :
 
 	$ echo nautobot-plugin-ixia >> local_requirements.txt
 
