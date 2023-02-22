@@ -42,13 +42,59 @@ class IxiaRow24Table(BaseTable):
             "tenant",
             "description"
         )
-
+# Ixia Row 14
 class IxiaRow14Table(BaseTable):
+    
+    #creates alias name 
+    pk = ToggleColumn()
+    module = tables.LinkColumn(verbose_name="Module Number")
+    description = tables.Column(verbose_name="Description/Project")
     
     class Meta(BaseTable.Meta):
         model = IxiaRow14
+        
+        #determines which field to display
+        fields = (
+            "pk",
+            "module",
+            "speed",
+            "port",
+            "status",
+            "tenant",
+            "description",
+        )
+        #determines default columns 
+        default_columns = (
+            "pk",
+            "module",
+            "speed",
+            "port",
+            "status",
+            "tenant",
+            "description"
+        )
 
+#Ixia App server Table 
 class IxiaAppServerTable(BaseTable):
     
+    #creates alias name 
+    pk = ToggleColumn()
     class Meta(BaseTable.Meta):
         model = IxiaAppServer
+        
+        #determines which field to display
+        fields = (
+            "pk",
+            "username",
+            "password",
+            "tenant",
+            "description",
+        )
+        #determines default columns 
+        default_columns = (
+            "pk",
+            "username",
+            "password",
+            "tenant",
+            "description",
+        )

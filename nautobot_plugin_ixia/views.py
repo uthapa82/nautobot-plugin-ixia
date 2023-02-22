@@ -51,3 +51,4 @@ class IxiaAppServerUIViewSet(view_mixins.ObjectListViewMixin,
     table_class = IxiaAppServerTable
     form_class = IxiaAppServerForm
     serializer_class = serializers.IxiaAppServerSerializer
+    action_buttons = ("add", )
