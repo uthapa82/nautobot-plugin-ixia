@@ -1,0 +1,40 @@
+<!-----
+@author: Upendra Thapa
+@last modifie:02/21/2023
+ -->
+{% extends 'generic/object_retrieve.html' %}
+{% load helpers %}
+
+{% block content_left_page %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Hostname</strong>
+    </div>
+    <table class="table table-hover panel-body attr-table">
+        <tr>
+            <td>Module</td>
+            <td>{{ object.module|placeholder }}</td>
+        </tr>
+        <tr>
+            <td>Speed</td>
+            <td>{{ object.speed|placeholder }}</td>
+        </tr>
+        <tr>
+            <td>Port</td>
+            <td>{{ object.port|placeholder }}</td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>{{ object.status|placeholder }}</td>
+        </tr>
+        <tr>
+            <td>Tenant</td>
+            <td>{{ object.tenant|placeholder }}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>{{ object.description|placeholder }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock content_left_page %}
