@@ -25,4 +25,3 @@ class IxiaAppServerTable(BaseTable):
     
     class Meta(BaseTable.Meta):
         model = IxiaAppServer
-    
