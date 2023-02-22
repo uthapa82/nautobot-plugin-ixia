@@ -7,12 +7,11 @@
 #------------------------------
 
 from nautobot.utilities.tables import BaseTable
-
 from .models import IxiaRow24, IxiaRow14, IxiaAppServer
 
 #table definition using Nautobot base template
 class IxiaRow24Table(BaseTable):
-    
+
     class Meta(BaseTable.Meta):
         model = IxiaRow24
 

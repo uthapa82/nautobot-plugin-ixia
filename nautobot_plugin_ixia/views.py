@@ -11,6 +11,8 @@ from nautobot.core.views import mixins as view_mixins
 from .models import IxiaRow24, IxiaRow14, IxiaAppServer
 from .tables import IxiaRow24Table, IxiaRow14Table, IxiaAppServerTable
 
+from .forms import IxiaRow24Form
+from . api import serializers
 
 #Ixia Row 24
 class IxiaRow24UIViewSet(view_mixins.ObjectListViewMixin, 
@@ -21,6 +23,8 @@ class IxiaRow24UIViewSet(view_mixins.ObjectListViewMixin,
 ):
     queryset = IxiaRow24.objects.all()
     table_class = IxiaRow24Table
+    form_class = IxiaRow24Form
+    serializer_class = serializers.IxiaRow24Serializer
     
 #Ixia Row 14  
 class IxiaRow14UIViewSet(view_mixins.ObjectListViewMixin, 
