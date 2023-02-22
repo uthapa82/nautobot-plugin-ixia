@@ -17,27 +17,39 @@ menu_items = (
                 weight=150,
                 items=(
                     NavMenuItem(
-                        link="plugins:nautobot_plugin_ixia:ixiarowmodel24_list",
+                        link="plugins:nautobot_plugin_ixia:ixiarow24_list",
                         name="Ixia Row 24",
                         permissions=[],
                         buttons=(
                             NavMenuAddButton(
-                                link="plugins:nautobot_plugin_ixia:ixiarowmodel24_add",
+                                link="plugins:nautobot_plugin_ixia:ixiarow24_add",
                                 permissions=[],
                             ),
                         ), 
                     ),
                     NavMenuItem(
-                        link="plugins:nautobot_plugin_ixia:ixiarowmodel14_list",
+                        link="plugins:nautobot_plugin_ixia:ixiarow14_list",
                         name="Ixia Row 14",
                         permissions=[],
                         buttons=(
                             NavMenuAddButton(
-                                link="plugins:nautobot_plugin_ixia:ixiarowmodel14_add",
+                                link="plugins:nautobot_plugin_ixia:ixiarow14_add",
                                 permissions=[],
                             ),
                         ),
                     ),
+                    NavMenuItem(
+                        link="plugins:nautobot_plugin_ixia:ixiaappserver_list",
+                        name="Ixia App Server",
+                        permissions=[],
+                        buttons=(
+                            NavMenuAddButton(
+                                link="plugins:nautobot_plugin_ixia:ixiaappserver_add",
+                                permissions=[],
+                            ),
+                        ),
+                    ),
+                    
                 ),
             ),
         ),

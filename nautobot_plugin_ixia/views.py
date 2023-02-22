@@ -8,23 +8,35 @@
 
 from nautobot.core.views import mixins as view_mixins 
 
-from .models import IxiaRowModel24, IxiaRowModel14
-from .tables import IxiaRowModel24Table, IxiaRowModel14Table
+from .models import IxiaRow24, IxiaRow14, IxiaAppServer
+from .tables import IxiaRow24Table, IxiaRow14Table, IxiaAppServerTable
 
-class IxiaRowModel24UIViewSet(view_mixins.ObjectListViewMixin, 
+#Ixia Row 24
+class IxiaRow24UIViewSet(view_mixins.ObjectListViewMixin, 
                             view_mixins.ObjectDetailViewMixin,
                             view_mixins.ObjectEditViewMixin,
                             view_mixins.ObjectDestroyViewMixin,
                             view_mixins.ObjectBulkDestroyViewMixin,
 ):
-    queryset = IxiaRowModel24.objects.all()
-    table_class = IxiaRowModel24Table
-    
-class IxiaRowModel14UIViewSet(view_mixins.ObjectListViewMixin, 
+    queryset = IxiaRow24.objects.all()
+    table_class = IxiaRow24Table
+
+#Ixia Row 14  
+class IxiaRow14UIViewSet(view_mixins.ObjectListViewMixin, 
                             view_mixins.ObjectDetailViewMixin,
                             view_mixins.ObjectEditViewMixin,
                             view_mixins.ObjectDestroyViewMixin,
                             view_mixins.ObjectBulkDestroyViewMixin,
 ):
-    queryset = IxiaRowModel14.objects.all()
-    table_class = IxiaRowModel14Table
+    queryset = IxiaRow14.objects.all()
+    table_class = IxiaRow14Table
+
+#Ixia AppServer Info
+class IxiaAppServerUIViewSet(view_mixins.ObjectListViewMixin, 
+                            view_mixins.ObjectDetailViewMixin,
+                            view_mixins.ObjectEditViewMixin,
+                            view_mixins.ObjectDestroyViewMixin,
+                            view_mixins.ObjectBulkDestroyViewMixin,
+):
+    queryset = IxiaAppServer.objects.all()
+    table_class = IxiaAppServerTable

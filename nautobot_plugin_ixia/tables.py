@@ -8,16 +8,21 @@
 
 from nautobot.utilities.tables import BaseTable
 
-from .models import IxiaRowModel24, IxiaRowModel14
+from .models import IxiaRow24, IxiaRow14, IxiaAppServer
 
 #table definition using Nautobot base template
-class IxiaRowModel24Table(BaseTable):
+class IxiaRow24Table(BaseTable):
     
     class Meta(BaseTable.Meta):
-        model = IxiaRowModel24
+        model = IxiaRow24
 
-class IxiaRowModel14Table(BaseTable):
+class IxiaRow14Table(BaseTable):
     
     class Meta(BaseTable.Meta):
-        model = IxiaRowModel14
+        model = IxiaRow14
+
+class IxiaAppServerTable(BaseTable):
+    
+    class Meta(BaseTable.Meta):
+        model = IxiaAppServer
     
