@@ -10,8 +10,10 @@ from nautobot.core.views.routers import NautobotUIViewSetRouter
 from . import views
 
 router = NautobotUIViewSetRouter()
-router.register("ixia24", views.IxiaRowModel24UIViewSet)
-router.register("ixia14", views.IxiaRowModel14UIViewSet)
+router.register("ixia24", views.IxiaRow24UIViewSet)
+router.register("ixia14", views.IxiaRow14UIViewSet)
+router.register("ixia-app-server", views.IxiaAppServerUIViewSet)
+
 
 urlpatterns = []
 
