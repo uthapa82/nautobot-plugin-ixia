@@ -172,8 +172,8 @@ Temporary Solution:
 	`user@hostname:~$ psql -h hostname -d databasename -U username -f file_name.sql`
 
 	After the above command if it gives error like: 
-
-		*"psql: could not connect to server: Connection refused" Error when connecting to remote database*
+	
+	*psql: could not connect to server: Connection refused" Error when connecting to remote database*
 	
 	follow the following steps:
 
@@ -200,7 +200,7 @@ Temporary Solution:
 
 	`user@hostname:~$  sudo /etc/init.d/postgresql restart `
 
-	Now if you reapply [Importing existing database.sql file](#importing-existing-databasesql-file) commandit should work
+	Now if you reapply [Importing existing database.sql file](#importing-existing-databasesql-file) command it should work
 
  	##### Verify the database 
 
