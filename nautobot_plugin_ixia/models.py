@@ -38,7 +38,7 @@ class IxiaRow24(PrimaryModel):
     port = models.PositiveIntegerField(default='1', help_text="Port number in the Module")
     status = models.CharField(max_length=200, help_text="Status of the Port Available/Reserved")
     tenant = models.CharField(max_length=200, help_text="Tenant the port is reserved to")
-    description = models.CharField(max_length=200, help_text="Any additional Information")
+    description = models.CharField(max_length=200, blank=True, help_text="Any additional Information")
     
     # method to calculate the canonical URL for an object
     # string to refer object over HTTP
@@ -58,7 +58,7 @@ class IxiaRow14(PrimaryModel):
     port = models.PositiveIntegerField(default="1", help_text="Port number in the Module")
     status = models.CharField(max_length=200, help_text="Status of the Port Available/Reserved")
     tenant = models.CharField(max_length=200, help_text="Tenant the port is reserved to")
-    description = models.CharField(max_length=200, help_text="Any additional Information")
+    description = models.CharField(max_length=200, blank=True, help_text="Any additional Information")
     
     # method to calculate the canonical URL for an object
     # string to refer object over HTTP
@@ -76,7 +76,7 @@ class IxiaAppServer(PrimaryModel):
     slug = AutoSlugField(populate_from="username")
     password = models.CharField(max_length=200, help_text="@password")
     tenant = models.CharField(max_length=200, help_text="@user using it")
-    description = models.CharField(max_length=200, null=True, help_text="Any additional Information/Project")
+    description = models.CharField(max_length=200, blank=True, help_text="Any additional Information/Project")
     
     # method to calculate the canonical URL for an object
     # string to refer object over HTTP

@@ -7,7 +7,8 @@
 #------------------------------
 
 import django_tables2 as tables 
-from nautobot.utilities.tables import BaseTable, ToggleColumn
+from nautobot.utilities.tables import (BaseTable, ToggleColumn, ColoredLabelColumn)
+from nautobot.tenancy.tables import TenantColumn
 
 from .models import IxiaRow24, IxiaRow14, IxiaAppServer
 
@@ -16,6 +17,8 @@ class IxiaRow24Table(BaseTable):
     
     #creates alias name 
     pk = ToggleColumn()
+    tenant = TenantColumn()
+    status = ColoredLabelColumn()
     module = tables.LinkColumn(verbose_name="Module Number")
     description = tables.Column(verbose_name="Description/Project")
     
@@ -47,6 +50,8 @@ class IxiaRow14Table(BaseTable):
     
     #creates alias name 
     pk = ToggleColumn()
+    tenant = TenantColumn()
+    status = ColoredLabelColumn()
     module = tables.LinkColumn(verbose_name="Module Number")
     description = tables.Column(verbose_name="Description/Project")
     
@@ -79,6 +84,7 @@ class IxiaAppServerTable(BaseTable):
     
     #creates alias name 
     pk = ToggleColumn()
+    tenant = TenantColumn()
     class Meta(BaseTable.Meta):
         model = IxiaAppServer
         
