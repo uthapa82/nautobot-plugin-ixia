@@ -138,6 +138,85 @@ Temporary Solution:
 
 	`$ nautobot-server runserver 0.0.0.0:8000 --insecure`
 
+* Steps to import the existing database 
+	It would be better to DROP the existing database as well as user and create new one, otherwise it might give *"Error:Relation already exists"*
+
+	* DROP the existing database **-CAUTION: Make sure you have backup before dropping**
+
+	```
+	user@nautobot-test# sudo -u postgres psql
+		postgres=# DROP DATABASE nautobot;
+		DROP DATABASE  
+		postgres=# DROP USER DATABASE;
+		DROP ROLE 
+		postgres=# \q
+	
+	```
+
+	* Recreate the database 
+
+	```
+	user@nautobot-test# sudo -u postgres psql
+		postgres=# CREATE DATABASE nautobot;
+		CREATE DATABASE  
+		postgres=# CREATE USER nautobot WITH PASSWORD '<-test-password->';
+		CREATE ROLE
+		postgres=# GRANT ALL PRIVILEGES ON DATABASE nautobot to nautobot;
+		GRANT
+		postgres=# \q
+	
+	```
+
+	##### Importing existing database.sql file 
+	
+	`user@hostname:~$ psql -h hostname -d databasename -U username -f file_name.sql`
+
+	After the above command if it gives error like: 
+		*"psql: could not connect to server: Connection refused" Error when connecting to remote database*
+	
+	follow the following steps:
+
+	```
+	user@hostname:~$ cd /etc/postgresql/<tab for version>/main/
+	# ls & open postgresql.conf file 
+	user@hostname:~$ sudo nano postgresql.conf 
+
+	# add following line to that file, it might already be there just need to uncomment it 
+	listen_addresses = '*'
+
+	# After that open pg_hba.conf file 
+	`user@hostname:~$ sudo nano pg_hba.conf' 
+
+	# add the following line 
+	host all all 0.0.0.0/0  md5
+
+	```
+
+	* Finally restart the postgresql server 
+
+	`user@hostname:~$  sudo /etc/init.d/postgresql restart `
+
+	Now if you reapply [the import command](#importing-existing-databasesql-file) it should work
+
+ 	##### Verify the database 
+
+	```
+	user@nautobot-test# sudo -u postgres psql
+		postgres=# \list 
+		# Your existing list of databases will be shown
+		
+		#connect the database you created 
+		postgres=# \connect nautobot
+		You are now connected to database "database name" as user "username"
+
+		#list the tables 
+		postgres=# \dt 
+		# List of relations will be shown
+
+		postgres=# \q
+	
+	```
+
 ### Documentation-References-Acknowledgements
 * [Official Nautobot Docs](https://docs.nautobot.com/)
 * [Code Reference](https://docs.nautobot.com/projects/core/en/stable/plugins/development/#extending-object-detail-views)
