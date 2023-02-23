@@ -137,6 +137,7 @@ Temporary Solution:
 	`$ nautobot-server runserver 0.0.0.0:8000 --insecure`
 
 * Steps to import the existing database 
+
 	It would be better to DROP the existing database as well as user and create new one, otherwise it might give *"Error:Relation already exists"*
 
 	* DROP the existing database **-CAUTION: Make sure you have backup before dropping**
@@ -150,6 +151,7 @@ Temporary Solution:
 		postgres=# \q
 	
 	```
+
 
 	* Recreate the database 
 
@@ -170,6 +172,7 @@ Temporary Solution:
 	`user@hostname:~$ psql -h hostname -d databasename -U username -f file_name.sql`
 
 	After the above command if it gives error like: 
+
 		*"psql: could not connect to server: Connection refused" Error when connecting to remote database*
 	
 	follow the following steps:
@@ -177,9 +180,11 @@ Temporary Solution:
 	```
 	user@hostname:~$ cd /etc/postgresql/<tab for version>/main/
 	# ls & open postgresql.conf file 
+
 	user@hostname:~$ sudo nano postgresql.conf 
 
 	# add following line to that file, it might already be there just need to uncomment it 
+
 	listen_addresses = '*'
 
 	# After that open pg_hba.conf file 
@@ -190,11 +195,12 @@ Temporary Solution:
 
 	```
 
+
 	* Finally restart the postgresql server 
 
 	`user@hostname:~$  sudo /etc/init.d/postgresql restart `
 
-	Now if you reapply [the import command](#importing-existing-databasesql-file) it should work
+	Now if you reapply [Importing existing database.sql file](#importing-existing-databasesql-file) commandit should work
 
  	##### Verify the database 
 
@@ -209,8 +215,9 @@ Temporary Solution:
 
 		#list the tables 
 		postgres=# \dt 
-		# List of relations will be shown
 
+		# List of relations will be shown
+		..................................
 		postgres=# \q
 	
 	```
