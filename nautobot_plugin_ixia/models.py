@@ -4,6 +4,7 @@
 # __modified__:02/20/2023
 # __version__ ="0.1.0"
 # __status__ = "development"
+# __credits__ = "Network To Code"
 #------------------------------
 
 from nautobot.core.models.generics import PrimaryModel
@@ -72,11 +73,11 @@ class IxiaRow14(PrimaryModel):
 # Ixia App Server Credentials 
 class IxiaAppServer(PrimaryModel):
     """Model representing Ixia App server Credentials and user"""
-    username = models.CharField(max_length=200, help_text ="@username")
+    username = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from="username")
-    password = models.CharField(max_length=200, help_text="@password")
-    tenant = models.CharField(max_length=200, help_text="@user using it")
-    description = models.CharField(max_length=200, blank=True, help_text="Any additional Information/Project")
+    password = models.CharField(max_length=200)
+    tenant = models.CharField(max_length=200, help_text="User using it")
+    description = models.CharField(max_length=200, blank=True, help_text="Any additional Information/Project Name")
     
     # method to calculate the canonical URL for an object
     # string to refer object over HTTP

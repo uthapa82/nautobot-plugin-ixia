@@ -1,6 +1,13 @@
 """forms.py"""
+#----------------------------------
+# __author__: Upendra Thapa
+# __modified__:02/20/2023
+# __version__ ="0.1.0"
+# __status__ = "development"
+# __credits__ = "Network To Code"
+#----------------------------------
 
-from nautobot.extras.forms import NautobotModelForm
+from nautobot.extras.forms import NautobotModelForm, NautobotFilterForm
 from .models import IxiaRow24, IxiaRow14, IxiaAppServer
 from django import forms
 
@@ -45,4 +52,29 @@ class IxiaAppServerForm(NautobotModelForm):
             "description",
         ]
 
+# Ixia Row 24 Filter form 
+class IxiaRow24FilterForm(NautobotFilterForm):
+    """Filtering/search form for 'IxiaRow24Form' objects"""
+    
+    model = IxiaRow24
+    q = forms.CharField(required=False, label="Search")
+    module = forms.CharField(required=False)
+    port = forms.IntegerField(required=False, max_value=13, min_value=0)
+    
+# Ixia Row 14 Filter form 
+class IxiaRow14FilterForm(NautobotFilterForm):
+    """Filtering/search form for 'IxiaRow14Form' objects"""
+    
+    model = IxiaRow14
+    q = forms.CharField(required=False, label="Search")
+    module = forms.CharField(required=False)
+    port = forms.IntegerField(required=False, max_value=13, min_value=0)
 
+# Ixia AppServer Filter 
+class IxiaAppServerFilterForm(NautobotFilterForm):
+    """Filtering/search form for 'IxiaAppServerForm' objects"""
+    
+    model = IxiaAppServer
+    q = forms.CharField(required=False, label="Search")
+    tenant = forms.CharField(required=False, label="Name")
+    username = forms.CharField(required=False)

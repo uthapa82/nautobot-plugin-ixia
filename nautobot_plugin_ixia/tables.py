@@ -1,10 +1,11 @@
 """tables.py"""
-#-----------------------------
+#---------------------------------
 # __author__: Upendra Thapa
 # __modified__:02/20/2023
 # __version__ ="0.1.0"
 # __status__ = "development"
-#------------------------------
+# __credits__ = "Network To Code"
+#----------------------------------
 
 import django_tables2 as tables 
 from nautobot.utilities.tables import (BaseTable, ToggleColumn, ColoredLabelColumn)
