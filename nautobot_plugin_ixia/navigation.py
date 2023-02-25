@@ -1,10 +1,11 @@
 """Nautobot Example DNS Manager Navigation."""
-#-----------------------------
+#--------------------------------
 # __author__: Upendra Thapa
 # __modified__:02/20/2023
 # __version__ ="0.1.0"
 # __status__ = "development"
-#------------------------------
+# __credits__ = "Network To Code"
+#---------------------------------
 
 from nautobot.core.apps import NavMenuAddButton, NavMenuGroup, NavMenuItem, NavMenuImportButton, NavMenuTab
 

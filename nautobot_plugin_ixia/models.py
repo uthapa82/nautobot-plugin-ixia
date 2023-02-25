@@ -4,6 +4,7 @@
 # __modified__:02/20/2023
 # __version__ ="0.1.0"
 # __status__ = "development"
+# __credits__ = "Network To Code"
 #------------------------------
 
 from nautobot.core.models.generics import PrimaryModel
@@ -13,15 +14,32 @@ from nautobot.core.fields import AutoSlugField
 from nautobot.core.models.generics import PrimaryModel
 from django.urls import reverse
 
+# Module drop down list 
+module_choices = []
+for choice in range(1, 13):
+    result = 'Module ' + str(choice)
+    module_choices.append((result, result))
+    
+FINAL_CHOICES = tuple(module_choices)
+
+# speed drop down 
+SPEED_CHOICES = (
+    ("1G", "1G"),
+    ("10G", "10G"),
+    ("25G", "25G"),
+    ("100G", "100G"),
+)
+    
 # Ixia row 24 Models
 class IxiaRow24(PrimaryModel):
     """Model representing Ixia devices and other information"""
-    module = models.CharField(max_length=200, help_text ="Module Name eg Module1")
+    module = models.CharField(max_length=200, choices=FINAL_CHOICES)
+    speed = models.CharField(max_length=200, choices=SPEED_CHOICES, default="10G", help_text ="Speed of Module deafult 10G")
     slug = AutoSlugField(populate_from="module")
-    port = models.IntegerField(help_text="Port number in the Module")
+    port = models.PositiveIntegerField(default='1', help_text="Port number in the Module")
     status = models.CharField(max_length=200, help_text="Status of the Port Available/Reserved")
-    tenant = models.CharField(max_length=200, help_text="tenant the port is reserved to")
-    description = models.CharField(max_length=200, help_text="Any additional Information")
+    tenant = models.CharField(max_length=200, help_text="Tenant the port is reserved to")
+    description = models.CharField(max_length=200, blank=True, help_text="Any additional Information")
     
     # method to calculate the canonical URL for an object
     # string to refer object over HTTP
@@ -30,17 +48,18 @@ class IxiaRow24(PrimaryModel):
 
     # __str__ representation of object, to view in shell_plus
     def __str__(self):
-        return self.name
+        return self.module
     
 # Ixia Row 14 Model 
 class IxiaRow14(PrimaryModel):
     """Model representing Ixia devices and other information"""
-    module = models.CharField(max_length=200, help_text ="Module Name eg Module1")
+    module = models.CharField(max_length=200, choices=FINAL_CHOICES)
+    speed = models.CharField(max_length=200, choices=SPEED_CHOICES, default="10G", help_text ="Speed of Module eg 10G")
     slug = AutoSlugField(populate_from="module")
-    port = models.IntegerField(help_text="Port number in the Module")
+    port = models.PositiveIntegerField(default="1", help_text="Port number in the Module")
     status = models.CharField(max_length=200, help_text="Status of the Port Available/Reserved")
-    tenant = models.CharField(max_length=200, help_text="tenant the port is reserved to")
-    description = models.CharField(max_length=200, help_text="Any additional Information")
+    tenant = models.CharField(max_length=200, help_text="Tenant the port is reserved to")
+    description = models.CharField(max_length=200, blank=True, help_text="Any additional Information")
     
     # method to calculate the canonical URL for an object
     # string to refer object over HTTP
@@ -49,15 +68,16 @@ class IxiaRow14(PrimaryModel):
     
     # __str__ representation of object, to view in shell_plus
     def __str__(self):
-        return self.name
+        return self.module
 
 # Ixia App Server Credentials 
 class IxiaAppServer(PrimaryModel):
     """Model representing Ixia App server Credentials and user"""
-    username = models.CharField(max_length=200, help_text ="@username")
+    username = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from="username")
-    password = models.CharField(max_length=200, help_text="@password")
-    tenant = models.CharField(max_length=200, help_text="@user using it")
+    password = models.CharField(max_length=200)
+    tenant = models.CharField(max_length=200, help_text="User using it")
+    description = models.CharField(max_length=200, blank=True, help_text="Any additional Information/Project Name")
     
     # method to calculate the canonical URL for an object
     # string to refer object over HTTP
@@ -66,4 +86,4 @@ class IxiaAppServer(PrimaryModel):
 
     # __str__ representation of object, to view in shell_plus
     def __str__(self):
-        return self.name
+        return self.username
