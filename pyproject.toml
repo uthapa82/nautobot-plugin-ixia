@@ -3,11 +3,13 @@ name = "nautobot-plugin-ixia"
 version = "0.1.0"
 description = "Nautobot Plugin Ixia"
 authors = ["Upendra Thapa"]
+license =  "Apache-2.0"
 readme = "README.md"
 homepage = "https://github.com/uthapa82/nautobot-plugin-ixia.git"
 repository = "https://github.com/uthapa82/nautobot-plugin-ixia.git"
 keywords = ["nautobot", "nautobot-plugin"]
 include = [
+    "LICENSE",
     "README.md",
 ]
 packages = [
@@ -16,7 +18,7 @@ packages = [
 
 [tool.poetry.dependencies]
 # Used for local development
-nautobot = { version = "^1.2.0", optional = true }
+nautobot = "^1.4.5"
 python = "^3.7"
 
 [tool.poetry.dev-dependencies]
