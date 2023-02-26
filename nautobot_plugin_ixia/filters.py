@@ -38,7 +38,7 @@ class IxiaRow14FilterSet(NautobotFilterSet):
         filter_predicates={
             "module": "icontains",
             "port": "icontains",
-            #"tenant": "icontains",
+            "tenant": "icontains",
             "ntm": "icontains",
         }
     )
@@ -47,7 +47,7 @@ class IxiaRow14FilterSet(NautobotFilterSet):
         model = IxiaRow14
         fields = "__all__"
 
-# Ixia Row 14
+# Ixia App Server 
 class IxiaAppServerFilterSet(NautobotFilterSet):
     """Filter for filtering IxiaRow24 Objects."""
     

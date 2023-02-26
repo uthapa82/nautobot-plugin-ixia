@@ -40,7 +40,7 @@ class IxiaRow14Form(NautobotModelForm, TenancyForm):
             "port",
             #"status",
             "tenant_group",
-            #"tenant",
+            "tenant",
             "description",
         ]
 

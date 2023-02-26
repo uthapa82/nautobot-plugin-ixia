@@ -54,7 +54,7 @@ class IxiaRow14Table(BaseTable):
     
     #creates alias name 
     pk = ToggleColumn()
-    #tenant = TenantColumn()
+    tenant = TenantColumn()
     #status = ColoredLabelColumn()
     module = tables.LinkColumn(verbose_name="Module Number")
     description = tables.Column(verbose_name="Description/Project")
@@ -70,7 +70,7 @@ class IxiaRow14Table(BaseTable):
             "port",
             "ntm",
             #"status",
-            #"tenant",
+            "tenant",
             "description",
         )
         #determines default columns 
@@ -81,7 +81,7 @@ class IxiaRow14Table(BaseTable):
             "port",
             "ntm",
             #"status",
-            #"tenant",
+            "tenant",
             "description"
         )
 

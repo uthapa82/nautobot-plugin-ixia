@@ -12,7 +12,6 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.core.exceptions import ValidationError,  MultipleObjectsReturned
 from django.db import models
 from django.urls import reverse
-from django.contrib.contenttypes.fields import GenericRelation
 
 from nautobot.core.fields import AutoSlugField
 from nautobot.core.models.generics import PrimaryModel
@@ -88,15 +87,15 @@ class IxiaRow14(PrimaryModel):
         help_text="default: Temporary Direct Connection",
         )
 
-    # tenant = models.ForeignKey(
-    #     to="tenancy.Tenant",
-    #     on_delete=models.SET_NULL,
-    #     related_name="ixiarow14s",
-    #     null=True,
-    #     blank=True,
-    #     verbose_name="tenant",
-    #     help_text="Tenant the port is reserved to",
-    #     )  
+    tenant = models.ForeignKey(
+        to="tenancy.Tenant",
+        on_delete=models.PROTECT,
+        related_name="ixiarow14s",
+        null=True,
+        blank=True,
+        verbose_name="tenant",
+        help_text="Tenant the port is reserved to",
+        )  
     
     class Meta:
         verbose_name = "IXIA Row 14 Port"
