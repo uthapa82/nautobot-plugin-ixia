@@ -7,7 +7,7 @@
 
 <p align='center'>
 
-<a href="https://www.postgresql.org/" target="_blank">![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)</a> <a href="https://www.djangoproject.com/" target="_blank">![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)</a> <a href="https://www.python.org" target="_blank">![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)</a> <a href="https://docs.docker.com/get-docker/" target="_blank">![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)</a> <a href="https://python-poetry.org/" target="_blank"><img src="https://img.shields.io/badge/packaging-poetry-cyan.svg" height="28"/> </a> <a href="https://redis.io/" target="_blank">![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white) <a href="https://code.visualstudio.com/" target="_blank">![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)</a>
+<a href="https://www.postgresql.org/" target="_blank">![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)</a> <a href="https://www.djangoproject.com/" target="_blank">![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)</a> <a href="https://www.python.org" target="_blank">![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)</a> <a href="https://docs.docker.com/get-docker/" target="_blank">![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)</a> <a href="https://python-poetry.org/" target="_blank"><img src="https://img.shields.io/badge/packaging-poetry-cyan.svg" height="28"/> </a> <a href="https://redis.io/" target="_blank">![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white) <a href="https://code.visualstudio.com/" target="_blank">![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)</a> ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 
 </p>
 
@@ -77,6 +77,18 @@ Need to resolve this warning, this seems to be a bug in Poetry itself, [Poetry-I
 Temporary Solution: 
 	`$ poetry  lock --no-update`
 
+Solution that worked to fix this warning
+
+	$ cd ~/.cache/pypoetry/cache
+	
+	$ rm -rf artifcats/
+
+
+
+Verification 
+	`$ poetry lock --check `
+
+
 ### Useful Commands 
 * Docker Status and troubleshooting commands
 	```properties
@@ -136,17 +148,18 @@ Temporary Solution:
 
 	`$ nautobot-server runserver 0.0.0.0:8000 --insecure`
 
-* Steps to import the existing database 
+* #### Steps to import the existing database
 
 	It would be better to DROP the existing database as well as user and create new one, otherwise it might give *"Error:Relation already exists"*
 
 	* DROP the existing database **-CAUTION: Make sure you have backup before dropping**
 
 	```
+
 	user@nautobot-test# sudo -u postgres psql
 		postgres=# DROP DATABASE nautobot;
 		DROP DATABASE  
-		postgres=# DROP USER DATABASE;
+		postgres=# DROP USER nautobot;
 		DROP ROLE 
 		postgres=# \q
 	
@@ -230,4 +243,4 @@ Temporary Solution:
 	* [nautobot-plugin-netbox-importer](https://github.com/nautobot/nautobot-plugin-netbox-importer)
 	* [nautobot-polugin-data-validation-engine](https://github.com/nautobot/nautobot-plugin-data-validation-engine)
 
-* Special thanks to [@nautobot slack community](http://slack.networktocode.com/) for answering the questions and guidelines
+* Special thanks to [Ken Celenza](https://github.com/itdependsnetworks) Director of Network Automation @Network to Code, [Jeremy White](https://www.linkedin.com/in/whitej6/) Principal Developer at Network To Code & [nautobot slack community](http://slack.networktocode.com/) for answering the questions and guidelines
