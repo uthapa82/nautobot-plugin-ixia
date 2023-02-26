@@ -53,7 +53,7 @@ class IxiaAppServerForm(NautobotModelForm, TenancyForm):
             "username",
             "password",
             "tenant_group",
-            #"tenant",
+            "tenant",
             "description",
         ]
 
@@ -85,5 +85,5 @@ class IxiaAppServerFilterForm(NautobotFilterForm):
     
     model = IxiaAppServer
     q = forms.CharField(required=False, label="Search")
-    #tenant = forms.CharField(required=False, label="Name")
+    tenant = forms.CharField(required=False, label="Name")
     username = forms.CharField(required=False)

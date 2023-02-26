@@ -90,7 +90,7 @@ class IxiaAppServerTable(BaseTable):
     
     #creates alias name 
     pk = ToggleColumn()
-    #tenant = TenantColumn()
+    tenant = TenantColumn()
     class Meta(BaseTable.Meta):
         model = IxiaAppServer
         
@@ -99,7 +99,7 @@ class IxiaAppServerTable(BaseTable):
             "pk",
             "username",
             "password",
-           # "tenant",
+            "tenant",
             "description",
         )
         #determines default columns 
@@ -107,6 +107,6 @@ class IxiaAppServerTable(BaseTable):
             "pk",
             "username",
             "password",
-           # "tenant",
+            "tenant",
             "description",
         )

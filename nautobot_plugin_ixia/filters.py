@@ -53,7 +53,7 @@ class IxiaAppServerFilterSet(NautobotFilterSet):
     
     q = SearchFilter(
         filter_predicates={
-            #"tenant": "icontains",
+            "tenant": "icontains",
             "username": "icontains",
         }
     )

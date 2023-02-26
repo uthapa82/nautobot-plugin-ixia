@@ -8,18 +8,18 @@
 #------------------------------
 
 from nautobot.core.models.generics import PrimaryModel
-from django.core.validators import MaxValueValidator, MinValueValidator 
-from django.core.exceptions import ValidationError,  MultipleObjectsReturned
+#from django.core.validators import MaxValueValidator, MinValueValidator 
+#from django.core.exceptions import ValidationError,  MultipleObjectsReturned
 from django.db import models
 from django.urls import reverse
 
 from nautobot.core.fields import AutoSlugField
 from nautobot.core.models.generics import PrimaryModel
-from nautobot.extras.models import Status, StatusModel
+#from nautobot.extras.models import Status, StatusModel
 
 from nautobot_plugin_ixia.choices import ModuleNumberChoices, SpeedChoices
 from nautobot.extras.models import StatusModel
-from nautobot.extras.utils import extras_features 
+#from nautobot.extras.utils import extras_features 
 import logging
 
 __all__ = (
@@ -118,14 +118,14 @@ class IxiaAppServer(PrimaryModel):
     password = models.CharField(max_length=200)
     description = models.CharField(max_length=200, blank=True, help_text="Any additional Information/Project Name")
 
-    # tenant = models.ForeignKey(
-    #     to="tenancy.Tenant",
-    #     on_delete=models.SET_NULL,
-    #     related_name="ixiaappservers",
-    #     null=True,
-    #     blank=True,
-    #     help_text="Tenant the port is reserved to",
-    #     )
+    tenant = models.ForeignKey(
+        to="tenancy.Tenant",
+        on_delete=models.PROTECT,
+        related_name="ixiaappservers",
+        null=True,
+        blank=True,
+        help_text="Tenant the port is reserved to",
+        )
       
     # method to calculate the canonical URL for an object
     # string to refer object over HTTP
