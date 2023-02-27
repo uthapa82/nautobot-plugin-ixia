@@ -15,12 +15,11 @@ from .models import IxiaRow24, IxiaRow14, IxiaAppServer
 
 
 #table definition using Nautobot base template
-class IxiaRow24Table(BaseTable):
+class IxiaRow24Table(StatusTableMixin, BaseTable):
     
     #creates alias name 
     pk = ToggleColumn()
     tenant = TenantColumn()
-    #status = ColoredLabelColumn()
     module = tables.LinkColumn(verbose_name="Module Number")
     description = tables.Column(verbose_name="Description/Project")
     
@@ -34,7 +33,7 @@ class IxiaRow24Table(BaseTable):
             "speed",
             "port",
             "ntm",
-            #"status",
+            "status",
             "tenant",
             "description",
         )
@@ -45,17 +44,16 @@ class IxiaRow24Table(BaseTable):
             "speed",
             "port",
             "ntm",
-            #"status",
+            "status",
             "tenant",
             "description"
         )
 # Ixia Row 14
-class IxiaRow14Table(BaseTable):
+class IxiaRow14Table(StatusTableMixin, BaseTable):
     
     #creates alias name 
     pk = ToggleColumn()
     tenant = TenantColumn()
-    #status = ColoredLabelColumn()
     module = tables.LinkColumn(verbose_name="Module Number")
     description = tables.Column(verbose_name="Description/Project")
     
@@ -69,7 +67,7 @@ class IxiaRow14Table(BaseTable):
             "speed",
             "port",
             "ntm",
-            #"status",
+            "status",
             "tenant",
             "description",
         )
@@ -80,7 +78,7 @@ class IxiaRow14Table(BaseTable):
             "speed",
             "port",
             "ntm",
-            #"status",
+            "status",
             "tenant",
             "description"
         )

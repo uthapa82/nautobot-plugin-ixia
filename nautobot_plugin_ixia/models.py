@@ -15,11 +15,10 @@ from django.urls import reverse
 
 from nautobot.core.fields import AutoSlugField
 from nautobot.core.models.generics import PrimaryModel
-#from nautobot.extras.models import Status, StatusModel
+from nautobot.extras.models import StatusModel
 
 from nautobot_plugin_ixia.choices import ModuleNumberChoices, SpeedChoices
-from nautobot.extras.models import StatusModel
-#from nautobot.extras.utils import extras_features 
+from nautobot.extras.utils import extras_features 
 import logging
 
 __all__ = (
@@ -30,8 +29,11 @@ __all__ = (
 
 logger = logging.getLogger(__name__)
 
+@extras_features(
+    "statuses",
+)
 # Ixia row 24 Models
-class IxiaRow24(PrimaryModel):
+class IxiaRow24(PrimaryModel, StatusModel):
     """Model representing Ixia devices and other information"""
     module = models.CharField(max_length=200, choices=ModuleNumberChoices)
     speed = models.CharField(max_length=200, choices=SpeedChoices, default="10G", help_text ="Speed of Module deafult 10G")
@@ -70,8 +72,11 @@ class IxiaRow24(PrimaryModel):
         verbose_name = "IXIA Row 24 Port"
         verbose_name_plural = "IXIA Row 24 Ports"
         
+@extras_features(
+    "statuses",
+)     
 # Ixia Row 14 Model 
-class IxiaRow14(PrimaryModel):
+class IxiaRow14(PrimaryModel, StatusModel):
     """Model representing Ixia devices and other information"""
     module = models.CharField(max_length=200, choices=ModuleNumberChoices)
     speed = models.CharField(max_length=200, choices=SpeedChoices, default="10G", help_text ="Speed of Module eg 10G")
@@ -109,6 +114,7 @@ class IxiaRow14(PrimaryModel):
     # __str__ representation of object, to view in shell_plus
     def __str__(self):
         return self.module
+
 
 # Ixia App Server Credentials 
 class IxiaAppServer(PrimaryModel):
