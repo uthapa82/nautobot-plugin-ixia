@@ -9,7 +9,7 @@
  {% block content_left_page %}
  <div class="panel panel-default">
      <div class="panel-heading">
-         <strong>Hostname</strong>
+         <strong>Ixia Row 14</strong>
      </div>
      <table class="table table-hover panel-body attr-table">
          <tr>
@@ -25,9 +25,15 @@
              <td>{{ object.port|placeholder }}</td>
          </tr>
          <tr>
-             <td>Status</td>
-             <td>{{ object.status|placeholder }}</td>
-         </tr>
+            <td>NTM Connection</td>
+            <td>{{ object.ntm|placeholder }}</td>
+        </tr>
+         <tr>
+            <td>Status</td>
+            <td>
+                <span class="label" style="color: {{ object.status.color|fgcolor }}; background-color: #{{ object.status.color }}">{{ object.get_status_display }}</span>
+            </td>
+        </tr>
          <tr>
              <td>Tenant</td>
              <td>{{ object.tenant|placeholder }}</td>

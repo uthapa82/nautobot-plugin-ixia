@@ -44,9 +44,9 @@ class IxiaRow24(PrimaryModel, StatusModel):
     ntm = models.CharField(
         max_length=200, 
         blank=True, 
-        default="Format eg.NTM1 M2 P36",
+        default="Temporary Direct Connection",
         verbose_name="NTM Connection",
-        help_text="default: Temporary Direct Connection",
+        help_text="Format eg.NTM1 M2 P36",
         )
     
     tenant = models.ForeignKey(
@@ -87,9 +87,9 @@ class IxiaRow14(PrimaryModel, StatusModel):
     ntm = models.CharField(
         max_length=200, 
         blank=True, 
-        default="Format eg.NTM1 M2 P36",
+        default="Temporary Direct Connection",
         verbose_name="NTM Connection",
-        help_text="default: Temporary Direct Connection",
+        help_text="Format eg.NTM1 M2 P36",
         )
 
     tenant = models.ForeignKey(
