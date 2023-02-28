@@ -24,6 +24,7 @@ class IxiaRow24Form(NautobotModelForm, TenancyForm):
             "speed",
             "port",
             "status",
+            "ntm",
             "tenant_group",
             "tenant",
             "description",
@@ -32,6 +33,7 @@ class IxiaRow24Form(NautobotModelForm, TenancyForm):
 #Ixia Row 14 
 class IxiaRow14Form(NautobotModelForm, TenancyForm):
     
+    
     class Meta:
         model = IxiaRow14
         fields = [
@@ -39,6 +41,7 @@ class IxiaRow14Form(NautobotModelForm, TenancyForm):
             "speed",
             "port",
             "status",
+            "ntm",
             "tenant_group",
             "tenant",
             "description",
