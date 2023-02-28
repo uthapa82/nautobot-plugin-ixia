@@ -20,15 +20,17 @@ from nautobot.tenancy.forms import TenancyForm, TenancyFilterForm
 
 from .models import IxiaRow24, IxiaRow14, IxiaAppServer
 
+    
 #Ixia Row 24 
 class IxiaRow24Form(NautobotModelForm, TenancyForm):
-    
+   
     class Meta:
         model = IxiaRow24
         fields = [
             "module",
             "speed",
             "port",
+            "ntm",
             "status",
             "tenant_group",
             "tenant",
@@ -45,14 +47,15 @@ class IxiaRow14Form(NautobotModelForm, TenancyForm):
             "module",
             "speed",
             "port",
+            "ntm",
             "status",
             "tenant_group",
             "tenant",
             "description",
          
         ]
-
-#Ixia App server 
+ 
+ #Ixia App server 
 class IxiaAppServerForm(NautobotModelForm, TenancyForm):
     
     class Meta:

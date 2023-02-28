@@ -15,11 +15,12 @@ menu_items = (
         groups=(
             NavMenuGroup(
                 name="Ixia Chassis",
-                weight=150,
+                weight=100,
                 items=(
                     NavMenuItem(
                         link="plugins:nautobot_plugin_ixia:ixiarow24_list",
                         name="Ixia Row 24",
+                        weight=100,
                         permissions=[],
                         buttons=(
                             NavMenuAddButton(
@@ -31,6 +32,7 @@ menu_items = (
                     NavMenuItem(
                         link="plugins:nautobot_plugin_ixia:ixiarow14_list",
                         name="Ixia Row 14",
+                        weight=200,
                         permissions=[],
                         buttons=(
                             NavMenuAddButton(
@@ -42,6 +44,7 @@ menu_items = (
                     NavMenuItem(
                         link="plugins:nautobot_plugin_ixia:ixiaappserver_list",
                         name="Ixia App Server",
+                        weight=300,
                         permissions=[],
                         buttons=(
                             NavMenuAddButton(

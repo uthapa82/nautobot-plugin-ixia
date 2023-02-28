@@ -7,18 +7,17 @@
 # __credits__ = "Network To Code"
 #------------------------------
 
-from nautobot.core.models.generics import PrimaryModel
-#from django.core.validators import MaxValueValidator, MinValueValidator 
-#from django.core.exceptions import ValidationError,  MultipleObjectsReturned
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.urls import reverse
 
 from nautobot.core.fields import AutoSlugField
 from nautobot.core.models.generics import PrimaryModel
 from nautobot.extras.models import StatusModel
+from nautobot.extras.utils import extras_features
 
 from nautobot_plugin_ixia.choices import ModuleNumberChoices, SpeedChoices
-from nautobot.extras.utils import extras_features 
+
 import logging
 
 
