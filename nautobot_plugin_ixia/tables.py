@@ -11,6 +11,7 @@ from nautobot.utilities.tables import (BaseTable, ToggleColumn)
 from nautobot.tenancy.tables import TenantColumn
 from nautobot.extras.tables import StatusTableMixin
 
+
 from .models import IxiaRow24, IxiaRow14, IxiaAppServer
 
 
@@ -84,11 +85,12 @@ class IxiaRow14Table(StatusTableMixin, BaseTable):
         )
 
 #Ixia App server Table 
-class IxiaAppServerTable(BaseTable):
+class IxiaAppServerTable(StatusTableMixin, BaseTable):
     
     #creates alias name 
     pk = ToggleColumn()
     tenant = TenantColumn()
+    username = tables.LinkColumn()
     class Meta(BaseTable.Meta):
         model = IxiaAppServer
         
@@ -97,14 +99,18 @@ class IxiaAppServerTable(BaseTable):
             "pk",
             "username",
             "password",
+            "status",
             "tenant",
             "description",
+        
         )
         #determines default columns 
         default_columns = (
             "pk",
             "username",
             "password",
+            "status",
             "tenant",
             "description",
+    
         )

@@ -21,11 +21,13 @@ from nautobot_plugin_ixia.choices import ModuleNumberChoices, SpeedChoices
 from nautobot.extras.utils import extras_features 
 import logging
 
+
 __all__ = (
     "IxiaRow24",
     "IxiaRow14",
     "IxiaAppServer",
 )
+
 
 logger = logging.getLogger(__name__)
 
@@ -44,7 +46,6 @@ class IxiaRow24(PrimaryModel, StatusModel):
     ntm = models.CharField(
         max_length=200, 
         blank=True, 
-        default="Temporary Direct Connection",
         verbose_name="NTM Connection",
         help_text="Format eg.NTM1 M2 P36",
         )
@@ -87,7 +88,6 @@ class IxiaRow14(PrimaryModel, StatusModel):
     ntm = models.CharField(
         max_length=200, 
         blank=True, 
-        default="Temporary Direct Connection",
         verbose_name="NTM Connection",
         help_text="Format eg.NTM1 M2 P36",
         )
@@ -116,8 +116,11 @@ class IxiaRow14(PrimaryModel, StatusModel):
         return self.module
 
 
+@extras_features(
+    "statuses",
+)  
 # Ixia App Server Credentials 
-class IxiaAppServer(PrimaryModel):
+class IxiaAppServer(PrimaryModel, StatusModel):
     """Model representing Ixia App server Credentials and user"""
     username = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from="username")
