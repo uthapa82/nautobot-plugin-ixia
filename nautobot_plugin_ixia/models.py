@@ -40,7 +40,7 @@ class IxiaRow24(PrimaryModel, StatusModel):
     module = models.CharField(max_length=200, choices=ModuleNumberChoices)
     speed = models.CharField(max_length=200, choices=SpeedChoices, default="10G", help_text ="Speed of Module deafult 10G")
     slug = AutoSlugField(populate_from="module")
-    port = models.PositiveIntegerField(default='1', help_text="Port number in the Module")
+    port = models.PositiveIntegerField(help_text="Port number in the Module")
     description = models.CharField(max_length=200, blank=True, help_text="Any additional Information/Project")
     
     ntm = models.CharField(
@@ -59,7 +59,8 @@ class IxiaRow24(PrimaryModel, StatusModel):
         help_text="Tenant the port is reserved to",
         )  
     
-
+    csv_headers = ["Module", "Speed", "Port", "NTM", "Status", "Tenant", "Description"]
+    
     # method to calculate the canonical URL for an object
     # string to refer object over HTTP
     def get_absolute_url(self):
@@ -72,6 +73,19 @@ class IxiaRow24(PrimaryModel, StatusModel):
     class Meta:
         verbose_name = "IXIA Row 24 Port"
         verbose_name_plural = "IXIA Row 24 Ports"
+    
+    #export to csv
+    def to_csv(self):
+        return(
+            
+            self.module,
+            self.speed,
+            self.port,
+            self.ntm if self.ntm else None,
+            self.status,
+            self.tenant if self.tenant else None,
+            self.description if self.tenant else None,
+        )
         
 @extras_features(
     "statuses",
@@ -82,7 +96,7 @@ class IxiaRow14(PrimaryModel, StatusModel):
     module = models.CharField(max_length=200, choices=ModuleNumberChoices)
     speed = models.CharField(max_length=200, choices=SpeedChoices, default="10G", help_text ="Speed of Module eg 10G")
     slug = AutoSlugField(populate_from="module")
-    port = models.PositiveIntegerField(default="1", help_text="Port number in the Module")
+    port = models.PositiveIntegerField(help_text="Port number in the Module")
     description = models.CharField(max_length=200, blank=True, help_text="Any additional Information/Project")
 
     ntm = models.CharField(
@@ -100,7 +114,9 @@ class IxiaRow14(PrimaryModel, StatusModel):
         blank=True,
         verbose_name="tenant",
         help_text="Tenant the port is reserved to",
-        )  
+        ) 
+     
+    csv_headers = ["Module", "Speed", "Port", "NTM", "Status", "Tenant", "Description"]
     
     class Meta:
         verbose_name = "IXIA Row 14 Port"
@@ -114,7 +130,19 @@ class IxiaRow14(PrimaryModel, StatusModel):
     # __str__ representation of object, to view in shell_plus
     def __str__(self):
         return self.module
-
+    
+    #export to csv
+    def to_csv(self):
+        return(
+            
+            self.module,
+            self.speed,
+            self.port,
+            self.ntm if self.ntm else None,
+            self.status,
+            self.tenant if self.tenant else None,
+            self.description if self.tenant else None,
+        )
 
 @extras_features(
     "statuses",

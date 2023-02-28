@@ -35,6 +35,7 @@ class IxiaRow24FilterSet(NautobotFilterSet, TenancyModelFilterSetMixin, StatusMo
     class Meta:
         model = IxiaRow24
         fields = "__all__"
+    
 
 # Ixia Row 14
 class IxiaRow14FilterSet(NautobotFilterSet, TenancyModelFilterSetMixin, StatusModelFilterSetMixin):

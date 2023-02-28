@@ -36,7 +36,7 @@ class IxiaRow24UIViewSet(view_mixins.ObjectListViewMixin,
     table_class = IxiaRow24Table
     form_class = IxiaRow24Form
     serializer_class = serializers.IxiaRow24Serializer
-    action_buttons = ("add", )
+    action_buttons = ("add", "export")
     filterset_class = IxiaRow24FilterSet
     filterset_form_class = IxiaRow24FilterForm
     
@@ -51,7 +51,7 @@ class IxiaRow14UIViewSet(view_mixins.ObjectListViewMixin,
     table_class = IxiaRow14Table
     form_class = IxiaRow14Form
     serializer_class = serializers.IxiaRow14Serializer
-    action_buttons = ("add", )
+    action_buttons = ("add", "export")
     filterset_class = IxiaRow14FilterSet
     filterset_form_class = IxiaRow14FilterForm
 
