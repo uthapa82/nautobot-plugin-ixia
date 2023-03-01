@@ -1,12 +1,12 @@
 """tables.py"""
-#---------------------------------
+# ---------------------------------
 # __author__: Upendra Thapa
 # __modified__:02/20/2023
 # __version__ ="0.1.0"
 # __status__ = "development"
 # __credits__ = "Network To Code"
-#----------------------------------
-import django_tables2 as tables 
+# ----------------------------------
+import django_tables2 as tables
 from nautobot.utilities.tables import BaseTable, ToggleColumn
 from nautobot.tenancy.tables import TenantColumn
 from nautobot.extras.tables import StatusTableMixin
@@ -15,19 +15,20 @@ from nautobot.extras.tables import StatusTableMixin
 from .models import IxiaRow24, IxiaRow14, IxiaAppServer
 
 
-#table definition using Nautobot base template
+# table definition using Nautobot base template
 class IxiaRow24Table(StatusTableMixin, BaseTable):
-    
-    #creates alias name 
+
+    # creates alias name
     pk = ToggleColumn()
     tenant = TenantColumn()
     module = tables.LinkColumn(verbose_name="Module Number")
     description = tables.Column(verbose_name="Description/Project")
     ntm = tables.LinkColumn()
+
     class Meta(BaseTable.Meta):
         model = IxiaRow24
-        
-        #determines which field to display
+
+        # determines which field to display
         fields = (
             "pk",
             "module",
@@ -38,30 +39,24 @@ class IxiaRow24Table(StatusTableMixin, BaseTable):
             "tenant",
             "description",
         )
-        #determines default columns 
-        default_columns = (
-            "pk",
-            "module",
-            "speed",
-            "port",
-            "ntm",
-            "status",
-            "tenant",
-            "description"
-        )
+        # determines default columns
+        default_columns = ("pk", "module", "speed", "port", "ntm", "status", "tenant", "description")
+
+
 # Ixia Row 14
 class IxiaRow14Table(StatusTableMixin, BaseTable):
-    
-    #creates alias name 
+
+    # creates alias name
     pk = ToggleColumn()
     tenant = TenantColumn()
     module = tables.LinkColumn(verbose_name="Module Number")
     description = tables.Column(verbose_name="Description/Project")
     ntm = tables.LinkColumn()
+
     class Meta(BaseTable.Meta):
         model = IxiaRow14
-        
-        #determines which field to display
+
+        # determines which field to display
         fields = (
             "pk",
             "module",
@@ -72,29 +67,22 @@ class IxiaRow14Table(StatusTableMixin, BaseTable):
             "tenant",
             "description",
         )
-        #determines default columns 
-        default_columns = (
-            "pk",
-            "module",
-            "speed",
-            "port",
-            "ntm",
-            "status",
-            "tenant",
-            "description"
-        )
+        # determines default columns
+        default_columns = ("pk", "module", "speed", "port", "ntm", "status", "tenant", "description")
 
-#Ixia App server Table 
+
+# Ixia App server Table
 class IxiaAppServerTable(StatusTableMixin, BaseTable):
-    
-    #creates alias name 
+
+    # creates alias name
     pk = ToggleColumn()
     tenant = TenantColumn()
     username = tables.LinkColumn()
+
     class Meta(BaseTable.Meta):
         model = IxiaAppServer
-        
-        #determines which field to display
+
+        # determines which field to display
         fields = (
             "pk",
             "username",
@@ -102,9 +90,8 @@ class IxiaAppServerTable(StatusTableMixin, BaseTable):
             "status",
             "tenant",
             "description",
-        
         )
-        #determines default columns 
+        # determines default columns
         default_columns = (
             "pk",
             "username",
@@ -112,5 +99,4 @@ class IxiaAppServerTable(StatusTableMixin, BaseTable):
             "status",
             "tenant",
             "description",
-    
         )

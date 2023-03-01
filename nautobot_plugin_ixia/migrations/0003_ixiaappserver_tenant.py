@@ -7,14 +7,20 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tenancy', '0002_auto_slug'),
-        ('nautobot_plugin_ixia', '0002_ixiarow14_tenant'),
+        ("tenancy", "0002_auto_slug"),
+        ("nautobot_plugin_ixia", "0002_ixiarow14_tenant"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='ixiaappserver',
-            name='tenant',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='ixiaappservers', to='tenancy.tenant'),
+            model_name="ixiaappserver",
+            name="tenant",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.PROTECT,
+                related_name="ixiaappservers",
+                to="tenancy.tenant",
+            ),
         ),
     ]

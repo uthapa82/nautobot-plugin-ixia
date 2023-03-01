@@ -16,73 +16,179 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('extras', '0047_enforce_custom_field_slug'),
-        ('tenancy', '0002_auto_slug'),
+        ("extras", "0047_enforce_custom_field_slug"),
+        ("tenancy", "0002_auto_slug"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='IxiaRow24',
+            name="IxiaRow24",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('created', models.DateField(auto_now_add=True, null=True)),
-                ('last_updated', models.DateTimeField(auto_now=True, null=True)),
-                ('_custom_field_data', models.JSONField(blank=True, default=dict, encoder=django.core.serializers.json.DjangoJSONEncoder)),
-                ('module', models.CharField(max_length=200)),
-                ('speed', models.CharField(default='10G', max_length=200)),
-                ('slug', nautobot.core.fields.AutoSlugField(blank=True, max_length=100, populate_from='module', unique=True)),
-                ('port', models.PositiveIntegerField()),
-                ('description', models.CharField(blank=True, max_length=200)),
-                ('ntm', models.CharField(blank=True, max_length=200, validators=[django.core.validators.RegexValidator(code='invalid', message='Invalid Format, NTM[1-3]<space>M[0-10]<space>P[1-96]', regex='NTM[1-3]\\sM([0-9]|10)\\sP([0-9][0-6]|[0-9])')])),
-                ('status', nautobot.extras.models.statuses.StatusField(null=True, on_delete=django.db.models.deletion.PROTECT, related_name='nautobot_plugin_ixia_ixiarow24_related', to='extras.status')),
-                ('tags', taggit.managers.TaggableManager(through='extras.TaggedItem', to='extras.Tag')),
-                ('tenant', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='ixiarow24s', to='tenancy.tenant')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True
+                    ),
+                ),
+                ("created", models.DateField(auto_now_add=True, null=True)),
+                ("last_updated", models.DateTimeField(auto_now=True, null=True)),
+                (
+                    "_custom_field_data",
+                    models.JSONField(blank=True, default=dict, encoder=django.core.serializers.json.DjangoJSONEncoder),
+                ),
+                ("module", models.CharField(max_length=200)),
+                ("speed", models.CharField(default="10G", max_length=200)),
+                (
+                    "slug",
+                    nautobot.core.fields.AutoSlugField(blank=True, max_length=100, populate_from="module", unique=True),
+                ),
+                ("port", models.PositiveIntegerField()),
+                ("description", models.CharField(blank=True, max_length=200)),
+                (
+                    "ntm",
+                    models.CharField(
+                        blank=True,
+                        max_length=200,
+                        validators=[
+                            django.core.validators.RegexValidator(
+                                code="invalid",
+                                message="Invalid Format, NTM[1-3]<space>M[0-10]<space>P[1-96]",
+                                regex="NTM[1-3]\\sM([0-9]|10)\\sP([0-9][0-6]|[0-9])",
+                            )
+                        ],
+                    ),
+                ),
+                (
+                    "status",
+                    nautobot.extras.models.statuses.StatusField(
+                        null=True,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="nautobot_plugin_ixia_ixiarow24_related",
+                        to="extras.status",
+                    ),
+                ),
+                ("tags", taggit.managers.TaggableManager(through="extras.TaggedItem", to="extras.Tag")),
+                (
+                    "tenant",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="ixiarow24s",
+                        to="tenancy.tenant",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'IXIA Row 24 Port',
-                'verbose_name_plural': 'IXIA Row 24 Ports',
+                "verbose_name": "IXIA Row 24 Port",
+                "verbose_name_plural": "IXIA Row 24 Ports",
             },
-            bases=(models.Model, nautobot.extras.models.mixins.DynamicGroupMixin, nautobot.extras.models.mixins.NotesMixin),
+            bases=(
+                models.Model,
+                nautobot.extras.models.mixins.DynamicGroupMixin,
+                nautobot.extras.models.mixins.NotesMixin,
+            ),
         ),
         migrations.CreateModel(
-            name='IxiaRow14',
+            name="IxiaRow14",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('created', models.DateField(auto_now_add=True, null=True)),
-                ('last_updated', models.DateTimeField(auto_now=True, null=True)),
-                ('_custom_field_data', models.JSONField(blank=True, default=dict, encoder=django.core.serializers.json.DjangoJSONEncoder)),
-                ('module', models.CharField(max_length=200)),
-                ('speed', models.CharField(default='10G', max_length=200)),
-                ('slug', nautobot.core.fields.AutoSlugField(blank=True, max_length=100, populate_from='module', unique=True)),
-                ('port', models.PositiveIntegerField()),
-                ('description', models.CharField(blank=True, max_length=200)),
-                ('ntm', models.CharField(blank=True, max_length=200, validators=[django.core.validators.RegexValidator(code='invalid', message='Invalid Format, NTM[1-3]<space>M[0-10]<space>P[1-96]', regex='NTM[1-3]\\sM([0-9]|10)\\sP([0-9][0-6]|[0-9])')])),
-                ('status', nautobot.extras.models.statuses.StatusField(null=True, on_delete=django.db.models.deletion.PROTECT, related_name='nautobot_plugin_ixia_ixiarow14_related', to='extras.status')),
-                ('tags', taggit.managers.TaggableManager(through='extras.TaggedItem', to='extras.Tag')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True
+                    ),
+                ),
+                ("created", models.DateField(auto_now_add=True, null=True)),
+                ("last_updated", models.DateTimeField(auto_now=True, null=True)),
+                (
+                    "_custom_field_data",
+                    models.JSONField(blank=True, default=dict, encoder=django.core.serializers.json.DjangoJSONEncoder),
+                ),
+                ("module", models.CharField(max_length=200)),
+                ("speed", models.CharField(default="10G", max_length=200)),
+                (
+                    "slug",
+                    nautobot.core.fields.AutoSlugField(blank=True, max_length=100, populate_from="module", unique=True),
+                ),
+                ("port", models.PositiveIntegerField()),
+                ("description", models.CharField(blank=True, max_length=200)),
+                (
+                    "ntm",
+                    models.CharField(
+                        blank=True,
+                        max_length=200,
+                        validators=[
+                            django.core.validators.RegexValidator(
+                                code="invalid",
+                                message="Invalid Format, NTM[1-3]<space>M[0-10]<space>P[1-96]",
+                                regex="NTM[1-3]\\sM([0-9]|10)\\sP([0-9][0-6]|[0-9])",
+                            )
+                        ],
+                    ),
+                ),
+                (
+                    "status",
+                    nautobot.extras.models.statuses.StatusField(
+                        null=True,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="nautobot_plugin_ixia_ixiarow14_related",
+                        to="extras.status",
+                    ),
+                ),
+                ("tags", taggit.managers.TaggableManager(through="extras.TaggedItem", to="extras.Tag")),
             ],
             options={
-                'verbose_name': 'IXIA Row 14 Port',
-                'verbose_name_plural': 'IXIA Row 14 Ports',
+                "verbose_name": "IXIA Row 14 Port",
+                "verbose_name_plural": "IXIA Row 14 Ports",
             },
-            bases=(models.Model, nautobot.extras.models.mixins.DynamicGroupMixin, nautobot.extras.models.mixins.NotesMixin),
+            bases=(
+                models.Model,
+                nautobot.extras.models.mixins.DynamicGroupMixin,
+                nautobot.extras.models.mixins.NotesMixin,
+            ),
         ),
         migrations.CreateModel(
-            name='IxiaAppServer',
+            name="IxiaAppServer",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('created', models.DateField(auto_now_add=True, null=True)),
-                ('last_updated', models.DateTimeField(auto_now=True, null=True)),
-                ('_custom_field_data', models.JSONField(blank=True, default=dict, encoder=django.core.serializers.json.DjangoJSONEncoder)),
-                ('username', models.CharField(max_length=200)),
-                ('slug', nautobot.core.fields.AutoSlugField(blank=True, max_length=100, populate_from='username', unique=True)),
-                ('password', models.CharField(max_length=200)),
-                ('description', models.CharField(blank=True, max_length=200)),
-                ('status', nautobot.extras.models.statuses.StatusField(null=True, on_delete=django.db.models.deletion.PROTECT, related_name='nautobot_plugin_ixia_ixiaappserver_related', to='extras.status')),
-                ('tags', taggit.managers.TaggableManager(through='extras.TaggedItem', to='extras.Tag')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True
+                    ),
+                ),
+                ("created", models.DateField(auto_now_add=True, null=True)),
+                ("last_updated", models.DateTimeField(auto_now=True, null=True)),
+                (
+                    "_custom_field_data",
+                    models.JSONField(blank=True, default=dict, encoder=django.core.serializers.json.DjangoJSONEncoder),
+                ),
+                ("username", models.CharField(max_length=200)),
+                (
+                    "slug",
+                    nautobot.core.fields.AutoSlugField(
+                        blank=True, max_length=100, populate_from="username", unique=True
+                    ),
+                ),
+                ("password", models.CharField(max_length=200)),
+                ("description", models.CharField(blank=True, max_length=200)),
+                (
+                    "status",
+                    nautobot.extras.models.statuses.StatusField(
+                        null=True,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="nautobot_plugin_ixia_ixiaappserver_related",
+                        to="extras.status",
+                    ),
+                ),
+                ("tags", taggit.managers.TaggableManager(through="extras.TaggedItem", to="extras.Tag")),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
-            bases=(models.Model, nautobot.extras.models.mixins.DynamicGroupMixin, nautobot.extras.models.mixins.NotesMixin),
+            bases=(
+                models.Model,
+                nautobot.extras.models.mixins.DynamicGroupMixin,
+                nautobot.extras.models.mixins.NotesMixin,
+            ),
         ),
     ]
