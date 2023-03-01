@@ -1,0 +1,33 @@
+<!-----
+@author: Upendra Thapa
+@last modified:02/21/2023
+@filename: ixiaappserver_retrieve.html
+ -->
+ {% extends 'generic/object_retrieve.html' %}
+ {% load helpers %}
+ 
+ {% block content_left_page %}
+ <div class="panel panel-default">
+     <div class="panel-heading">
+         <strong>Ixia App Server Access Info</strong>
+     </div>
+     <table class="table table-hover panel-body attr-table">
+         <tr>
+             <td>Username</td>
+             <td>{{ object.username|placeholder }}</td>
+         </tr>
+         <tr>
+             <td>Password</td>
+             <td>{{ object.password|placeholder }}</td>
+         </tr>
+         <tr>
+             <td>Engineer</td>
+             <td>{{ object.tenant|placeholder }}</td>
+         </tr>
+         <tr>
+             <td>Description/Project</td>
+             <td>{{ object.description|placeholder }}</td>
+         </tr>
+     </table>
+ </div>
+ {% endblock content_left_page %}
