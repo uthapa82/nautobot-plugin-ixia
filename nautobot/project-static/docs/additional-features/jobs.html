@@ -1,0 +1,3890 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.nautobot.com/en/stable/additional-features/jobs.html">
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>Jobs - Nautobot Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jobs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Nautobot Documentation" class="md-header__button md-logo" aria-label="Nautobot Documentation" data-md-component="logo">
+      
+  <img src="../assets/nautobot_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nautobot Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Jobs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nautobot/nautobot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Overview
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../installation/index.html" class="md-tabs__link md-tabs__link--active">
+        Documentation
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../development/index.html" class="md-tabs__link">
+        Developer Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../release-notes/index.html" class="md-tabs__link">
+        Release Notes
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../apps/index.html" class="md-tabs__link">
+        Nautobot Apps
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://docs.nautobot.com/" class="md-tabs__link">
+      Nautobot Docs Home ↗︎
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Nautobot Documentation" class="md-nav__button md-logo" aria-label="Nautobot Documentation" data-md-component="logo">
+      
+  <img src="../assets/nautobot_logo.svg" alt="logo">
+
+    </a>
+    Nautobot Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nautobot/nautobot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/index.html" class="md-nav__link">
+        Installing Prerequisites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/nautobot.html" class="md-nav__link">
+        Installing Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/services.html" class="md-nav__link">
+        Deploying Nautobot Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/http-server.html" class="md-nav__link">
+        Configuring an HTTP Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/external-authentication.html" class="md-nav__link">
+        External Authentication (Optional)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/index.html" class="md-nav__link">
+        Nautobot Docker Images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Migration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Migration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Migration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/migrating-from-netbox.html" class="md-nav__link">
+        Migrating from NetBox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/upgrading.html" class="md-nav__link">
+        Upgrading Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/migrating-from-postgresql.html" class="md-nav__link">
+        Migrating from PostgreSQL to MySQL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configuration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/index.html" class="md-nav__link">
+        Configuring Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/required-settings.html" class="md-nav__link">
+        Required Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/optional-settings.html" class="md-nav__link">
+        Optional Settings
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          External Authentication
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="External Authentication" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          External Authentication
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/authentication/ldap.html" class="md-nav__link">
+        LDAP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/authentication/sso.html" class="md-nav__link">
+        SSO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/authentication/remote.html" class="md-nav__link">
+        Remote Header
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          Administration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Administration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Administration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/nautobot-server.html" class="md-nav__link">
+        Nautobot Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/nautobot-shell.html" class="md-nav__link">
+        Nautobot Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/permissions.html" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/replicating-nautobot.html" class="md-nav__link">
+        Replicating Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          User Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="User Guides" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          User Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/index.html" class="md-nav__link">
+        Getting Started In the Web UI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/creating-devices.html" class="md-nav__link">
+        Creating Devices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/regions.html" class="md-nav__link">
+        Regions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/platforms.html" class="md-nav__link">
+        Platforms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/tenants.html" class="md-nav__link">
+        Tenants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/vlans-and-vlan-groups.html" class="md-nav__link">
+        VLANS and VLAN Groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/ipam.html" class="md-nav__link">
+        IP Address Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/search-bar.html" class="md-nav__link">
+        The Search Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/git-data-source.html" class="md-nav__link">
+        Git as a Data Source
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/graphql.html" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          Core Functionality
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Core Functionality" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Core Functionality
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/circuits.html" class="md-nav__link">
+        Circuits
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/devices.html" class="md-nav__link">
+        Devices and Cabling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/device-types.html" class="md-nav__link">
+        Device Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/ipam.html" class="md-nav__link">
+        IP Address Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/power.html" class="md-nav__link">
+        Power Tracking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/secrets.html" class="md-nav__link">
+        Secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/services.html" class="md-nav__link">
+        Service Mapping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/sites-and-racks.html" class="md-nav__link">
+        Sites, Locations, and Racks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/tenancy.html" class="md-nav__link">
+        Tenancy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/virtualization.html" class="md-nav__link">
+        Virtualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/vlans.html" class="md-nav__link">
+        VLAN Management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          Additional Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Additional Features" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Additional Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="caching.html" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="change-logging.html" class="md-nav__link">
+        Change Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/computedfield.html" class="md-nav__link">
+        Computed Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="config-contexts.html" class="md-nav__link">
+        Context Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/customfield.html" class="md-nav__link">
+        Custom Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/customlink.html" class="md-nav__link">
+        Custom Links
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/dynamicgroup.html" class="md-nav__link">
+        Dynamic Groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/exporttemplate.html" class="md-nav__link">
+        Export Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/gitrepository.html" class="md-nav__link">
+        Git Repositories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="healthcheck.html" class="md-nav__link">
+        Health Check
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Jobs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="jobs.html" class="md-nav__link md-nav__link--active">
+        Jobs
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#writing-jobs" class="md-nav__link">
+    Writing Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-metadata-attributes" class="md-nav__link">
+    Module Metadata Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Module Metadata Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-grouping" class="md-nav__link">
+    name (Grouping)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-metadata-attributes" class="md-nav__link">
+    Class Metadata Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Class Metadata Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approval_required" class="md-nav__link">
+    approval_required
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit_default" class="md-nav__link">
+    commit_default
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field_order" class="md-nav__link">
+    field_order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#has_sensitive_variables" class="md-nav__link">
+    has_sensitive_variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hidden" class="md-nav__link">
+    hidden
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read_only" class="md-nav__link">
+    read_only
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soft_time_limit" class="md-nav__link">
+    soft_time_limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_name" class="md-nav__link">
+    template_name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time_limit" class="md-nav__link">
+    time_limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-variable-options" class="md-nav__link">
+    Default Variable Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stringvar" class="md-nav__link">
+    StringVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textvar" class="md-nav__link">
+    TextVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integervar" class="md-nav__link">
+    IntegerVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleanvar" class="md-nav__link">
+    BooleanVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choicevar" class="md-nav__link">
+    ChoiceVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multichoicevar" class="md-nav__link">
+    MultiChoiceVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectvar" class="md-nav__link">
+    ObjectVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiobjectvar" class="md-nav__link">
+    MultiObjectVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filevar" class="md-nav__link">
+    FileVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipaddressvar" class="md-nav__link">
+    IPAddressVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipaddresswithmaskvar" class="md-nav__link">
+    IPAddressWithMaskVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipnetworkvar" class="md-nav__link">
+    IPNetworkVar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-run-method" class="md-nav__link">
+    The run() Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-test_-methods" class="md-nav__link">
+    The test_*() Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-post_run-method" class="md-nav__link">
+    The post_run() Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    Logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-request-data" class="md-nav__link">
+    Accessing Request Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-data-from-files" class="md-nav__link">
+    Reading Data from Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-jobs" class="md-nav__link">
+    Managing Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-jobs-for-running" class="md-nav__link">
+    Enabling Jobs for Running
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overriding-metadata" class="md-nav__link">
+    Overriding Metadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-jobs" class="md-nav__link">
+    Deleting Jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-jobs" class="md-nav__link">
+    Running Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jobs-and-class_path" class="md-nav__link">
+    Jobs and class_path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-the-web-ui" class="md-nav__link">
+    Via the Web UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-the-api" class="md-nav__link">
+    Via the API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-the-cli" class="md-nav__link">
+    Via the CLI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-jobs" class="md-nav__link">
+    Testing Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nautobot-133-and-later" class="md-nav__link">
+    Nautobot 1.3.3 and later
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nautobot-132-and-earlier-including-12" class="md-nav__link">
+    Nautobot 1.3.2 and earlier (including 1.2)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-jobs" class="md-nav__link">
+    Example Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-objects-for-a-planned-site" class="md-nav__link">
+    Creating objects for a planned site
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-validation" class="md-nav__link">
+    Device validation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/jobhook.html" class="md-nav__link">
+        Job Hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="job-scheduling-and-approvals.html" class="md-nav__link">
+        Job Scheduling and Approvals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="napalm.html" class="md-nav__link">
+        NAPALM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/note.html" class="md-nav__link">
+        Notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="prometheus-metrics.html" class="md-nav__link">
+        Prometheus Metrics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/relationship.html" class="md-nav__link">
+        Relationships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/status.html" class="md-nav__link">
+        Statuses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/tag.html" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="template-filters.html" class="md-nav__link">
+        Template Filters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/webhook.html" class="md-nav__link">
+        Webhooks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          REST API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="REST API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          REST API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/filtering.html" class="md-nav__link">
+        Filtering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/authentication.html" class="md-nav__link">
+        Authentication
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_10">
+          GraphQL API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GraphQL API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          GraphQL API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="graphql.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/index.html" class="md-nav__link">
+        Installing and Using Plugins
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Developer Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Developer Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/index.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/getting-started.html" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/docker-compose-advanced-use-cases.html" class="md-nav__link">
+        Advanced Docker Compose Usage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Plugins
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Plugins" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/development.html" class="md-nav__link">
+        Developing Plugins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/porting-from-netbox.html" class="md-nav__link">
+        Porting NetBox Plugins to Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/best-practices.html" class="md-nav__link">
+        Best Practices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/style-guide.html" class="md-nav__link">
+        Style Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/extending-models.html" class="md-nav__link">
+        Extending Models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/application-registry.html" class="md-nav__link">
+        Application Registry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/templates.html" class="md-nav__link">
+        Page Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/navigation-menu.html" class="md-nav__link">
+        Navigation Menu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/homepage.html" class="md-nav__link">
+        Home Page Panels
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/user-preferences.html" class="md-nav__link">
+        User Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/release-checklist.html" class="md-nav__link">
+        Release Checklist
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Release Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Release Notes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.4.html" class="md-nav__link">
+        Version 1.4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.3.html" class="md-nav__link">
+        Version 1.3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.2.html" class="md-nav__link">
+        Version 1.2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.1.html" class="md-nav__link">
+        Version 1.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.0.html" class="md-nav__link">
+        Version 1.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Nautobot Apps
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Nautobot Apps" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Nautobot Apps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          Network to Code App Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Network to Code App Docs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Network to Code App Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.nautobot.com/projects/golden-config/" class="md-nav__link">
+        Nautobot Golden Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://nautobot-plugin-ssot.readthedocs.io/en/latest/" class="md-nav__link">
+        Nautobot Single Source of Truth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://nautobot-plugin-firewall-models.readthedocs.io/en/latest/" class="md-nav__link">
+        Nautobot Firewall Models
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/nautobot-apps.html" class="md-nav__link">
+        Community Apps
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.nautobot.com/" class="md-nav__link">
+        Nautobot Docs Home ↗︎
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#writing-jobs" class="md-nav__link">
+    Writing Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-metadata-attributes" class="md-nav__link">
+    Module Metadata Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Module Metadata Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-grouping" class="md-nav__link">
+    name (Grouping)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-metadata-attributes" class="md-nav__link">
+    Class Metadata Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Class Metadata Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approval_required" class="md-nav__link">
+    approval_required
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit_default" class="md-nav__link">
+    commit_default
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field_order" class="md-nav__link">
+    field_order
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#has_sensitive_variables" class="md-nav__link">
+    has_sensitive_variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hidden" class="md-nav__link">
+    hidden
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read_only" class="md-nav__link">
+    read_only
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soft_time_limit" class="md-nav__link">
+    soft_time_limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_name" class="md-nav__link">
+    template_name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time_limit" class="md-nav__link">
+    time_limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-variable-options" class="md-nav__link">
+    Default Variable Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stringvar" class="md-nav__link">
+    StringVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textvar" class="md-nav__link">
+    TextVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integervar" class="md-nav__link">
+    IntegerVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleanvar" class="md-nav__link">
+    BooleanVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choicevar" class="md-nav__link">
+    ChoiceVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multichoicevar" class="md-nav__link">
+    MultiChoiceVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectvar" class="md-nav__link">
+    ObjectVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiobjectvar" class="md-nav__link">
+    MultiObjectVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filevar" class="md-nav__link">
+    FileVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipaddressvar" class="md-nav__link">
+    IPAddressVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipaddresswithmaskvar" class="md-nav__link">
+    IPAddressWithMaskVar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipnetworkvar" class="md-nav__link">
+    IPNetworkVar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-run-method" class="md-nav__link">
+    The run() Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-test_-methods" class="md-nav__link">
+    The test_*() Methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-post_run-method" class="md-nav__link">
+    The post_run() Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    Logging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-request-data" class="md-nav__link">
+    Accessing Request Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-data-from-files" class="md-nav__link">
+    Reading Data from Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-jobs" class="md-nav__link">
+    Managing Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-jobs-for-running" class="md-nav__link">
+    Enabling Jobs for Running
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overriding-metadata" class="md-nav__link">
+    Overriding Metadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-jobs" class="md-nav__link">
+    Deleting Jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-jobs" class="md-nav__link">
+    Running Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jobs-and-class_path" class="md-nav__link">
+    Jobs and class_path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-the-web-ui" class="md-nav__link">
+    Via the Web UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-the-api" class="md-nav__link">
+    Via the API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-the-cli" class="md-nav__link">
+    Via the CLI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-jobs" class="md-nav__link">
+    Testing Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nautobot-133-and-later" class="md-nav__link">
+    Nautobot 1.3.3 and later
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nautobot-132-and-earlier-including-12" class="md-nav__link">
+    Nautobot 1.3.2 and earlier (including 1.2)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-jobs" class="md-nav__link">
+    Example Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-objects-for-a-planned-site" class="md-nav__link">
+    Creating objects for a planned site
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-validation" class="md-nav__link">
+    Device validation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/nautobot/nautobot/edit/main/nautobot/docs/additional-features/jobs.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="jobs">Jobs<a class="headerlink" href="#jobs" title="Permanent link">&para;</a></h1>
+<p>Jobs are a way for users to execute custom logic on demand from within the Nautobot UI. Jobs can interact directly with Nautobot data to accomplish various data creation, modification, and validation tasks, such as:</p>
+<ul>
+<li>Automatically populate new devices and cables in preparation for a new site deployment</li>
+<li>Create a range of new reserved prefixes or IP addresses</li>
+<li>Fetch data from an external source and import it to Nautobot</li>
+<li>Check and report whether all top-of-rack switches have a console connection</li>
+<li>Check and report whether every router has a loopback interface with an assigned IP address</li>
+<li>Check and report whether all IP addresses have a parent prefix</li>
+</ul>
+<p>...and so on. Jobs are Python code and exist outside of the official Nautobot code base, so they can be updated and changed without interfering with the core Nautobot installation. And because they're completely customizable, there's practically no limit to what a job can accomplish.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Jobs unify and supersede the functionality previously provided in NetBox by "custom scripts" and "reports". Jobs are backwards-compatible for now with the <code>Script</code> and <code>Report</code> class APIs, but you are urged to move to the new <code>Job</code> class API described below. Jobs may be optionally marked as <a href="#read_only">read-only</a> which equates to the <code>Report</code> functionally, but in all cases, user input is supported via <a href="#variables">job variables</a>.</p>
+</div>
+<h2 id="writing-jobs">Writing Jobs<a class="headerlink" href="#writing-jobs" title="Permanent link">&para;</a></h2>
+<p>Jobs may be installed in one of three ways:</p>
+<ul>
+<li>Manually installed as files in the <a href="../configuration/optional-settings.html#jobs_root"><code>JOBS_ROOT</code></a> path (which defaults to <code>$NAUTOBOT_ROOT/jobs/</code>).<ul>
+<li>The <code>JOBS_ROOT</code> directory <em>must</em> contain a file named <code>__init__.py</code>. Do not delete this file.</li>
+<li>Each file created within this path is considered a separate module; there is no support for cross-file dependencies (such as a file acting as a common "library" module of functions shared between jobs) for files installed in this way.</li>
+</ul>
+</li>
+<li>Imported from an external <a href="../models/extras/gitrepository.html#jobs">Git repository</a>.<ul>
+<li>The repository's <code>jobs/</code> directory <em>must</em> contain a file named <code>__init__.py</code>.</li>
+<li>Each Job file in the repository is considered a separate module; there is no support for cross-file dependencies (such as a file acting as a common "library" module of functions shared between jobs) for files installed in this way.</li>
+</ul>
+</li>
+<li>Packaged as part of a <a href="../plugins/development.html#including-jobs">plugin</a>.<ul>
+<li>Jobs installed this way are part of the plugin module and can import code from elsewhere in the plugin or even have dependencies on other packages, if needed, via the standard Python packaging mechanisms.</li>
+</ul>
+</li>
+</ul>
+<p>In any case, each module holds one or more Jobs (Python classes), each of which serves a specific purpose. The logic of each job can be split into a number of distinct methods, each of which performs a discrete portion of the overall job logic.</p>
+<p>For example, we can create a module named <code>devices.py</code> to hold all of our jobs which pertain to devices in Nautobot. Within that module, we might define several jobs. Each job is defined as a Python class inheriting from <code>extras.jobs.Job</code>, which provides the base functionality needed to accept user input and log activity.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure you are <em>not</em> inheriting <code>extras.jobs.models.Job</code> instead, otherwise Django will think you want to define a new database model.</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">nautobot.extras.jobs</span> <span class="kn">import</span> <span class="n">Job</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">class</span> <span class="nc">CreateDevices</span><span class="p">(</span><span class="n">Job</span><span class="p">):</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="o">...</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">class</span> <span class="nc">DeviceConnectionsReport</span><span class="p">(</span><span class="n">Job</span><span class="p">):</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="o">...</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">class</span> <span class="nc">DeviceIPsReport</span><span class="p">(</span><span class="n">Job</span><span class="p">):</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="o">...</span>
+</code></pre></div>
+<p>Each job class will implement some or all of the following components:</p>
+<ul>
+<li>Module and class attributes, providing for default behavior, documentation and discoverability</li>
+<li>a set of variables for user input via the Nautobot UI (if your job requires any user inputs)</li>
+<li>a <code>run()</code> method, which is executed first and receives the user input values, if any</li>
+<li>any number of <code>test_*()</code> methods, which will be invoked next in order of declaration. Log messages generated by the job will be grouped together by the test method they were invoked from.</li>
+<li>a <code>post_run()</code> method, which is executed last and can be used to handle any necessary cleanup or final events (such as sending an email or triggering a webhook). The status of the overall job is available at this time as <code>self.failed</code> and the <code>JobResult</code> data object is available as <code>self.result</code>.</li>
+</ul>
+<p>You can implement the entire job within the <code>run()</code> function, but for more complex jobs, you may want to provide more granularity in the output and logging of activity. For this purpose, you can implement portions of the logic as <code>test_*()</code> methods (i.e., methods whose name begins with <code>test_*</code>) and/or a <code>post_run()</code> method. Log messages generated by the job logging APIs (more below on this topic) will be grouped together according to their base method (<code>run</code>, <code>test_a</code>, <code>test_b</code>, ..., <code>post_run</code>) which can aid in understanding the operation of the job.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your job can of course define additional Python methods to compartmentalize and reuse logic as required; however the <code>run</code>, <code>test_*</code>, and <code>post_run</code> methods are the only ones that will be automatically invoked by Nautobot.</p>
+</div>
+<p>It's important to understand that jobs execute on the server asynchronously as background tasks; they log messages and report their status to the database by updating <a href="../models/extras/jobresult.html"><code>JobResult</code></a> records and creating <a href="../models/extras/joblogentry.html"><code>JobLogEntry</code></a> records.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When actively developing a Job utilizing a development environment it's important to understand that the "automatically reload when code changes are detected" debugging functionality provided by <code>nautobot-server runserver</code> does <strong>not</strong> automatically restart the Celery <code>worker</code> process when code changes are made; therefore, it is required to restart the <code>worker</code> after each update to your Job source code or else it will continue to run the version of the Job code that was present when it first started.</p>
+<p>Additionally, as of Nautobot 1.3, the Job database records corresponding to installed Jobs are <em>not</em> automatically refreshed when the development server auto-restarts. If you make changes to any of the class and module metadata attributes described in the following sections, the database will be refreshed to reflect these changes only after running <code>nautobot-server migrate</code> or <code>nautobot-server post_upgrade</code> (recommended) or if you manually edit a Job database record to force it to be refreshed.</p>
+</div>
+<h3 id="module-metadata-attributes">Module Metadata Attributes<a class="headerlink" href="#module-metadata-attributes" title="Permanent link">&para;</a></h3>
+<h4 id="name-grouping"><code>name</code> (Grouping)<a class="headerlink" href="#name-grouping" title="Permanent link">&para;</a></h4>
+<p>You can define a global constant called <code>name</code> within a job module (the Python file which contains one or more job classes) to set the default grouping under which jobs in this module will be displayed in the Nautobot UI. If this value is not defined, the module's file name will be used. This "grouping" value may also be defined or overridden when editing Job records in the database.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In some UI elements and API endpoints, the module file name is displayed in addition to or in place of this attribute, so even if defining this attribute, you should still choose an appropriately explanatory file name as well.</p>
+</div>
+<h3 id="class-metadata-attributes">Class Metadata Attributes<a class="headerlink" href="#class-metadata-attributes" title="Permanent link">&para;</a></h3>
+<p>Job-specific attributes may be defined under a class named <code>Meta</code> within each job class you implement. All of these are optional, but encouraged.</p>
+<h4 id="name"><code>name</code><a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
+<p>This is the human-friendly name of your job, as will be displayed in the Nautobot UI. If not set, the class name will be used.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In some UI elements and API endpoints, the class name is displayed in addition to or in place of this attribute, so even if defining this attribute, you should still choose an appropriately explanatory class name as well.</p>
+</div>
+<h4 id="description"><code>description</code><a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
+<p>An optional human-friendly description of what this job does.
+This can accept either plain text or Markdown-formatted text. It can also be multiple lines:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span> <span class="nc">ExampleJob</span><span class="p">(</span><span class="n">Job</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s2">            This job does a number of interesting things.</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="s2">             1. It hacks the Gibson</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="s2">             2. It immanentizes the eschaton</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s2">             3. It&#39;s a floor wax *and* a dessert topping</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="s2">        &quot;&quot;&quot;</span>
+</code></pre></div>
+<p>If you code a multi-line description, the first line only will be used in the description column of the jobs list, while the full description will be rendered in the job detail view, submission, approval, and results pages.</p>
+<h4 id="approval_required"><code>approval_required</code><a class="headerlink" href="#approval_required" title="Permanent link">&para;</a></h4>
+<p>Default: <code>False</code></p>
+<p>A boolean that will mark this job as requiring approval from another user to be run. For more details on approvals, <a href="job-scheduling-and-approvals.html">please refer to the section on scheduling and approvals</a>.</p>
+<h4 id="commit_default"><code>commit_default</code><a class="headerlink" href="#commit_default" title="Permanent link">&para;</a></h4>
+<p>Default: <code>True</code></p>
+<p>The checkbox to commit database changes when executing a job is checked by default in the Nautobot UI. You can set <code>commit_default</code> to <code>False</code> under the <code>Meta</code> class if you want this option to instead be unchecked by default.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span> <span class="nc">MyJob</span><span class="p">(</span><span class="n">Job</span><span class="p">):</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="n">commit_default</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div>
+<h4 id="field_order"><code>field_order</code><a class="headerlink" href="#field_order" title="Permanent link">&para;</a></h4>
+<p>Default: <code>[]</code></p>
+<p>A list of strings (field names) representing the order your job <a href="#variables">variables</a> should be rendered as form fields in the job submission UI. If not defined, the variables will be listed in order of their definition in the code. If variables are defined on a parent class and no field order is defined, the parent class variables will appear before the subclass variables.</p>
+<h4 id="has_sensitive_variables"><code>has_sensitive_variables</code><a class="headerlink" href="#has_sensitive_variables" title="Permanent link">&para;</a></h4>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.3.10</p>
+</div>
+<p>Default: <code>True</code></p>
+<p>Unless set to False, it prevents the job's input parameters from being saved to the database. This defaults to True so as to protect against inadvertent database exposure of input parameters that may include sensitive data such as passwords or other user credentials. Review whether each job's inputs contain any such variables before setting this to False; if a job <em>does</em> contain sensitive inputs, if possible you should consider whether the job could be re-implemented using Nautobot's <a href="../core-functionality/secrets.html"><code>Secrets</code></a> feature as a way to ensure that the sensitive data is not directly provided as a job variable at all.</p>
+<p>Important notes about jobs with sensitive variables:</p>
+<ul>
+<li>Such jobs cannot be scheduled to run in the future or on a recurring schedule (as scheduled jobs must by necessity store their variables in the database for future reference).</li>
+<li>Jobs with sensitive variables cannot be marked as requiring approval (as jobs pending approval must store their variables in the database until approved).</li>
+</ul>
+<h4 id="hidden"><code>hidden</code><a class="headerlink" href="#hidden" title="Permanent link">&para;</a></h4>
+<p>Default: <code>False</code></p>
+<p>A Boolean that if set to <code>True</code> prevents the job from being displayed by default in the list of Jobs in the Nautobot UI.</p>
+<p>Since the jobs execution framework is designed to be generic, there may be several technical jobs defined by users which interact with or are invoked by external systems. In such cases, these jobs are not meant to be executed by a human and likely do not make sense to expose to end users for execution, and thus having them exposed in the UI at all is extraneous.</p>
+<p>Important notes about hidden jobs:</p>
+<ul>
+<li>This is merely hiding them by default from the web interface. It is NOT a security feature.</li>
+<li>In the Jobs list view it is possible to filter to "Hidden: (no selection)" or even "Hidden: Yes" to list the hidden jobs.</li>
+<li>All Job UI and REST API endpoints still exist for hidden jobs and can be accessed by any user who is aware of their existence.</li>
+<li>Hidden jobs can still be executed through the UI or the REST API given the appropriate URL.</li>
+<li>Results for hidden jobs will still appear in the Job Results list after they are run.</li>
+</ul>
+<h4 id="read_only"><code>read_only</code><a class="headerlink" href="#read_only" title="Permanent link">&para;</a></h4>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.1.0</p>
+</div>
+<p>Default: <code>False</code></p>
+<p>A boolean that designates whether the job is able to make changes to data in the database. The value defaults to <code>False</code> but when set to <code>True</code>, any data modifications executed from the job's code will be automatically aborted at the end of the job. The job input form is also modified to remove the <code>commit</code> checkbox as it is irrelevant for read-only jobs. When a job is marked as read-only, log messages that are normally automatically emitted about the DB transaction state are not included because no changes to data are allowed. Note that user input may still be optionally collected with read-only jobs via job variables, as described below.</p>
+<h4 id="soft_time_limit"><code>soft_time_limit</code><a class="headerlink" href="#soft_time_limit" title="Permanent link">&para;</a></h4>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.3.0</p>
+</div>
+<p>An int or float value, in seconds, which can be used to override the default <a href="../configuration/optional-settings.html#celery_task_soft_time_limit">soft time limit</a> for a job task to complete.</p>
+<p>The <code>celery.exceptions.SoftTimeLimitExceeded</code> exception will be raised when this soft time limit is exceeded. The job task can catch this to clean up before the <a href="../configuration/optional-settings.html#celery_task_time_limit">hard time limit</a> (10 minutes by default) is reached:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">celery.exceptions</span> <span class="kn">import</span> <span class="n">SoftTimeLimitExceeded</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span> <span class="nn">nautobot.extras.jobs</span> <span class="kn">import</span> <span class="n">Job</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">class</span> <span class="nc">ExampleJobWithSoftTimeLimit</span><span class="p">(</span><span class="n">Job</span><span class="p">):</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Soft Time Limit&quot;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Set a soft time limit of 10 seconds`&quot;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="n">soft_time_limit</span> <span class="o">=</span> <span class="mi">10</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">commit</span><span class="p">):</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            <span class="c1"># code which might take longer than 10 seconds to run</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>            <span class="n">job_code</span><span class="p">()</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="k">except</span> <span class="n">SoftTimeLimitExceeded</span><span class="p">:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>            <span class="c1"># any clean up code</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>            <span class="n">cleanup_in_a_hurry</span><span class="p">()</span>
+</code></pre></div>
+<h4 id="template_name"><code>template_name</code><a class="headerlink" href="#template_name" title="Permanent link">&para;</a></h4>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.4.0</p>
+</div>
+<p>A path relative to the job source code containing a Django template which provides additional code to customize the Job's submission form. This template should extend the existing job template, <code>extras/job.html</code>, otherwise the base form and functionality may not be available.</p>
+<p>A template can provide additional JavaScript, CSS, or even display HTML. A good starting template would be:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{% extends &#39;extras/job.html&#39; %}
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>{% block extra_styles %}
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    {{ block.super }}
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="cm">&lt;!-- Add additional CSS here. --&gt;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>{% endblock %}
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>{% block content %}
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    {{ block.super }}
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="cm">&lt;!-- Add additional HTML here. --&gt;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>{% endblock content %}
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>{% block javascript %}
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    {{ block.super }}
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="cm">&lt;!-- Add additional JavaScript here. --&gt;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>{% endblock javascript %}
+</code></pre></div>
+<p>For another example checkout <a href="https://github.com/nautobot/nautobot/blob/next/examples/example_plugin/example_plugin/templates/example_plugin/example_with_custom_template.html">the template used in example plugin</a> in the GitHub repo.</p>
+<h4 id="time_limit"><code>time_limit</code><a class="headerlink" href="#time_limit" title="Permanent link">&para;</a></h4>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.3.0</p>
+</div>
+<p>An int or float value, in seconds, which can be used to override the
+default <a href="../configuration/optional-settings.html#celery_task_time_limit">hard time limit</a> (10 minutes by default) for a job task to complete.</p>
+<p>Unlike the <code>soft_time_limit</code> above, no exceptions are raised when a <code>time_limit</code> is exceeded. The task will just terminate silently:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">nautobot.extras.jobs</span> <span class="kn">import</span> <span class="n">Job</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">class</span> <span class="nc">ExampleJobWithHardTimeLimit</span><span class="p">(</span><span class="n">Job</span><span class="p">):</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Hard Time Limit&quot;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Set a hard time limit of 10 seconds`&quot;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="n">time_limit</span> <span class="o">=</span> <span class="mi">10</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">commit</span><span class="p">):</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="c1"># code which might take longer than 10 seconds to run</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="c1"># this code will fail silently if the time_limit is exceeded</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="n">job_code</span><span class="p">()</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the <code>time_limit</code> is set to a value less than or equal to the <code>soft_time_limit</code>, a warning log is generated to inform the user that this job will fail silently after the <code>time_limit</code> as the <code>soft_time_limit</code> will never be reached.</p>
+</div>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<p>Variables allow your job to accept user input via the Nautobot UI, but they are optional; if your job does not require any user input, there is no need to define any variables. Conversely, if you are making use of user input in your job, you <em>must</em> also implement the <code>run()</code> method, as it is the only entry point to your job that has visibility into the variable values provided by the user.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">nautobot.extras.jobs</span> <span class="kn">import</span> <span class="n">Job</span><span class="p">,</span> <span class="n">StringVar</span><span class="p">,</span> <span class="n">IntegerVar</span><span class="p">,</span> <span class="n">ObjectVar</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">class</span> <span class="nc">CreateDevices</span><span class="p">(</span><span class="n">Job</span><span class="p">):</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">var1</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="n">var2</span> <span class="o">=</span> <span class="n">IntegerVar</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="n">var3</span> <span class="o">=</span> <span class="n">ObjectVar</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">commit</span><span class="p">):</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>        <span class="o">...</span>
+</code></pre></div>
+<p>The remainder of this section documents the various supported variable types and how to make use of them.</p>
+<h4 id="default-variable-options">Default Variable Options<a class="headerlink" href="#default-variable-options" title="Permanent link">&para;</a></h4>
+<p>All job variables support the following default options:</p>
+<ul>
+<li><code>default</code> - The field's default value</li>
+<li><code>description</code> - A brief user-friendly description of the field</li>
+<li><code>label</code> - The field name to be displayed in the rendered form</li>
+<li><code>required</code> - Indicates whether the field is mandatory (all fields are required by default)</li>
+<li><code>widget</code> - The class of form widget to use (see the <a href="https://docs.djangoproject.com/en/stable/ref/forms/widgets/">Django documentation</a>)</li>
+</ul>
+<h4 id="stringvar"><code>StringVar</code><a class="headerlink" href="#stringvar" title="Permanent link">&para;</a></h4>
+<p>Stores a string of characters (i.e. text). Options include:</p>
+<ul>
+<li><code>min_length</code> - Minimum number of characters</li>
+<li><code>max_length</code> - Maximum number of characters</li>
+<li><code>regex</code> - A regular expression against which the provided value must match</li>
+</ul>
+<p>Note that <code>min_length</code> and <code>max_length</code> can be set to the same number to effect a fixed-length field.</p>
+<h4 id="textvar"><code>TextVar</code><a class="headerlink" href="#textvar" title="Permanent link">&para;</a></h4>
+<p>Arbitrary text of any length. Renders as a multi-line text input field.</p>
+<h4 id="integervar"><code>IntegerVar</code><a class="headerlink" href="#integervar" title="Permanent link">&para;</a></h4>
+<p>Stores a numeric integer. Options include:</p>
+<ul>
+<li><code>min_value</code> - Minimum value</li>
+<li><code>max_value</code> - Maximum value</li>
+</ul>
+<h4 id="booleanvar"><code>BooleanVar</code><a class="headerlink" href="#booleanvar" title="Permanent link">&para;</a></h4>
+<p>A true/false flag. This field has no options beyond the defaults listed above.</p>
+<h4 id="choicevar"><code>ChoiceVar</code><a class="headerlink" href="#choicevar" title="Permanent link">&para;</a></h4>
+<p>A set of choices from which the user can select one.</p>
+<ul>
+<li><code>choices</code> - A list of <code>(value, label)</code> tuples representing the available choices. For example:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">CHOICES</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;North&#39;</span><span class="p">),</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;South&#39;</span><span class="p">),</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;East&#39;</span><span class="p">),</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;West&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">direction</span> <span class="o">=</span> <span class="n">ChoiceVar</span><span class="p">(</span><span class="n">choices</span><span class="o">=</span><span class="n">CHOICES</span><span class="p">)</span>
+</code></pre></div>
+<p>In the example above, selecting the choice labeled "North" will submit the value <code>n</code>.</p>
+<h4 id="multichoicevar"><code>MultiChoiceVar</code><a class="headerlink" href="#multichoicevar" title="Permanent link">&para;</a></h4>
+<p>Similar to <code>ChoiceVar</code>, but allows for the selection of multiple choices.</p>
+<h4 id="objectvar"><code>ObjectVar</code><a class="headerlink" href="#objectvar" title="Permanent link">&para;</a></h4>
+<p>A particular object within Nautobot. Each ObjectVar must specify a particular model, and allows the user to select one of the available instances. ObjectVar accepts several arguments, listed below.</p>
+<ul>
+<li><code>model</code> - The model class</li>
+<li><code>display_field</code> - The name of the REST API object field to display in the selection list (default: <code>'display'</code>)</li>
+<li><code>query_params</code> - A dictionary of REST API query parameters to use when retrieving available options (optional)</li>
+<li><code>null_option</code> - A label representing a "null" or empty choice (optional)</li>
+</ul>
+<p>The <code>display_field</code> argument is useful in cases where using the <code>display</code> API field is not desired for referencing the object. For example, when displaying a list of IP Addresses, you might want to use the <code>dns_name</code> field:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">device_type</span> <span class="o">=</span> <span class="n">ObjectVar</span><span class="p">(</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="n">model</span><span class="o">=</span><span class="n">IPAddress</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="n">display_field</span><span class="o">=</span><span class="s2">&quot;dns_name&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">)</span>
+</code></pre></div>
+<p>To limit the selections available within the list, additional query parameters can be passed as the <code>query_params</code> dictionary. For example, to show only devices with an "active" status:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">device</span> <span class="o">=</span> <span class="n">ObjectVar</span><span class="p">(</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">model</span><span class="o">=</span><span class="n">Device</span><span class="p">,</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">query_params</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;active&#39;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="p">}</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">)</span>
+</code></pre></div>
+<p>Multiple values can be specified by assigning a list to the dictionary key. It is also possible to reference the value of other fields in the form by prepending a dollar sign (<code>$</code>) to the variable's name. The keys you can use in this dictionary are the same ones that are available in the REST API - as an example it is also possible to filter the <code>Site</code> <code>ObjectVar</code> for its <code>tenant_group_id</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">region</span> <span class="o">=</span> <span class="n">ObjectVar</span><span class="p">(</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">model</span><span class="o">=</span><span class="n">Region</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">)</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">tenant_group</span> <span class="o">=</span> <span class="n">ObjectVar</span><span class="p">(</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">model</span><span class="o">=</span><span class="n">TenantGroup</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">)</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="n">site</span> <span class="o">=</span> <span class="n">ObjectVar</span><span class="p">(</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="n">model</span><span class="o">=</span><span class="n">Site</span><span class="p">,</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="n">query_params</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>        <span class="s1">&#39;region_id&#39;</span><span class="p">:</span> <span class="s1">&#39;$region&#39;</span><span class="p">,</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>        <span class="s1">&#39;tenant_group_id&#39;</span><span class="p">:</span> <span class="s1">&#39;$tenant_group&#39;</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="p">}</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="p">)</span>
+</code></pre></div>
+<h4 id="multiobjectvar"><code>MultiObjectVar</code><a class="headerlink" href="#multiobjectvar" title="Permanent link">&para;</a></h4>
+<p>Similar to <code>ObjectVar</code>, but allows for the selection of multiple objects.</p>
+<h4 id="filevar"><code>FileVar</code><a class="headerlink" href="#filevar" title="Permanent link">&para;</a></h4>
+<p>An uploaded file. Note that uploaded files are present in memory only for the duration of the job's execution: They will not be automatically saved for future use. The job is responsible for writing file contents to disk where necessary.</p>
+<h4 id="ipaddressvar"><code>IPAddressVar</code><a class="headerlink" href="#ipaddressvar" title="Permanent link">&para;</a></h4>
+<p>An IPv4 or IPv6 address, without a mask. Returns a <code>netaddr.IPAddress</code> object.</p>
+<h4 id="ipaddresswithmaskvar"><code>IPAddressWithMaskVar</code><a class="headerlink" href="#ipaddresswithmaskvar" title="Permanent link">&para;</a></h4>
+<p>An IPv4 or IPv6 address with a mask. Returns a <code>netaddr.IPNetwork</code> object which includes the mask.</p>
+<h4 id="ipnetworkvar"><code>IPNetworkVar</code><a class="headerlink" href="#ipnetworkvar" title="Permanent link">&para;</a></h4>
+<p>An IPv4 or IPv6 network with a mask. Returns a <code>netaddr.IPNetwork</code> object. Two attributes are available to validate the provided mask:</p>
+<ul>
+<li><code>min_prefix_length</code> - Minimum length of the mask</li>
+<li><code>max_prefix_length</code> - Maximum length of the mask</li>
+</ul>
+<h3 id="the-run-method">The <code>run()</code> Method<a class="headerlink" href="#the-run-method" title="Permanent link">&para;</a></h3>
+<p>The <code>run()</code> method, if you choose to implement it, should accept two arguments:</p>
+<ol>
+<li><code>data</code> - A dictionary which will contain all of the variable data passed in by the user (via the web UI or REST API)</li>
+<li><code>commit</code> - A boolean indicating whether database changes should be committed. If this is <code>False</code>, even if your Job attempts to make database changes, they will be automatically rolled back when the Job completes.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">nautobot.extras.jobs</span> <span class="kn">import</span> <span class="n">Job</span><span class="p">,</span> <span class="n">StringVar</span><span class="p">,</span> <span class="n">IntegerVar</span><span class="p">,</span> <span class="n">ObjectVar</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">class</span> <span class="nc">CreateDevices</span><span class="p">(</span><span class="n">Job</span><span class="p">):</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="n">var1</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="n">var2</span> <span class="o">=</span> <span class="n">IntegerVar</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="n">var3</span> <span class="o">=</span> <span class="n">ObjectVar</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">commit</span><span class="p">):</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        <span class="o">...</span>
+</code></pre></div>
+<p>Again, defining user variables is totally optional; you may create a job with just a <code>run()</code> method if no user input is needed, in which case <code>data</code> will be an empty dictionary.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>test_*()</code> and <code>post_run()</code> methods do not accept any arguments; if you need to access user <code>data</code> or the <code>commit</code> flag, your <code>run()</code> method is responsible for storing these values in the job instance, such as:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>def run(self, data, commit):
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    self.data = data
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    self.commit = commit
+</code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When writing Jobs that create and manipulate data it is recommended to make use of the <code>validated_save()</code> convenience method which exists on all core models. This method saves the instance data but first enforces model validation logic. Simply calling <code>save()</code> on the model instance <strong>does not</strong> enforce validation automatically and may lead to bad data. See the development <a href="../development/best-practices.html">best practices</a>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Django ORM provides methods to create/edit many objects at once, namely <code>bulk_create()</code> and <code>update()</code>. These are best avoided in most cases as they bypass a model's built-in validation and can easily lead to database corruption if not used carefully.</p>
+</div>
+<h3 id="the-test_-methods">The <code>test_*()</code> Methods<a class="headerlink" href="#the-test_-methods" title="Permanent link">&para;</a></h3>
+<p>If your job class defines any number of methods whose names begin with <code>test_</code>, these will be automatically invoked after the <code>run()</code> method (if any) completes. These methods must take no arguments (other than <code>self</code>).</p>
+<p>Log messages generated by any of these methods will be automatically grouped together by the test method they were invoked from, which can be helpful for readability.</p>
+<h3 id="the-post_run-method">The <code>post_run()</code> Method<a class="headerlink" href="#the-post_run-method" title="Permanent link">&para;</a></h3>
+<p>If your job class implements a <code>post_run()</code> method (which must take no arguments other than <code>self</code>), this method will be automatically invoked after the <code>run()</code> and <code>test_*()</code> methods (if any). It will be called even if one of the other methods raises an exception, so this method can be used to handle any necessary cleanup or final events (such as sending an email or triggering a webhook). The status of the overall job is available at this time as <code>self.failed</code> and the associated <a href="../models/extras/jobresult.html"><code>JobResult</code></a> <code>data</code> field is available as <code>self.results</code>.</p>
+<h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
+<p>The following instance methods are available to log results from an executing job to be stored into <a href="../models/extras/joblogentry.html"><code>JobLogEntry</code></a> records associated with the current <a href="../models/extras/jobresult.html"><code>JobResult</code></a>:</p>
+<ul>
+<li><code>self.log(message)</code></li>
+<li><code>self.log_debug(message)</code></li>
+<li><code>self.log_success(obj=None, message=None)</code></li>
+<li><code>self.log_info(obj=None, message=None)</code></li>
+<li><code>self.log_warning(obj=None, message=None)</code></li>
+<li><code>self.log_failure(obj=None, message=None)</code></li>
+</ul>
+<p>Messages recorded with <code>log()</code> or <code>log_debug()</code> will appear in a job's results but are never associated with a particular object; the other <code>log_*</code> functions may be invoked with or without a provided object to associate the message with.</p>
+<p>It is advised to log a message for each object that is evaluated so that the results will reflect how many objects are being manipulated or reported on.</p>
+<p>Markdown rendering is supported for log messages.</p>
+<div class="admonition version-changed">
+<p class="admonition-title">Changed in version 1.3.4</p>
+<p>As a security measure, the <code>message</code> passed to any of these methods will be passed through the <code>nautobot.utilities.logging.sanitize()</code> function in an attempt to strip out information such as usernames/passwords that should not be saved to the logs. This is of course best-effort only, and Job authors should take pains to ensure that such information is not passed to the logging APIs in the first place. The set of redaction rules used by the <code>sanitize()</code> function can be configured as <a href="../configuration/optional-settings.html#sanitizer_patterns">settings.SANITIZER_PATTERNS</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using <code>self.log_failure()</code>, in addition to recording a log message, will flag the overall job as failed, but it will <strong>not</strong> stop the execution of the job, nor will it result in an automatic rollback of any database changes made by the job. To end a job early, you can use a Python <code>raise</code> or <code>return</code> as appropriate. Raising <code>nautobot.utilities.exceptions.AbortTransaction</code> will ensure that any database changes are rolled back as part of the process of ending the job.</p>
+</div>
+<h3 id="accessing-request-data">Accessing Request Data<a class="headerlink" href="#accessing-request-data" title="Permanent link">&para;</a></h3>
+<p>Details of the current HTTP request (the one being made to execute the job) are available as the instance attribute <code>self.request</code>. This can be used to infer, for example, the user executing the job and their client IP address:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">username</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">ip_address</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;HTTP_X_FORWARDED_FOR&#39;</span><span class="p">)</span> <span class="ow">or</span> \
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;REMOTE_ADDR&#39;</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="bp">self</span><span class="o">.</span><span class="n">log_info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Running as user </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2"> (IP: </span><span class="si">{</span><span class="n">ip_address</span><span class="si">}</span><span class="s2">)...&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>For a complete list of available request parameters, please see the <a href="https://docs.djangoproject.com/en/stable/ref/request-response/">Django documentation</a>.</p>
+<h3 id="reading-data-from-files">Reading Data from Files<a class="headerlink" href="#reading-data-from-files" title="Permanent link">&para;</a></h3>
+<p>The <code>Job</code> class provides two convenience methods for reading data from files:</p>
+<ul>
+<li><code>load_yaml</code></li>
+<li><code>load_json</code></li>
+</ul>
+<p>These two methods will load data in YAML or JSON format, respectively, from files within the local path (i.e. <code>JOBS_ROOT/</code>).</p>
+<h2 id="managing-jobs">Managing Jobs<a class="headerlink" href="#managing-jobs" title="Permanent link">&para;</a></h2>
+<p>As of Nautobot 1.3, each Job class installed in Nautobot is represented by a corresponding Job data record in the Nautobot database. These data records are refreshed when the <code>nautobot-server migrate</code> or <code>nautobot-server post_upgrade</code> command is run, or (for Jobs from a Git repository) when a Git repository is enabled or re-synced in Nautobot. These data records make it possible for an administrative user (or other user with appropriate access privileges) to exert a level of administrative control over the Jobs created and updated by Job authors.</p>
+<h3 id="enabling-jobs-for-running">Enabling Jobs for Running<a class="headerlink" href="#enabling-jobs-for-running" title="Permanent link">&para;</a></h3>
+<p>When a new Job record is created for a newly discovered Job class, it defaults to <code>enabled = False</code>, which prevents the Job from being run by any user. This is intended to provide a level of security and oversight regarding the installation of new Jobs into Nautobot.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>One exception to this default is when upgrading from a Nautobot release before 1.3 to Nautobot 1.3.0 or later. In this case, at the time of the upgrade, any Job class that shows evidence of having been run or scheduled under the older Nautobot version (that is, there is at least one JobResult and/or ScheduledJob record that references this Job class) will result in the creation of a Job database record with <code>enabled = True</code>. The reasoning for this feature is the assertion that because the Job has been run or scheduled previously, it has presumably already undergone appropriate review at that time, and so it should remain possible to run it as it was possible before the upgrade.</p>
+</div>
+<p>An administrator or user with <code>extras.change_job</code> permission can edit the Job to change it to <code>enabled = True</code>, permitting running of the Job, when they have completed any appropriate review of the new Job to ensure that it meets their standards. Similarly, an obsolete or no-longer-used Job can be prevented from inadvertent execution by changing it back to <code>enabled = False</code>.</p>
+<h3 id="overriding-metadata">Overriding Metadata<a class="headerlink" href="#overriding-metadata" title="Permanent link">&para;</a></h3>
+<p>An administrator or user with <code>extras.change_job</code> permission can also edit a Job database record to optionally override any or all of the following metadata attributes defined by the Job module or class:</p>
+<ul>
+<li><code>grouping</code></li>
+<li><code>name</code></li>
+<li><code>description</code></li>
+<li><code>approval_required</code></li>
+<li><code>commit_default</code></li>
+<li><code>hidden</code></li>
+<li><code>read_only</code></li>
+<li><code>soft_time_limit</code></li>
+<li><code>time_limit</code></li>
+</ul>
+<p>This is done by setting the corresponding "override" flag (<code>grouping_override</code>, <code>name_override</code>, etc.) to <code>True</code> then providing a new value for the attribute in question. An overridden attribute will remain set to its overridden value even if the underlying Job class definition changes and <code>nautobot-server &lt;migrate|post_upgrade&gt;</code> gets run again. Conversely, clearing the "override" flag for an attribute and saving the database record will revert the attribute to the underlying value defined within the Job class source code.</p>
+<h3 id="deleting-jobs">Deleting Jobs<a class="headerlink" href="#deleting-jobs" title="Permanent link">&para;</a></h3>
+<p>When a previously installed Job class is removed, after running <code>nautobot-server &lt;migrate|post_upgrade&gt;</code> or refreshing the providing Git repository, the Job database record will <em>not</em> be automatically deleted, but <em>will</em> be flagged as <code>installed = False</code> and can no longer be run or scheduled.</p>
+<p>An administrator or user with <code>extras.delete_job</code> permissions <em>may</em> delete such a Job database record if desired, but be aware that doing so will result in any existing JobResult or ScheduledJob records that originated from this Job losing their association to the Job; this association will not be automatically restored even if the Job is later reinstalled or reintroduced.</p>
+<h2 id="running-jobs">Running Jobs<a class="headerlink" href="#running-jobs" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To run any job, a user must be assigned the <code>extras.run_job</code> permission. This is achieved by assigning the user (or group) a permission on the <code>extras &gt; job</code> object and specifying the <code>run</code> action in the admin UI as shown below.</p>
+<p>Similarly, to <a href="job-scheduling-and-approvals.html">approve a job request by another user</a>, a user must be assigned the <code>extras.approve_job</code> permission via the same process. Job approvers also need the <code>extras.change_scheduledjob</code> and/or <code>extras.delete_scheduledjob</code> permissions as job approvals are implemented via the <code>ScheduledJob</code> data model.</p>
+<p><img alt="Adding the run action to a permission" src="../media/admin_ui_run_permission.png" /></p>
+</div>
+<h3 id="jobs-and-class_path">Jobs and <code>class_path</code><a class="headerlink" href="#jobs-and-class_path" title="Permanent link">&para;</a></h3>
+<p>It is a key concept to understand the 3 <code>class_path</code> elements:</p>
+<ul>
+<li><code>grouping_name</code>: which can be one of <code>local</code>, <code>git</code>, or <code>plugins</code> - depending on where the <code>Job</code> has been defined.</li>
+<li><code>module_name</code>: which is the Python path to the job definition file, for a plugin-provided job, this might be something like <code>my_plugin_name.jobs.my_job_filename</code> or <code>nautobot_golden_config.jobs</code> and is the importable Python path name (which would not include the <code>.py</code> extension, as per Python syntax standards).</li>
+<li><code>JobClassName</code>: which is the name of the class inheriting from <code>nautobot.extras.jobs.Job</code> contained in the above file.</li>
+</ul>
+<p>The <code>class_path</code> is often represented as a string in the format of <code>&lt;grouping_name&gt;/&lt;module_name&gt;/&lt;JobClassName&gt;</code>, such as
+<code>local/example/MyJobWithNoVars</code> or <code>plugins/nautobot_golden_config.jobs/BackupJob</code>. Understanding the definitions of these
+elements will be important in running jobs programmatically.</p>
+<div class="admonition version-changed">
+<p class="admonition-title">Changed in version 1.3.0</p>
+<p>With the addition of Job database models, it is now generally possible and preferable to refer to a job by its UUID primary key, similar to other Nautobot database models, rather than its <code>class_path</code>.</p>
+</div>
+<h3 id="via-the-web-ui">Via the Web UI<a class="headerlink" href="#via-the-web-ui" title="Permanent link">&para;</a></h3>
+<p>Jobs can be run via the web UI by navigating to the job, completing any required form data (if any), and clicking the "Run Job" button.</p>
+<p>Once a job has been run, the latest <a href="../models/extras/jobresult.html"><code>JobResult</code></a> for that job will be summarized in the job list view.</p>
+<h3 id="via-the-api">Via the API<a class="headerlink" href="#via-the-api" title="Permanent link">&para;</a></h3>
+<p>To run a job via the REST API, issue a POST request to the job's endpoint <code>/api/extras/jobs/&lt;uuid&gt;/run/</code>. You can optionally provide JSON data to set the <code>commit</code> flag, specify any required user input <code>data</code>, and/or provide optional scheduling information as described in <a href="job-scheduling-and-approvals.html">the section on scheduling and approvals</a>.</p>
+<p>For example, to run a job with no user inputs and without committing any anything to the database:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>curl -X POST \
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>-H &quot;Authorization: Token $TOKEN&quot; \
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>-H &quot;Content-Type: application/json&quot; \
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>-H &quot;Accept: application/json; version=1.3; indent=4&quot; \
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>http://nautobot/api/extras/jobs/$JOB_ID/run/
+</code></pre></div>
+<p>Or to run a job that expects user inputs, and commit changes to the database:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>curl -X POST \
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>-H &quot;Authorization: Token $TOKEN&quot; \
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>-H &quot;Content-Type: application/json&quot; \
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>-H &quot;Accept: application/json; version=1.3; indent=4&quot; \
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>http://nautobot/api/extras/jobs/$JOB_ID/run/ \
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>--data &#39;{&quot;data&quot;: {&quot;string_variable&quot;: &quot;somevalue&quot;, &quot;integer_variable&quot;: 123}, &quot;commit&quot;: true}&#39;
+</code></pre></div>
+<p>When providing input data, it is possible to specify complex values contained in <code>ObjectVar</code>s, <code>MultiObjectVar</code>s, and <code>IPAddressVar</code>s.</p>
+<ul>
+<li><code>ObjectVar</code>s can be specified by either using their primary key directly as the value, or as a dictionary containing a more complicated query that gets passed into the Django ORM as keyword arguments.</li>
+<li><code>MultiObjectVar</code>s can be specified as a list of primary keys.</li>
+<li><code>IPAddressVar</code>s can be provided as strings in CIDR notation.</li>
+</ul>
+<h3 id="via-the-cli">Via the CLI<a class="headerlink" href="#via-the-cli" title="Permanent link">&para;</a></h3>
+<p>Jobs can be run from the CLI by invoking the management command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>nautobot-server runjob [--username &lt;username&gt;] [--commit] [--local] [--data &lt;data&gt;] &lt;class_path&gt;
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a href="#jobs-and-class_path">See above</a> for <code>class_path</code> definitions.</p>
+</div>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.3.10</p>
+<p>The <code>--data</code> and <code>--local</code> parameters were added.</p>
+<p>The <code>--data</code> parameter must be a JSON string, e.g. <code>--data='{"string_variable": "somevalue", "integer_variable": 123}'</code></p>
+</div>
+<p>Using the same example shown in the API:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>nautobot-server runjob --username myusername local/example/MyJobWithNoVars
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code>--username &lt;username&gt;</code> parameter can be used to specify the user that will be identified as the requester of the job. It is optional if the job will not be modifying the database, but is mandatory if you are running with <code>--commit</code>, as the specified user will own any resulting database changes.</p>
+<p>Note that <code>nautobot-server</code> commands, like all management commands and other direct interactions with the Django database, are not gated by the usual Nautobot user authentication flow. It is possible to specify any existing <code>--username</code> with the <code>nautobot-server runjob</code> command in order to impersonate any defined user in Nautobot. Use this power wisely and be cautious who you allow to access it.</p>
+</div>
+<h2 id="testing-jobs">Testing Jobs<a class="headerlink" href="#testing-jobs" title="Permanent link">&para;</a></h2>
+<p>Jobs are Python code and can be tested as such, usually via <a href="https://docs.djangoproject.com/en/stable/topics/testing/">Django unit-test features</a>. That said, there are a few useful tricks specific to testing Jobs.</p>
+<p>While individual methods within your Job can and should be tested in isolation, you'll likely also want to test the entire execution of the Job. Nautobot 1.3.3 introduced a few enhancements to make this simpler to do, but it's also quite possible to test in earlier releases with a bit more effort.</p>
+<h3 id="nautobot-133-and-later">Nautobot 1.3.3 and later<a class="headerlink" href="#nautobot-133-and-later" title="Permanent link">&para;</a></h3>
+<p>The simplest way to test the entire execution of Jobs from 1.3.3 on is via calling the <code>nautobot.utilities.testing.run_job_for_testing()</code> method, which is a helper wrapper around the <code>run_job</code> function used to execute a Job via Nautobot's Celery worker process.</p>
+<p>Because of the way <code>run_job_for_testing</code> and more specifically <code>run_job()</code> works, which is somewhat complex behind the scenes, you need to inherit from <code>nautobot.utilities.testing.TransactionTestCase</code> instead of <code>django.test.TestCase</code> (Refer to the <a href="https://docs.djangoproject.com/en/stable/topics/testing/tools/#provided-test-case-classes">Django documentation</a> if you're interested in the differences between these classes - <code>TransactionTestCase</code> from Nautobot is a small wrapper around Django's <code>TransactionTestCase</code>).</p>
+<p>When using <code>TransactionTestCase</code> (whether from Django or from Nautobot) each tests runs on a completely empty database. Furthermore, Nautobot requires new jobs to be enabled before they can run. Therefore, we need to make sure the job is enabled before each run which <code>run_job_for_testing</code> handles for us.</p>
+<p>A simple example of a Job test case for 1.3.3 and forward might look like the following:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span> <span class="nn">nautobot.extras.models</span> <span class="kn">import</span> <span class="n">Job</span><span class="p">,</span> <span class="n">JobLogEntry</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kn">from</span> <span class="nn">nautobot.utilities.testing</span> <span class="kn">import</span> <span class="n">run_job_for_testing</span><span class="p">,</span> <span class="n">TransactionTestCase</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="k">class</span> <span class="nc">MyJobTestCase</span><span class="p">(</span><span class="n">TransactionTestCase</span><span class="p">):</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    <span class="k">def</span> <span class="nf">test_my_job</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>        <span class="c1"># Testing of Job &quot;MyJob&quot; in file &quot;my_job_file.py&quot; in $JOBS_ROOT</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>        <span class="n">job</span> <span class="o">=</span> <span class="n">Job</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">job_class_name</span><span class="o">=</span><span class="s2">&quot;MyJob&quot;</span><span class="p">,</span> <span class="n">module_name</span><span class="o">=</span><span class="s2">&quot;my_job_file&quot;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;local&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>        <span class="c1"># or, job = Job.objects.get_for_class_path(&quot;local/my_job_file/MyJob&quot;)</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>        <span class="n">job_result</span> <span class="o">=</span> <span class="n">run_job_for_testing</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{},</span> <span class="n">commit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>        <span class="c1"># Since we ran with commit=False, any database changes made by the job won&#39;t persist,</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>        <span class="c1"># but we can still inspect the logs created by running the job</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>        <span class="n">log_entries</span> <span class="o">=</span> <span class="n">JobLogEntry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">job_result</span><span class="o">=</span><span class="n">job_result</span><span class="p">)</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>        <span class="k">for</span> <span class="n">log_entry</span> <span class="ow">in</span> <span class="n">log_entries</span><span class="p">:</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">log_entry</span><span class="o">.</span><span class="n">message</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For more advanced examples (such as testing jobs executed with <code>commit=True</code>, for example) refer to the Nautobot source code, specifically <code>nautobot/extras/tests/test_jobs.py</code>.</p>
+</div>
+<h3 id="nautobot-132-and-earlier-including-12">Nautobot 1.3.2 and earlier (including 1.2)<a class="headerlink" href="#nautobot-132-and-earlier-including-12" title="Permanent link">&para;</a></h3>
+<p>If your test case needs to be backwards-compatible with test execution against Nautobot 1.3.2 and/or earlier, you need to handle a couple more things manually:</p>
+<p>Set up the <code>"job_logs"</code> database correctly for testing:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">if</span> <span class="s2">&quot;job_logs&quot;</span> <span class="ow">in</span> <span class="n">settings</span><span class="o">.</span><span class="n">DATABASES</span><span class="p">:</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="n">settings</span><span class="o">.</span><span class="n">DATABASES</span><span class="p">[</span><span class="s2">&quot;job_logs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">DATABASES</span><span class="p">[</span><span class="s2">&quot;job_logs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    <span class="n">settings</span><span class="o">.</span><span class="n">DATABASES</span><span class="p">[</span><span class="s2">&quot;job_logs&quot;</span><span class="p">][</span><span class="s2">&quot;TEST&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;MIRROR&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">}</span>
+</code></pre></div>
+<p>Replicate the behavior of <code>run_job_for_testing</code> manually so that your test execution most closely resembles the way the celery worker would run the test:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kn">import</span> <span class="nn">uuid</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">get_user_model</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="kn">from</span> <span class="nn">django.contrib.contenttypes.models</span> <span class="kn">import</span> <span class="n">ContentType</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="kn">from</span> <span class="nn">nautobot.extras.context_managers</span> <span class="kn">import</span> <span class="n">web_request_context</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="kn">from</span> <span class="nn">nautobot.extras.jobs</span> <span class="kn">import</span> <span class="n">run_job</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="kn">from</span> <span class="nn">nautobot.extras.models</span> <span class="kn">import</span> <span class="n">JobResult</span><span class="p">,</span> <span class="n">Job</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="k">def</span> <span class="nf">run_job_for_testing</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s2">&quot;test-user&quot;</span><span class="p">):</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>        <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>    <span class="n">user_model</span> <span class="o">=</span> <span class="n">get_user_model</span><span class="p">()</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>    <span class="n">user</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">user_model</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">is_superuser</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>    <span class="n">job_result</span> <span class="o">=</span> <span class="n">JobResult</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>        <span class="n">name</span><span class="o">=</span><span class="n">job</span><span class="o">.</span><span class="n">class_path</span><span class="p">,</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>        <span class="n">obj_type</span><span class="o">=</span><span class="n">ContentType</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_for_model</span><span class="p">(</span><span class="n">Job</span><span class="p">),</span>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>        <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span>
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>        <span class="n">job_id</span><span class="o">=</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">(),</span>
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>    <span class="p">)</span>
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>    <span class="k">with</span> <span class="n">web_request_context</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">)</span> <span class="k">as</span> <span class="n">request</span><span class="p">:</span>
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>        <span class="n">run_job</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span> <span class="n">commit</span><span class="o">=</span><span class="n">commit</span><span class="p">,</span> <span class="n">job_result_pk</span><span class="o">=</span><span class="n">job_result</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>    <span class="k">return</span> <span class="n">job_result</span>
+</code></pre></div>
+<p>Setup the <code>databases</code> field on the test class correctly, and re-create the default Statuses on <code>setUp</code> in your test classes, because <code>django.test.TransactionTestCase</code> truncates them on every <code>tearDown</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kn">from</span> <span class="nn">django.apps</span> <span class="kn">import</span> <span class="n">apps</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TransactionTestCase</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="kn">from</span> <span class="nn">nautobot.extras.management</span> <span class="kn">import</span> <span class="n">populate_status_choices</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="k">class</span> <span class="nc">MyJobTestCase</span><span class="p">(</span><span class="n">TransactionTestCase</span><span class="p">):</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>    <span class="c1"># &#39;job_logs&#39; is a proxy connection to the same (default) database that&#39;s used exclusively for Job logging</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>    <span class="k">if</span> <span class="s2">&quot;job_logs&quot;</span> <span class="ow">in</span> <span class="n">settings</span><span class="o">.</span><span class="n">DATABASES</span><span class="p">:</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>        <span class="n">databases</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="s2">&quot;job_logs&quot;</span><span class="p">)</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setUp</span><span class="p">()</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>        <span class="n">populate_status_choices</span><span class="p">(</span><span class="n">apps</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="example-jobs">Example Jobs<a class="headerlink" href="#example-jobs" title="Permanent link">&para;</a></h2>
+<h3 id="creating-objects-for-a-planned-site">Creating objects for a planned site<a class="headerlink" href="#creating-objects-for-a-planned-site" title="Permanent link">&para;</a></h3>
+<p>This job prompts the user for three variables:</p>
+<ul>
+<li>The name of the new site</li>
+<li>The device model (a filtered list of defined device types)</li>
+<li>The number of access switches to create</li>
+</ul>
+<p>These variables are presented as a web form to be completed by the user. Once submitted, the job's <code>run()</code> method is called to create the appropriate objects, and it returns simple CSV output to the user summarizing the created objects.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">from</span> <span class="nn">django.utils.text</span> <span class="kn">import</span> <span class="n">slugify</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="kn">from</span> <span class="nn">nautobot.dcim.models</span> <span class="kn">import</span> <span class="n">Device</span><span class="p">,</span> <span class="n">DeviceRole</span><span class="p">,</span> <span class="n">DeviceType</span><span class="p">,</span> <span class="n">Manufacturer</span><span class="p">,</span> <span class="n">Site</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="kn">from</span> <span class="nn">nautobot.extras.models</span> <span class="kn">import</span> <span class="n">Status</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="kn">from</span> <span class="nn">nautobot.extras.jobs</span> <span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="k">class</span> <span class="nc">NewBranch</span><span class="p">(</span><span class="n">Job</span><span class="p">):</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;New Branch&quot;</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Provision a new branch site&quot;</span>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>        <span class="n">field_order</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;site_name&#39;</span><span class="p">,</span> <span class="s1">&#39;switch_count&#39;</span><span class="p">,</span> <span class="s1">&#39;switch_model&#39;</span><span class="p">]</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>    <span class="n">site_name</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">(</span>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Name of the new site&quot;</span>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>    <span class="p">)</span>
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>    <span class="n">switch_count</span> <span class="o">=</span> <span class="n">IntegerVar</span><span class="p">(</span>
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Number of access switches to create&quot;</span>
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>    <span class="p">)</span>
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>    <span class="n">manufacturer</span> <span class="o">=</span> <span class="n">ObjectVar</span><span class="p">(</span>
+<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>        <span class="n">model</span><span class="o">=</span><span class="n">Manufacturer</span><span class="p">,</span>
+<a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>        <span class="n">required</span><span class="o">=</span><span class="kc">False</span>
+<a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a>    <span class="p">)</span>
+<a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a>    <span class="n">switch_model</span> <span class="o">=</span> <span class="n">ObjectVar</span><span class="p">(</span>
+<a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Access switch model&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a>        <span class="n">model</span><span class="o">=</span><span class="n">DeviceType</span><span class="p">,</span>
+<a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a>        <span class="n">query_params</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a>            <span class="s1">&#39;manufacturer_id&#39;</span><span class="p">:</span> <span class="s1">&#39;$manufacturer&#39;</span>
+<a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a>        <span class="p">}</span>
+<a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a>    <span class="p">)</span>
+<a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a>
+<a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">commit</span><span class="p">):</span>
+<a id="__codelineno-22-34" name="__codelineno-22-34" href="#__codelineno-22-34"></a>        <span class="n">STATUS_PLANNED</span> <span class="o">=</span> <span class="n">Status</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">slug</span><span class="o">=</span><span class="s1">&#39;planned&#39;</span><span class="p">)</span>
+<a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a>
+<a id="__codelineno-22-36" name="__codelineno-22-36" href="#__codelineno-22-36"></a>        <span class="c1"># Create the new site</span>
+<a id="__codelineno-22-37" name="__codelineno-22-37" href="#__codelineno-22-37"></a>        <span class="n">site</span> <span class="o">=</span> <span class="n">Site</span><span class="p">(</span>
+<a id="__codelineno-22-38" name="__codelineno-22-38" href="#__codelineno-22-38"></a>            <span class="n">name</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;site_name&#39;</span><span class="p">],</span>
+<a id="__codelineno-22-39" name="__codelineno-22-39" href="#__codelineno-22-39"></a>            <span class="n">slug</span><span class="o">=</span><span class="n">slugify</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;site_name&#39;</span><span class="p">]),</span>
+<a id="__codelineno-22-40" name="__codelineno-22-40" href="#__codelineno-22-40"></a>            <span class="n">status</span><span class="o">=</span><span class="n">STATUS_PLANNED</span><span class="p">,</span>
+<a id="__codelineno-22-41" name="__codelineno-22-41" href="#__codelineno-22-41"></a>        <span class="p">)</span>
+<a id="__codelineno-22-42" name="__codelineno-22-42" href="#__codelineno-22-42"></a>        <span class="n">site</span><span class="o">.</span><span class="n">validated_save</span><span class="p">()</span>
+<a id="__codelineno-22-43" name="__codelineno-22-43" href="#__codelineno-22-43"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">log_success</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">site</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Created new site&quot;</span><span class="p">)</span>
+<a id="__codelineno-22-44" name="__codelineno-22-44" href="#__codelineno-22-44"></a>
+<a id="__codelineno-22-45" name="__codelineno-22-45" href="#__codelineno-22-45"></a>        <span class="c1"># Create access switches</span>
+<a id="__codelineno-22-46" name="__codelineno-22-46" href="#__codelineno-22-46"></a>        <span class="n">switch_role</span> <span class="o">=</span> <span class="n">DeviceRole</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Access Switch&#39;</span><span class="p">)</span>
+<a id="__codelineno-22-47" name="__codelineno-22-47" href="#__codelineno-22-47"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;switch_count&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-22-48" name="__codelineno-22-48" href="#__codelineno-22-48"></a>            <span class="n">switch</span> <span class="o">=</span> <span class="n">Device</span><span class="p">(</span>
+<a id="__codelineno-22-49" name="__codelineno-22-49" href="#__codelineno-22-49"></a>                <span class="n">device_type</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;switch_model&#39;</span><span class="p">],</span>
+<a id="__codelineno-22-50" name="__codelineno-22-50" href="#__codelineno-22-50"></a>                <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">site</span><span class="o">.</span><span class="n">slug</span><span class="si">}</span><span class="s1">-switch</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+<a id="__codelineno-22-51" name="__codelineno-22-51" href="#__codelineno-22-51"></a>                <span class="n">site</span><span class="o">=</span><span class="n">site</span><span class="p">,</span>
+<a id="__codelineno-22-52" name="__codelineno-22-52" href="#__codelineno-22-52"></a>                <span class="n">status</span><span class="o">=</span><span class="n">STATUS_PLANNED</span><span class="p">,</span>
+<a id="__codelineno-22-53" name="__codelineno-22-53" href="#__codelineno-22-53"></a>                <span class="n">device_role</span><span class="o">=</span><span class="n">switch_role</span>
+<a id="__codelineno-22-54" name="__codelineno-22-54" href="#__codelineno-22-54"></a>            <span class="p">)</span>
+<a id="__codelineno-22-55" name="__codelineno-22-55" href="#__codelineno-22-55"></a>            <span class="n">switch</span><span class="o">.</span><span class="n">validated_save</span><span class="p">()</span>
+<a id="__codelineno-22-56" name="__codelineno-22-56" href="#__codelineno-22-56"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">log_success</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">switch</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Created new switch&quot;</span><span class="p">)</span>
+<a id="__codelineno-22-57" name="__codelineno-22-57" href="#__codelineno-22-57"></a>
+<a id="__codelineno-22-58" name="__codelineno-22-58" href="#__codelineno-22-58"></a>        <span class="c1"># Generate a CSV table of new devices</span>
+<a id="__codelineno-22-59" name="__codelineno-22-59" href="#__codelineno-22-59"></a>        <span class="n">output</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-22-60" name="__codelineno-22-60" href="#__codelineno-22-60"></a>            <span class="s1">&#39;name,make,model&#39;</span>
+<a id="__codelineno-22-61" name="__codelineno-22-61" href="#__codelineno-22-61"></a>        <span class="p">]</span>
+<a id="__codelineno-22-62" name="__codelineno-22-62" href="#__codelineno-22-62"></a>        <span class="k">for</span> <span class="n">switch</span> <span class="ow">in</span> <span class="n">Device</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">site</span><span class="o">=</span><span class="n">site</span><span class="p">):</span>
+<a id="__codelineno-22-63" name="__codelineno-22-63" href="#__codelineno-22-63"></a>            <span class="n">attrs</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-22-64" name="__codelineno-22-64" href="#__codelineno-22-64"></a>                <span class="n">switch</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-22-65" name="__codelineno-22-65" href="#__codelineno-22-65"></a>                <span class="n">switch</span><span class="o">.</span><span class="n">device_type</span><span class="o">.</span><span class="n">manufacturer</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-22-66" name="__codelineno-22-66" href="#__codelineno-22-66"></a>                <span class="n">switch</span><span class="o">.</span><span class="n">device_type</span><span class="o">.</span><span class="n">model</span>
+<a id="__codelineno-22-67" name="__codelineno-22-67" href="#__codelineno-22-67"></a>            <span class="p">]</span>
+<a id="__codelineno-22-68" name="__codelineno-22-68" href="#__codelineno-22-68"></a>            <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">attrs</span><span class="p">))</span>
+<a id="__codelineno-22-69" name="__codelineno-22-69" href="#__codelineno-22-69"></a>
+<a id="__codelineno-22-70" name="__codelineno-22-70" href="#__codelineno-22-70"></a>        <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="device-validation">Device validation<a class="headerlink" href="#device-validation" title="Permanent link">&para;</a></h3>
+<p>A job to perform various validation of Device data in Nautobot. As this job does not require any user input, it does not define any variables, nor does it implement a <code>run()</code> method.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">from</span> <span class="nn">nautobot.dcim.models</span> <span class="kn">import</span> <span class="n">ConsolePort</span><span class="p">,</span> <span class="n">Device</span><span class="p">,</span> <span class="n">PowerPort</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kn">from</span> <span class="nn">nautobot.extras.models</span> <span class="kn">import</span> <span class="n">Status</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="kn">from</span> <span class="nn">nautobot.extras.jobs</span> <span class="kn">import</span> <span class="n">Job</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="k">class</span> <span class="nc">DeviceConnectionsReport</span><span class="p">(</span><span class="n">Job</span><span class="p">):</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>    <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Validate the minimum physical connections for each device&quot;</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>    <span class="k">def</span> <span class="nf">test_console_connection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>        <span class="n">STATUS_ACTIVE</span> <span class="o">=</span> <span class="n">Status</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">slug</span><span class="o">=</span><span class="s1">&#39;active&#39;</span><span class="p">)</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>        <span class="c1"># Check that every console port for every active device has a connection defined.</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>        <span class="k">for</span> <span class="n">console_port</span> <span class="ow">in</span> <span class="n">ConsolePort</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">prefetch_related</span><span class="p">(</span><span class="s1">&#39;device&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">device__status</span><span class="o">=</span><span class="n">STATUS_ACTIVE</span><span class="p">):</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>            <span class="k">if</span> <span class="n">console_port</span><span class="o">.</span><span class="n">connected_endpoint</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">log_failure</span><span class="p">(</span>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>                    <span class="n">obj</span><span class="o">=</span><span class="n">console_port</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>                    <span class="n">message</span><span class="o">=</span><span class="s2">&quot;No console connection defined for </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">console_port</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>                <span class="p">)</span>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>            <span class="k">elif</span> <span class="ow">not</span> <span class="n">console_port</span><span class="o">.</span><span class="n">connection_status</span><span class="p">:</span>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">log_warning</span><span class="p">(</span>
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>                    <span class="n">obj</span><span class="o">=</span><span class="n">console_port</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>                    <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Console connection for </span><span class="si">{}</span><span class="s2"> marked as planned&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">console_port</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>                <span class="p">)</span>
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>            <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">log_success</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">console_port</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>    <span class="k">def</span> <span class="nf">test_power_connections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a>        <span class="n">STATUS_ACTIVE</span> <span class="o">=</span> <span class="n">Status</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">slug</span><span class="o">=</span><span class="s1">&#39;active&#39;</span><span class="p">)</span>
+<a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>
+<a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a>        <span class="c1"># Check that every active device has at least two connected power supplies.</span>
+<a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a>        <span class="k">for</span> <span class="n">device</span> <span class="ow">in</span> <span class="n">Device</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">STATUS_ACTIVE</span><span class="p">):</span>
+<a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a>            <span class="n">connected_ports</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a>            <span class="k">for</span> <span class="n">power_port</span> <span class="ow">in</span> <span class="n">PowerPort</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">):</span>
+<a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a>                <span class="k">if</span> <span class="n">power_port</span><span class="o">.</span><span class="n">connected_endpoint</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a>                    <span class="n">connected_ports</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a>                    <span class="k">if</span> <span class="ow">not</span> <span class="n">power_port</span><span class="o">.</span><span class="n">connection_status</span><span class="p">:</span>
+<a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a>                        <span class="bp">self</span><span class="o">.</span><span class="n">log_warning</span><span class="p">(</span>
+<a id="__codelineno-23-38" name="__codelineno-23-38" href="#__codelineno-23-38"></a>                            <span class="n">obj</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+<a id="__codelineno-23-39" name="__codelineno-23-39" href="#__codelineno-23-39"></a>                            <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Power connection for </span><span class="si">{}</span><span class="s2"> marked as planned&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">power_port</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<a id="__codelineno-23-40" name="__codelineno-23-40" href="#__codelineno-23-40"></a>                        <span class="p">)</span>
+<a id="__codelineno-23-41" name="__codelineno-23-41" href="#__codelineno-23-41"></a>            <span class="k">if</span> <span class="n">connected_ports</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<a id="__codelineno-23-42" name="__codelineno-23-42" href="#__codelineno-23-42"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">log_failure</span><span class="p">(</span>
+<a id="__codelineno-23-43" name="__codelineno-23-43" href="#__codelineno-23-43"></a>                    <span class="n">obj</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+<a id="__codelineno-23-44" name="__codelineno-23-44" href="#__codelineno-23-44"></a>                    <span class="n">message</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> connected power supplies found (2 needed)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">connected_ports</span><span class="p">)</span>
+<a id="__codelineno-23-45" name="__codelineno-23-45" href="#__codelineno-23-45"></a>                <span class="p">)</span>
+<a id="__codelineno-23-46" name="__codelineno-23-46" href="#__codelineno-23-46"></a>            <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-23-47" name="__codelineno-23-47" href="#__codelineno-23-47"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">log_success</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="healthcheck.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Health Check" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Health Check
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../models/extras/jobhook.html" class="md-footer__link md-footer__link--next" aria-label="Next: Job Hooks" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Job Hooks
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    
+    <div class="md-copyright__highlight">
+        Copyright &copy; The Authors
+    </div>
+    <a href="https://github.com/nautobot/nautobot/blob/main/LICENSE.txt">Apache-2.0 LICENSE</a>
+    
+</div>
+
+<div class="md-copyright">
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Made with Material for MkDocs</a>
+    | <a href="https://www.networktocode.com/community/" target="_blank" rel="noopener">Join Nautobot Slack</a>
+    
+    | <a href="https://networktocode.com" target="_blank" rel="noopener">Sponsored by <img
+            src=../assets/networktocode_bw.png class="copyright-logo"></a>
+    
+</div>
+
+<!-- RTD version flyout injected on live site -->
+<div id="readthedocs-embed-flyout"></div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://blog.networktocode.com/blog/tags/nautobot" target="_blank" rel="noopener" title="Network to Code Blog" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M25.57 176.1C12.41 175.4.912 185.2.052 198.4s9.173 24.65 22.39 25.5c120.1 7.875 225.7 112.7 233.6 233.6C256.9 470.3 267.4 480 279.1 480c.531 0 1.062-.031 1.594-.063 13.22-.843 23.25-12.28 22.39-25.5C294.6 310.3 169.7 185.4 25.57 176.1zM32 32C14.33 32 0 46.31 0 64s14.33 32 32 32c194.1 0 352 157.9 352 352 0 17.69 14.33 32 32 32s32-14.31 32-32C448 218.6 261.4 32 32 32zm31.1 319.9C28.63 351.9 0 380.6 0 416s28.63 64 63.1 64 64.08-28.62 64.08-64-27.81-64.1-64.08-64.1z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.youtube.com/playlist?list=PLjA0bhxgryJ2Ts4GJMDA-tPzVWEncv4pb" target="_blank" rel="noopener" title="Nautobot Videos" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.networktocode.com/community/" target="_blank" rel="noopener" title="Network to Code Community" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://github.com/nautobot/nautobot" target="_blank" rel="noopener" title="GitHub Repo" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://twitter.com/networktocode" target="_blank" rel="noopener" title="Network to Code Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      
+    
+  </body>
+</html>

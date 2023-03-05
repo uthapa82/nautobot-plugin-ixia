@@ -1,0 +1,57 @@
+{% load helpers %}
+{% load custom_links %}
+{% load form_helpers %}
+{% load ajax_table %}
+{% load render_table from django_tables2 %}
+{% load log_levels %}
+{% load plugins %}
+{% load static %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>Summary of Results</strong>
+    </div>
+    <table class="table table-hover panel-body">
+        {% if result.job_model is not None %}
+            <tr>
+                <td>Job Description</td>
+                <td>{{ result.job_model.description | render_markdown }}</td>
+            </tr>
+        {% endif %}
+        <tr>
+            <td>Status</td>
+            <td><span id="pending-result-label">{% include 'extras/inc/job_label.html' with result=result %}</span></td>
+        </tr>
+        <tr>
+            <td>Started at</td>
+            <td>{{ result.created }}</td>
+        </tr>
+        <tr>
+            <td>User</td>
+            <td>{{ result.user }}</td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td id="pending-result-loader">
+            {% if result.completed %}
+                {{ result.duration }}
+            {% else %}
+                <img src="{% static 'img/ajax-loader.gif' %}">
+            {% endif %}
+            </td>
+        </tr>
+    </table>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>Logs</strong>
+            <div class="pull-right col-md-2 noprint">
+                <input class="form-control log-filter" type="text" placeholder="Filter log level or message" title="Filter log level or message (regular expressions supported)" style="height: 23px" />
+            </div>
+        </div>
+        {% ajax_table "log_table" "extras:jobresult_log-table" pk=result.pk %}
+    </div>
+</form>

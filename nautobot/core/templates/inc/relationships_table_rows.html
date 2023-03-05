@@ -1,0 +1,41 @@
+{% load helpers %}
+{% with relationships=relationships_data %}
+    {% if relationships.source or relationships.destination or relationships.peer %}
+        {% for side, relationships in relationships.items %}
+            {% for relationship, value in relationships.items %}
+                <tr>
+                    <td><span title="{{ relationship.slug }}">{{ value.label }}</span></td>
+                {% if not value.has_many and value.value %}
+                    <td>
+                        <a href="{{ value.url }}">{{ value.value }}</a>
+                    </td>
+                {% elif value.has_many and value.queryset.count %}
+                    <td>
+                        <a href="{% url 'extras:relationshipassociation_list' %}?relationship={{relationship.slug}}&{{side}}_id={{object.id}}">
+                            {{ value.queryset.count }}
+                            {% comment %}
+                            If peer_type is a plugin model that has subsequently been uninstalled,
+                            peer_type.model_class will be None and we can't access its Meta.
+                            https://github.com/nautobot/nautobot/issues/2077
+                            {% endcomment %}
+                            {% if value.peer_type.model_class is not None %}
+                                {% if value.queryset.count > 1 %}
+                                    {{ value.peer_type.model_class|meta:"verbose_name_plural" }}
+                                {% else %}
+                                    {{ value.peer_type.model_class|meta:"verbose_name" }}
+                                {% endif %}
+                            {% else %}
+                                {{ value.peer_type }}(s)
+                            {% endif %}
+                        </a>
+                    </td>
+                {% else %}
+                    <td>
+                        <span class="text-muted">&mdash;</span>
+                    </td>
+                {% endif %}
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}

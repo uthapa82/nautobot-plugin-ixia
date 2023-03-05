@@ -1,0 +1,13 @@
+{% extends 'generic/object_detail.html' %}
+{% load helpers %}
+
+{% block breadcrumbs %}
+                <li><a href="{% url 'dcim:device_list' %}">Devices</a></li>
+                <li>{{ object.device|hyperlinked_object }}</li>
+                {% if breadcrumb_url %}
+                    <li><a href="{% url breadcrumb_url pk=object.device.pk %}">{{ object|meta:"verbose_name_plural"|bettertitle }}</a></li>
+                {% endif %}
+                <li>{{ object|hyperlinked_object }}</li>
+{% endblock breadcrumbs %}
+
+{% block title %}{{ object.device }} / {{ object }}{% endblock title %}

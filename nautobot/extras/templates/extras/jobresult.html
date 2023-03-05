@@ -1,0 +1,116 @@
+{% extends 'generic/object_detail.html' %}
+{% load helpers %}
+{% load custom_links %}
+{% load form_helpers %}
+{% load log_levels %}
+{% load plugins %}
+{% load static %}
+
+{% block breadcrumbs %}
+    <li><a href="{% url 'extras:jobresult_list' %}">Job Results</a></li>
+    {% if result.job_model is not None %}
+        <li>{{ result.job_model.grouping }}</li>
+        <li><a href="{% url 'extras:jobresult_list' %}?job_model={{ result.job_model.slug }}">
+            {{ result.job_model }}
+        </a></li>
+    {% elif associated_record %}
+        {% if associated_record.name %}
+            <li><a href="{% url 'extras:jobresult_list' %}?name={{ associated_record.name|urlencode }}">
+                {{ associated_record.name }}
+            </a></li>
+        {% else %}
+            <li>{{ associated_record }}</li>
+        {% endif %}
+    {% elif job %}
+        <li><a href="{% url 'extras:jobresult_list' %}?name={{ job.class_path|urlencode }}">
+            {{ job.class_path }}
+        </a></li>
+    {% else %}
+        <li>{{ result.name }}</li>
+    {% endif %}
+    <li>{{ result.created }}</li>
+{% endblock breadcrumbs %}
+
+{% block buttons %}
+    {% if perms.extras.run_job %}
+        {% if result.job_model and result.job_kwargs %}
+            <a href="{% url 'extras:job_run' slug=result.job_model.slug %}?kwargs_from_job_result={{ result.pk }}"
+               class="btn btn-success">
+                <span class="mdi mdi-repeat" aria-hidden="true"></span> Re-Run
+            </a>
+        {% elif result.job_model is not None %}
+            <a href="{% url 'extras:job_run' slug=result.job_model.slug %}"
+               class="btn btn-primary">
+                <span class="mdi mdi-play" aria-hidden="true"></span> Run
+            </a>
+        {% endif %}
+    {% endif %}
+    {{ block.super }}
+{% endblock buttons %}
+
+{% block title %}
+    Job Result:
+    {% if result.job_model is not None %}
+        {{ result.job_model }}
+    {% elif associated_record %}
+        {{ associated_record }}
+    {% elif job %}
+        {{ job }}
+    {% else %}
+        {{ result.name }}
+    {% endif %}
+{% endblock %}
+
+{% block extra_nav_tabs %}
+    <li role="presentation">
+        <a href="#json" role="tab" data-toggle="tab">Additional Data</a>
+    </li>
+    {% if result.data.output %}
+        <li role="presentation">
+            <a href="#output" role="tab" data-toggle="tab">Output</a>
+        </li>
+    {% endif %}
+{% endblock %}
+
+{% block content_full_width_page %}
+    {% include 'extras/inc/jobresult.html' with result=result log_table=log_table %}
+{% endblock content_full_width_page %}
+
+{% block extra_tab_content %}
+    <div role="tabpanel" class="tab-pane" id="json">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>Job Inputs</strong>
+                    </div>
+                    <div class="panel-body">
+                        {% include 'extras/inc/json_data.html' with data=result.job_kwargs format="json" %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>Output Data</strong>
+                    </div>
+                    <div class="panel-body">
+                        {% include 'extras/inc/json_data.html' with data=result.data format="json" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if result.data.output %}
+        <div role="tabpanel" class="tab-pane" id="output">
+            <pre>{{ result.data.output }}</pre>
+        </div>
+    {% endif %}
+{% endblock extra_tab_content %}
+
+{% block javascript %}
+    {{ block.super }}
+    {% include 'extras/inc/jobresult_js.html' with result=result %}
+    <script src="{% static 'js/tableconfig.js' %}?v{{ settings.VERSION }}"></script>
+    <script src="{% static 'js/log_level_filtering.js' %}?v{{ settings.VERSION }}"></script>
+{% endblock %}

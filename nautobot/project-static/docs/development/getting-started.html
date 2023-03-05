@@ -1,0 +1,3749 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.nautobot.com/en/stable/development/getting-started.html">
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>Getting Started - Nautobot Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Nautobot Documentation" class="md-header__button md-logo" aria-label="Nautobot Documentation" data-md-component="logo">
+      
+  <img src="../assets/nautobot_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nautobot Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nautobot/nautobot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Overview
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../installation/index.html" class="md-tabs__link">
+        Documentation
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link md-tabs__link--active">
+        Developer Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../release-notes/index.html" class="md-tabs__link">
+        Release Notes
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../apps/index.html" class="md-tabs__link">
+        Nautobot Apps
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://docs.nautobot.com/" class="md-tabs__link">
+      Nautobot Docs Home ↗︎
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Nautobot Documentation" class="md-nav__button md-logo" aria-label="Nautobot Documentation" data-md-component="logo">
+      
+  <img src="../assets/nautobot_logo.svg" alt="logo">
+
+    </a>
+    Nautobot Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nautobot/nautobot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/index.html" class="md-nav__link">
+        Installing Prerequisites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/nautobot.html" class="md-nav__link">
+        Installing Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/services.html" class="md-nav__link">
+        Deploying Nautobot Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/http-server.html" class="md-nav__link">
+        Configuring an HTTP Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/external-authentication.html" class="md-nav__link">
+        External Authentication (Optional)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/index.html" class="md-nav__link">
+        Nautobot Docker Images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Migration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Migration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Migration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/migrating-from-netbox.html" class="md-nav__link">
+        Migrating from NetBox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/upgrading.html" class="md-nav__link">
+        Upgrading Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/migrating-from-postgresql.html" class="md-nav__link">
+        Migrating from PostgreSQL to MySQL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configuration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/index.html" class="md-nav__link">
+        Configuring Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/required-settings.html" class="md-nav__link">
+        Required Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/optional-settings.html" class="md-nav__link">
+        Optional Settings
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          External Authentication
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="External Authentication" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          External Authentication
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/authentication/ldap.html" class="md-nav__link">
+        LDAP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/authentication/sso.html" class="md-nav__link">
+        SSO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/authentication/remote.html" class="md-nav__link">
+        Remote Header
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          Administration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Administration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Administration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/nautobot-server.html" class="md-nav__link">
+        Nautobot Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/nautobot-shell.html" class="md-nav__link">
+        Nautobot Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/permissions.html" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/replicating-nautobot.html" class="md-nav__link">
+        Replicating Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          User Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="User Guides" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          User Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/index.html" class="md-nav__link">
+        Getting Started In the Web UI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/creating-devices.html" class="md-nav__link">
+        Creating Devices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/regions.html" class="md-nav__link">
+        Regions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/platforms.html" class="md-nav__link">
+        Platforms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/tenants.html" class="md-nav__link">
+        Tenants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/vlans-and-vlan-groups.html" class="md-nav__link">
+        VLANS and VLAN Groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/ipam.html" class="md-nav__link">
+        IP Address Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/search-bar.html" class="md-nav__link">
+        The Search Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/git-data-source.html" class="md-nav__link">
+        Git as a Data Source
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/graphql.html" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          Core Functionality
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Core Functionality" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Core Functionality
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/circuits.html" class="md-nav__link">
+        Circuits
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/devices.html" class="md-nav__link">
+        Devices and Cabling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/device-types.html" class="md-nav__link">
+        Device Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/ipam.html" class="md-nav__link">
+        IP Address Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/power.html" class="md-nav__link">
+        Power Tracking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/secrets.html" class="md-nav__link">
+        Secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/services.html" class="md-nav__link">
+        Service Mapping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/sites-and-racks.html" class="md-nav__link">
+        Sites, Locations, and Racks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/tenancy.html" class="md-nav__link">
+        Tenancy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/virtualization.html" class="md-nav__link">
+        Virtualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/vlans.html" class="md-nav__link">
+        VLAN Management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          Additional Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Additional Features" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Additional Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/caching.html" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/change-logging.html" class="md-nav__link">
+        Change Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/computedfield.html" class="md-nav__link">
+        Computed Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/config-contexts.html" class="md-nav__link">
+        Context Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/customfield.html" class="md-nav__link">
+        Custom Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/customlink.html" class="md-nav__link">
+        Custom Links
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/dynamicgroup.html" class="md-nav__link">
+        Dynamic Groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/exporttemplate.html" class="md-nav__link">
+        Export Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/gitrepository.html" class="md-nav__link">
+        Git Repositories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/healthcheck.html" class="md-nav__link">
+        Health Check
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/jobs.html" class="md-nav__link">
+        Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/jobhook.html" class="md-nav__link">
+        Job Hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/job-scheduling-and-approvals.html" class="md-nav__link">
+        Job Scheduling and Approvals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/napalm.html" class="md-nav__link">
+        NAPALM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/note.html" class="md-nav__link">
+        Notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/prometheus-metrics.html" class="md-nav__link">
+        Prometheus Metrics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/relationship.html" class="md-nav__link">
+        Relationships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/status.html" class="md-nav__link">
+        Statuses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/tag.html" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/template-filters.html" class="md-nav__link">
+        Template Filters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/webhook.html" class="md-nav__link">
+        Webhooks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          REST API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="REST API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          REST API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/filtering.html" class="md-nav__link">
+        Filtering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/authentication.html" class="md-nav__link">
+        Authentication
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_10">
+          GraphQL API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GraphQL API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          GraphQL API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/graphql.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/index.html" class="md-nav__link">
+        Installing and Using Plugins
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Developer Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Developer Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="getting-started.html" class="md-nav__link md-nav__link--active">
+        Getting Started
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git-branches" class="md-nav__link">
+    Git Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forking-the-repo" class="md-nav__link">
+    Forking the Repo
+  </a>
+  
+    <nav class="md-nav" aria-label="Forking the Repo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-remote-repos" class="md-nav__link">
+    About Remote Repos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-your-remotes" class="md-nav__link">
+    Setting up your Remotes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-branch" class="md-nav__link">
+    Creating a Branch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-pre-commit-hooks" class="md-nav__link">
+    Enabling Pre-Commit Hooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-development-environment" class="md-nav__link">
+    Setting up your Development Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up your Development Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-development" class="md-nav__link">
+    Windows Development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose-workflow" class="md-nav__link">
+    Docker Compose Workflow
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker Compose Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-invoke" class="md-nav__link">
+    Install Invoke
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-invoke-tasks" class="md-nav__link">
+    List Invoke Tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-docker-with-invoke" class="md-nav__link">
+    Using Docker with Invoke
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-virtual-environment-workflow" class="md-nav__link">
+    Python Virtual Environment Workflow
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Virtual Environment Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-poetry" class="md-nav__link">
+    Install Poetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-hadolint" class="md-nav__link">
+    Install Hadolint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-markdownlint-cli" class="md-nav__link">
+    Install markdownlint-cli
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-python-virtual-environment" class="md-nav__link">
+    Creating a Python Virtual Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-poetry" class="md-nav__link">
+    Working with Poetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-nautobot" class="md-nav__link">
+    Configuring Nautobot
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Nautobot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initializing-a-config" class="md-nav__link">
+    Initializing a Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-development-config" class="md-nav__link">
+    Using the Development Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-settings" class="md-nav__link">
+    Required Settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-in-your-development-environment" class="md-nav__link">
+    Working in your Development Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Working in your Development Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-superuser" class="md-nav__link">
+    Creating a Superuser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-development-server" class="md-nav__link">
+    Starting the Development Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-interactive-shell" class="md-nav__link">
+    Starting the Interactive Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-upgrade-operations" class="md-nav__link">
+    Post-upgrade Operations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinstalling-nautobot" class="md-nav__link">
+    Reinstalling Nautobot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-tests" class="md-nav__link">
+    Running Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    Unit Tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-tests" class="md-nav__link">
+    Integration Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-integration-test-executions" class="md-nav__link">
+    Customizing Integration Test Executions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-the-rest-api-schema" class="md-nav__link">
+    Verifying the REST API Schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-code-style-and-static-analysis" class="md-nav__link">
+    Verifying Code Style and Static Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-migrations" class="md-nav__link">
+    Handling Migrations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-on-documentation" class="md-nav__link">
+    Working on Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Working on Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-documentation" class="md-nav__link">
+    Writing Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-documentation" class="md-nav__link">
+    Verifying Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-pull-requests" class="md-nav__link">
+    Submitting Pull Requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fatal-sorry-too-many-clients-already" class="md-nav__link">
+    FATAL: sorry, too many clients already
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="docker-compose-advanced-use-cases.html" class="md-nav__link">
+        Advanced Docker Compose Usage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Plugins
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Plugins" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/development.html" class="md-nav__link">
+        Developing Plugins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/porting-from-netbox.html" class="md-nav__link">
+        Porting NetBox Plugins to Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="best-practices.html" class="md-nav__link">
+        Best Practices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="style-guide.html" class="md-nav__link">
+        Style Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="extending-models.html" class="md-nav__link">
+        Extending Models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-registry.html" class="md-nav__link">
+        Application Registry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="templates.html" class="md-nav__link">
+        Page Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="navigation-menu.html" class="md-nav__link">
+        Navigation Menu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="homepage.html" class="md-nav__link">
+        Home Page Panels
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user-preferences.html" class="md-nav__link">
+        User Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="release-checklist.html" class="md-nav__link">
+        Release Checklist
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Release Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Release Notes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.4.html" class="md-nav__link">
+        Version 1.4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.3.html" class="md-nav__link">
+        Version 1.3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.2.html" class="md-nav__link">
+        Version 1.2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.1.html" class="md-nav__link">
+        Version 1.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.0.html" class="md-nav__link">
+        Version 1.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Nautobot Apps
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Nautobot Apps" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Nautobot Apps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          Network to Code App Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Network to Code App Docs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Network to Code App Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.nautobot.com/projects/golden-config/" class="md-nav__link">
+        Nautobot Golden Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://nautobot-plugin-ssot.readthedocs.io/en/latest/" class="md-nav__link">
+        Nautobot Single Source of Truth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://nautobot-plugin-firewall-models.readthedocs.io/en/latest/" class="md-nav__link">
+        Nautobot Firewall Models
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/nautobot-apps.html" class="md-nav__link">
+        Community Apps
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.nautobot.com/" class="md-nav__link">
+        Nautobot Docs Home ↗︎
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git-branches" class="md-nav__link">
+    Git Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forking-the-repo" class="md-nav__link">
+    Forking the Repo
+  </a>
+  
+    <nav class="md-nav" aria-label="Forking the Repo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-remote-repos" class="md-nav__link">
+    About Remote Repos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-your-remotes" class="md-nav__link">
+    Setting up your Remotes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-branch" class="md-nav__link">
+    Creating a Branch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-pre-commit-hooks" class="md-nav__link">
+    Enabling Pre-Commit Hooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-development-environment" class="md-nav__link">
+    Setting up your Development Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up your Development Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-development" class="md-nav__link">
+    Windows Development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose-workflow" class="md-nav__link">
+    Docker Compose Workflow
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker Compose Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-invoke" class="md-nav__link">
+    Install Invoke
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-invoke-tasks" class="md-nav__link">
+    List Invoke Tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-docker-with-invoke" class="md-nav__link">
+    Using Docker with Invoke
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-virtual-environment-workflow" class="md-nav__link">
+    Python Virtual Environment Workflow
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Virtual Environment Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-poetry" class="md-nav__link">
+    Install Poetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-hadolint" class="md-nav__link">
+    Install Hadolint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-markdownlint-cli" class="md-nav__link">
+    Install markdownlint-cli
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-python-virtual-environment" class="md-nav__link">
+    Creating a Python Virtual Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-poetry" class="md-nav__link">
+    Working with Poetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-nautobot" class="md-nav__link">
+    Configuring Nautobot
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Nautobot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initializing-a-config" class="md-nav__link">
+    Initializing a Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-development-config" class="md-nav__link">
+    Using the Development Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-settings" class="md-nav__link">
+    Required Settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-in-your-development-environment" class="md-nav__link">
+    Working in your Development Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Working in your Development Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-superuser" class="md-nav__link">
+    Creating a Superuser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-development-server" class="md-nav__link">
+    Starting the Development Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-the-interactive-shell" class="md-nav__link">
+    Starting the Interactive Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-upgrade-operations" class="md-nav__link">
+    Post-upgrade Operations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinstalling-nautobot" class="md-nav__link">
+    Reinstalling Nautobot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-tests" class="md-nav__link">
+    Running Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    Unit Tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-tests" class="md-nav__link">
+    Integration Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-integration-test-executions" class="md-nav__link">
+    Customizing Integration Test Executions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-the-rest-api-schema" class="md-nav__link">
+    Verifying the REST API Schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-code-style-and-static-analysis" class="md-nav__link">
+    Verifying Code Style and Static Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-migrations" class="md-nav__link">
+    Handling Migrations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-on-documentation" class="md-nav__link">
+    Working on Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Working on Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-documentation" class="md-nav__link">
+    Writing Documentation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-documentation" class="md-nav__link">
+    Verifying Documentation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-pull-requests" class="md-nav__link">
+    Submitting Pull Requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fatal-sorry-too-many-clients-already" class="md-nav__link">
+    FATAL: sorry, too many clients already
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/nautobot/nautobot/edit/main/nautobot/docs/development/getting-started.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<h2 id="git-branches">Git Branches<a class="headerlink" href="#git-branches" title="Permanent link">&para;</a></h2>
+<p>The Nautobot project follows a branching model based on <a href="https://nvie.com/posts/a-successful-git-branching-model/">Git-flow</a>. As such, there are three persistent git branches:</p>
+<ul>
+<li><code>main</code> - Serves as a snapshot of the current stable release</li>
+<li><code>develop</code> - All bug fixes and minor feature development on the upcoming stable release occurs here</li>
+<li><code>next</code> - All major new feature development for the next feature release occurs here.</li>
+</ul>
+<p>You will always base pull requests off of either the <code>develop</code> branch, for fixes and minor features, or <code>next</code>, if you're working on a feature targeted for a later release. <strong>Never</strong> target fix or feature pull requests into the <code>main</code> branch, which receives merges only from the <code>develop</code> branch and only for new stable releases of Nautobot.</p>
+<h2 id="forking-the-repo">Forking the Repo<a class="headerlink" href="#forking-the-repo" title="Permanent link">&para;</a></h2>
+<p>When developing Nautobot, you'll be working on your own fork, so your first step will be to <a href="https://github.com/nautobot/nautobot/fork">fork the official GitHub repository</a>. You will then clone your GitHub fork locally for development.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is highly recommended that you use SSH with GitHub. If you haven't already, make sure that you <a href="https://docs.github.com/en/github/getting-started-with-github/set-up-git">setup Git</a> and <a href="https://help.github.com/articles/generating-ssh-keys/">add an SSH key to your GitHub account</a> before proceeding.</p>
+</div>
+<p>In this guide, SSH will be used to interact with Git.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ git clone git@github.com:yourusername/nautobot.git
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Cloning into &#39;nautobot&#39;...
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>remote: Enumerating objects: 231, done.
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>remote: Counting objects: 100% (231/231), done.
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>remote: Compressing objects: 100% (147/147), done.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>remote: Total 56705 (delta 134), reused 145 (delta 84), pack-reused 56474
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Receiving objects: 100% (56705/56705), 27.96 MiB | 34.92 MiB/s, done.
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Resolving deltas: 100% (44177/44177), done.
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>$ ls nautobot/
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>CHANGELOG.md     README.md    docs        nautobot.code-workspace  site
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>CONTRIBUTING.md  contrib      manage.py   poetry.lock              tasks.py
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>LICENSE.txt      development  mkdocs.yml  pyproject.toml           upgrade.sh
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>NOTICE           dist         nautobot    scripts
+</code></pre></div>
+<h3 id="about-remote-repos">About Remote Repos<a class="headerlink" href="#about-remote-repos" title="Permanent link">&para;</a></h3>
+<p>Git refers to remote repositories as <em>remotes</em>. When you make your initial clone of your fork, Git defaults to naming this remote <code>origin</code>. Throughout this documentation, the following remote names will be used:</p>
+<ul>
+<li><code>origin</code> - The default remote name used to refer to <em>your fork of Nautobot</em></li>
+<li><code>upstream</code> - The main remote used to refer to the <em>official Nautobot repository</em></li>
+</ul>
+<h3 id="setting-up-your-remotes">Setting up your Remotes<a class="headerlink" href="#setting-up-your-remotes" title="Permanent link">&para;</a></h3>
+<p>Remote repos are managed using the <code>git remote</code> command.</p>
+<p>Upon cloning Nautobot for the first time, you will have only a single remote:</p>
+<!-- markdownlint-disable MD010 -->
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ git remote -v
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>origin  git@github.com:yourusername/nautobot.git (fetch)
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>origin  git@github.com:yourusername/nautobot.git (push)
+</code></pre></div>
+<!-- markdownlint-enable MD010 -->
+<p>Add the official Nautobot repo as a the <code>upstream</code> remote:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ git remote add upstream git@github.com:nautobot/nautobot.git
+</code></pre></div>
+<p>View your remotes again to confirm you've got both <code>origin</code> pointing to your fork and <code>upstream</code> pointing to the official repo:</p>
+<!-- markdownlint-disable MD010 -->
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ git remote -v
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>origin  git@github.com:yourusername/nautobot.git (fetch)
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>origin  git@github.com:yourusername/nautobot.git (push)
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>upstream    git@github.com:nautobot/nautobot.git (fetch)
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>upstream    git@github.com:nautobot/nautobot.git (push)
+</code></pre></div>
+<!-- markdownlint-enable MD010 -->
+<p>You're now ready to proceed to the next steps.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You will always <strong>push</strong> changes to <code>origin</code> (your fork) and <strong>pull</strong> changes from <code>upstream</code> (official repo).</p>
+</div>
+<h3 id="creating-a-branch">Creating a Branch<a class="headerlink" href="#creating-a-branch" title="Permanent link">&para;</a></h3>
+<p>Before you make any changes, always create a new branch. Again, for bug fixes and minor features, you'll want to create your branches from the <code>develop</code> branch, while for major new features, you'll branch from <code>next</code> instead.</p>
+<p>Before you ever create a new branch, always checkout the appropriate branch and make sure you you've got the latest changes from <code>upstream</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ git checkout develop
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$ git pull upstream develop
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you do not do this, you run the risk of having merge conflicts in your branch, and that's never fun to deal with. Trust us on this one.</p>
+</div>
+<p>Now that you've got the latest upstream changes, create your branch. It's convention to always prefix your branch name with your GitHub username or your initials, and suffix it with the issue number if appropriate, separated by hyphens. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ git checkout -b yourusername-myfeature-1234
+</code></pre></div>
+<h2 id="enabling-pre-commit-hooks">Enabling Pre-Commit Hooks<a class="headerlink" href="#enabling-pre-commit-hooks" title="Permanent link">&para;</a></h2>
+<p>Nautobot ships with a <a href="https://githooks.com/">Git pre-commit hook</a> script that automatically checks for style compliance and missing database migrations prior to committing changes. This helps avoid erroneous commits that result in CI test failures.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This pre-commit hook currently only supports the Python Virtual Environment Workflow.</p>
+</div>
+<p>You are encouraged to enable it by creating a link to <code>scripts/git-hooks/pre-commit</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ cd .git/hooks/
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$ ln -s ../../scripts/git-hooks/pre-commit
+</code></pre></div>
+<h2 id="setting-up-your-development-environment">Setting up your Development Environment<a class="headerlink" href="#setting-up-your-development-environment" title="Permanent link">&para;</a></h2>
+<p>Getting started with Nautobot development is pretty straightforward, and should feel very familiar to anyone with Django development experience. We can recommend either a <a href="#docker-compose-workflow">Docker Compose workflow</a> (if you don't want to install dependencies such as PostgreSQL and Redis directly onto your system) or a <a href="#python-virtual-environment-workflow">Python virtual environment workflow</a>.</p>
+<h3 id="windows-development">Windows Development<a class="headerlink" href="#windows-development" title="Permanent link">&para;</a></h3>
+<p>Local development on Windows Subsystem for Linux (WSL) is not currently supported. When developing locally on Windows, we recommend
+using a virtual machine running an <a href="../installation/index.html#installing-nautobot-dependencies">officially supported operating system</a>.</p>
+<h3 id="docker-compose-workflow">Docker Compose Workflow<a class="headerlink" href="#docker-compose-workflow" title="Permanent link">&para;</a></h3>
+<p>This workflow uses <a href="https://docs.docker.com/get-docker/">Docker</a> and <a href="https://docs.docker.com/compose/">Docker Compose</a> and assumes that you have them installed.</p>
+<p>For the Docker Compose workflow, Nautobot uses <a href="http://docs.pyinvoke.org/en/latest/index.html">Invoke</a> as a replacement for Make. Invoke was chosen because it is less arcane than make. Instead of a <code>Makefile</code>, Invoke reads the <code>tasks.py</code> in the project root.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the Docker Compose workflow uses containers, it is important to note that the containers are running the local repository code on your machine. Changes you make to your local code will be picked up and executed by the containers.</p>
+</div>
+<h4 id="install-invoke">Install Invoke<a class="headerlink" href="#install-invoke" title="Permanent link">&para;</a></h4>
+<p>Because it is used to execute all common Docker workflow tasks, Invoke must be installed for your user environment. On most systems, if you're installing without root/superuser permissions, the default will install into your local user environment.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$ pip3 install invoke
+</code></pre></div>
+<p>If you run into issues, you may also deliberately tell <code>pip3</code> to install into your user environment by adding the <code>--user</code> flag:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$ pip3 install --user invoke
+</code></pre></div>
+<p>Please see the <a href="https://pip.pypa.io/en/stable/user_guide/#user-installs">official documentation on Pip user installs</a> for more information.</p>
+<h4 id="list-invoke-tasks">List Invoke Tasks<a class="headerlink" href="#list-invoke-tasks" title="Permanent link">&para;</a></h4>
+<p>Now that you have an <code>invoke</code> command, list the tasks defined in <code>tasks.py</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$ invoke --list
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Available tasks:
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  black                  Check Python code style with Black.
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  build                  Build Nautobot docker image.
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>  build-and-check-docs   Build docs for use within Nautobot.
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>  buildx                 Build Nautobot docker image using the experimental buildx docker functionality (multi-arch
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>                         capablility).
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  check-migrations       Check for missing migrations.
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>  check-schema           Render the REST API schema and check for problems.
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>  cli                    Launch a bash shell inside the running Nautobot (or other) Docker container.
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>  createsuperuser        Create a new Nautobot superuser account (default: &quot;admin&quot;), will prompt for password.
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>  debug                  Start Nautobot and its dependencies in debug mode.
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>  destroy                Destroy all containers and volumes.
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>  docker-push            Tags and pushes docker images to the appropriate repos, intended for release use only.
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>  dumpdata               Dump data from database to db_output file.
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>  flake8                 Check for PEP8 compliance and other style issues.
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>  hadolint               Check Dockerfile for hadolint compliance and other style issues.
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>  integration-test       Run Nautobot integration tests.
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>  loaddata               Load data from file.
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>  makemigrations         Perform makemigrations operation in Django.
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>  markdownlint           Lint Markdown files.
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>  migrate                Perform migrate operation in Django.
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>  nbshell                Launch an interactive nbshell session.
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>  post-upgrade           Performs Nautobot common post-upgrade operations using a single entrypoint.
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>  pylint                 Perform static analysis of Nautobot code.
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>  restart                Gracefully restart containers.
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>  start                  Start Nautobot and its dependencies in detached mode.
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>  stop                   Stop Nautobot and its dependencies.
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>  tests                  Run all linters and unit tests.
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>  unittest               Run Nautobot unit tests.
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>  unittest-coverage      Report on code test coverage as measured by &#39;invoke unittest&#39;.
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>  vscode                 Launch Visual Studio Code with the appropriate Environment variables to run in a container.
+</code></pre></div>
+<h4 id="using-docker-with-invoke">Using Docker with Invoke<a class="headerlink" href="#using-docker-with-invoke" title="Permanent link">&para;</a></h4>
+<p>A development environment can be easily started up from the root of the project using the following commands:</p>
+<ul>
+<li><code>invoke build</code> - Builds Nautobot docker images</li>
+<li><code>invoke migrate</code> - Performs database migration operation in Django</li>
+<li><code>invoke createsuperuser</code> - Creates a superuser account for the Nautobot application</li>
+<li><code>invoke debug</code> - Starts Docker containers for Nautobot, PostgreSQL, Redis, Celery, and the RQ worker in debug mode and attaches their output to the terminal in the foreground. You may enter Control-C to stop the containers</li>
+</ul>
+<p>Additional useful commands for the development environment:</p>
+<ul>
+<li><code>invoke start [-s servicename]</code> - Starts Docker containers for Nautobot, PostgreSQL, Redis, Celery, and the RQ worker (or a specific container/service, such as <code>invoke start -s redis</code>) to run in the background with debug disabled</li>
+<li><code>invoke cli [-s servicename]</code> - Launch a <code>bash</code> shell inside the specified service container (if none is specified, defaults to the Nautobot container)</li>
+<li><code>invoke stop [-s servicename]</code> - Stops all containers (or a specific container/service) created by <code>invoke start</code></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The mkdocs container must be started manually with <code>invoke start -s mkdocs</code>. It will not start automatically with the
+<code>invoke start</code> or <code>invoke debug</code> commands.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To learn about advanced use cases within the Docker Compose workflow, see the <a href="docker-compose-advanced-use-cases.html">Docker Compose Advanced Use Cases</a> page.</p>
+</div>
+<p>Proceed to the <a href="#working-in-your-development-environment">Working in your Development Environment</a> section</p>
+<h3 id="python-virtual-environment-workflow">Python Virtual Environment Workflow<a class="headerlink" href="#python-virtual-environment-workflow" title="Permanent link">&para;</a></h3>
+<p>This workflow uses Python and Poetry to work with your development environment locally. It requires that you install the required system dependencies on your system yourself.</p>
+<p>There are a few things you'll need:</p>
+<ul>
+<li>A Linux system or environment</li>
+<li>A MySQL or PostgreSQL server, which can be installed locally <a href="../installation/index.html#installing-nautobot-dependencies">per the documentation</a></li>
+<li>A Redis server, which can also be <a href="../installation/index.html#installing-nautobot-dependencies">installed locally</a></li>
+<li>A supported version of Python</li>
+<li>A recent version of <a href="https://python-poetry.org/docs/#installation">Poetry</a></li>
+</ul>
+<h4 id="install-poetry">Install Poetry<a class="headerlink" href="#install-poetry" title="Permanent link">&para;</a></h4>
+<p><a href="https://python-poetry.org/docs/">Poetry</a> is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update/remove) them for you. It will also manage virtual environments automatically, and allow for publishing packages to the <a href="https://pypi.org">Python Package Index</a>.</p>
+<p>You may install Poetry in your user environment by running:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ curl -sSL https://install.python-poetry.org | python3 -
+</code></pre></div>
+<p>For detailed installation instructions, please see the <a href="https://python-poetry.org/docs/#installation">official Poetry installation guide</a>.</p>
+<h4 id="install-hadolint">Install Hadolint<a class="headerlink" href="#install-hadolint" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/hadolint/hadolint">Hadolint</a> is a tool used to validate and lint Dockerfiles to ensure we are following best practices. On macOS with <a href="https://brew.sh/">Homebrew</a> you can install Hadolint by running:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$ brew install hadolint
+</code></pre></div>
+<h4 id="install-markdownlint-cli">Install markdownlint-cli<a class="headerlink" href="#install-markdownlint-cli" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/igorshubovych/markdownlint-cli">markdownlint-cli</a> is a tool used to validate and lint Markdown files, such as Nautobot's documentation, to ensure that they are correctly constructed. On macOS with <a href="https://brew.sh/">Homebrew</a> you can install markdownlint-cli by running:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$ brew install markdownlint-cli
+</code></pre></div>
+<h4 id="creating-a-python-virtual-environment">Creating a Python Virtual Environment<a class="headerlink" href="#creating-a-python-virtual-environment" title="Permanent link">&para;</a></h4>
+<p>A Python <a href="https://docs.python.org/3/tutorial/venv.html">virtual environment</a> (or <em>virtualenv</em>) is like a container for a set of Python packages. A virtualenv allow you to build environments suited to specific projects without interfering with system packages or other projects. When installed per the documentation, Nautobot uses a virtual environment in production.</p>
+<p>For Nautobot development, we have selected Poetry, which will transparently create a virtualenv for you, automatically install all dependencies required for Nautobot to operate, and will also install the <code>nautobot-server</code> CLI command that you will utilize to interact with Nautobot from here on out.</p>
+<p>Bootstrap your virtual environment using <code>poetry install</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$ poetry install
+</code></pre></div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If you are doing development or testing using MySQL, you may quickly install the <code>mysqlclient</code> library along with Nautobot by running <code>poetry install --extras mysql</code>.</p>
+</div>
+<p>This will create automatically create a virtualenv in your home directory, which houses a virtual copy of the Python executable and its related libraries and tooling. When running Nautobot for development, it will be run using the Python binary at found within the virtualenv.</p>
+<p>Once created, you may activate the virtual environment using <code>poetry shell</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$ poetry shell
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Spawning shell within /home/example/.cache/pypoetry/virtualenvs/nautobot-Ams_xyDt-py3.8
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>$ . /home/example/.cache/pypoetry/virtualenvs/nautobot-Ams_xyDt-py3.8/bin/activate
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>(nautobot-Ams_xyDt-py3.8) $
+</code></pre></div>
+<p>Notice that the console prompt changes to indicate the active environment. This updates the necessary system environment variables to ensure that any Python scripts are run within the virtual environment.</p>
+<p>Observe also that the <code>python</code> interpreter is bound within the virtualenv:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>(nautobot-Ams_xyDt-py3.8) $ which python
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>/home/example/.cache/pypoetry/virtualenvs/nautobot-Ams_xyDt-py3.8/bin/python
+</code></pre></div>
+<p>To exit the virtual shell, use <code>exit</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>(nautobot-Ams_xyDt-py3.8) $ exit
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>$
+</code></pre></div>
+<h4 id="working-with-poetry">Working with Poetry<a class="headerlink" href="#working-with-poetry" title="Permanent link">&para;</a></h4>
+<p>Poetry automatically installs your dependencies. However, if you need to install any additional dependencies this can be done with <code>pip</code>. For example, if you really like using <code>ipython</code> for development:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>(nautobot-Ams_xyDt-py3.8) $ pip3 install ipython
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Collecting ipython
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>  Using cached ipython-7.20.0-py3-none-any.whl (784 kB)
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>  ...
+</code></pre></div>
+<p>It may not always be convenient to enter into the virtual shell just to run programs. You may also execute a given command ad hoc within the project's virtual shell by using <code>poetry run</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$ poetry run mkdocs serve
+</code></pre></div>
+<p>Check out the <a href="https://python-poetry.org/docs/basic-usage/">Poetry usage guide</a> for more tips.</p>
+<h4 id="configuring-nautobot">Configuring Nautobot<a class="headerlink" href="#configuring-nautobot" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unless otherwise noted, all following commands should be executed inside the virtualenv.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Use <code>poetry shell</code> to enter the virtualenv.</p>
+</div>
+<p>Nautobot's configuration file is <code>nautobot_config.py</code>.</p>
+<h5 id="initializing-a-config">Initializing a Config<a class="headerlink" href="#initializing-a-config" title="Permanent link">&para;</a></h5>
+<p>You may also initialize a new configuration using <code>nautobot-server init</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$ nautobot-server init
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>Configuration file created at &#39;/home/example/.nautobot/nautobot_config.py&#39;
+</code></pre></div>
+<p>You may also specify alternate file locations. Please refer to <a href="../configuration/index.html">Configuring Nautobot</a> for how to do that.</p>
+<h5 id="using-the-development-config">Using the Development Config<a class="headerlink" href="#using-the-development-config" title="Permanent link">&para;</a></h5>
+<p>A <code>nautobot_config.py</code> suitable for development purposes can be found at <code>development/nautobot_config.py</code>. You may customize the values there or utilize environment variables to override the default values.</p>
+<p>If you want to use this file, initialize a config first, then copy this file to the default location Nautobot expects to find its config:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$ cp development/nautobot_config.py ~/.nautobot/nautobot_config.py
+</code></pre></div>
+<h5 id="required-settings">Required Settings<a class="headerlink" href="#required-settings" title="Permanent link">&para;</a></h5>
+<p>A newly created configuration includes sane defaults. If you need to customize them, edit your <code>nautobot_config.py</code> and update the following settings as required:</p>
+<ul>
+<li><a href="../configuration/required-settings.html#allowed_hosts"><code>ALLOWED_HOSTS</code></a>: This can be set to <code>["*"]</code> for development purposes and must be set if <code>DEBUG=False</code></li>
+<li><a href="../configuration/required-settings.html#databases"><code>DATABASES</code></a>: Database connection parameters, if different from the defaults</li>
+<li><strong>Redis settings</strong>: Redis configuration requires multiple settings including <a href="../configuration/required-settings.html#cacheops_redis"><code>CACHEOPS_REDIS</code></a> and <a href="../configuration/required-settings.html#rq_queues"><code>RQ_QUEUES</code></a>. The defaults should be fine for development.</li>
+<li><a href="../configuration/optional-settings.html#debug"><code>DEBUG</code></a>: Set to <code>True</code> to enable verbose exception logging and, if installed, the <a href="https://django-debug-toolbar.readthedocs.io/en/latest/">Django debug toolbar</a></li>
+<li><a href="../configuration/optional-settings.html#extra-applications"><code>EXTRA_INSTALLED_APPS</code></a>: Optionally provide a list of extra Django apps/plugins you may desire to use for development</li>
+</ul>
+<h2 id="working-in-your-development-environment">Working in your Development Environment<a class="headerlink" href="#working-in-your-development-environment" title="Permanent link">&para;</a></h2>
+<p>Below are common commands for working your development environment.</p>
+<h3 id="creating-a-superuser">Creating a Superuser<a class="headerlink" href="#creating-a-superuser" title="Permanent link">&para;</a></h3>
+<p>You'll need to create a administrative superuser account to be able to log into the Nautobot Web UI for the first time. Specifying an email address for the user is not required, but be sure to use a very strong password.</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invoke createsuperuser</code></td>
+<td><code>nautobot-server createsuperuser</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="starting-the-development-server">Starting the Development Server<a class="headerlink" href="#starting-the-development-server" title="Permanent link">&para;</a></h3>
+<p>Django provides a lightweight HTTP/WSGI server for development use. The development server automatically reloads Python code for each request, as needed. You don’t need to restart the server for code changes to take effect. However, some actions like adding files don’t trigger a restart, so you’ll have to restart the server in these cases.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>DO NOT USE THIS SERVER IN A PRODUCTION SETTING.</strong> The development server is for development and testing purposes only. It is neither performant nor secure enough for production use.</p>
+</div>
+<p>You can start the Nautobot development server with the <code>invoke start</code> command (if using Docker), or the <code>nautobot-server runserver</code> management command:</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invoke start</code></td>
+<td><code>nautobot-server runserver</code></td>
+</tr>
+</tbody>
+</table>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>$ nautobot-server runserver
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>Performing system checks...
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>System check identified no issues (0 silenced).
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>November 18, 2020 - 15:52:31
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>Django version 3.1, using settings &#39;nautobot.core.settings&#39;
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>Starting development server at http://127.0.0.1:8080/
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>Quit the server with CONTROL-C.
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not use <code>poetry run nautobot-server runserver</code> as it will crash unless you also pass the <code>--noreload</code> flag, which somewhat defeats the purpose of using the development server. It is recommended to use <code>nautobot-server runserver</code> from within an active virtualenv (e.g. <code>poetry shell</code>). This is a <a href="https://github.com/python-poetry/poetry/issues/2435">known issue with Django and Poetry</a>.</p>
+</div>
+<p>Please see the <a href="https://docs.djangoproject.com/en/stable/ref/django-admin/#runserver">official Django documentation on <code>runserver</code></a> for more information.</p>
+<p>You can then log into the development server at <code>localhost:8080</code> with the <a href="#creating-a-superuser">superuser</a> you created.</p>
+<h3 id="starting-the-interactive-shell">Starting the Interactive Shell<a class="headerlink" href="#starting-the-interactive-shell" title="Permanent link">&para;</a></h3>
+<p>Nautobot provides an <a href="../administration/nautobot-shell.html">interactive Python shell</a> that sets up the server environment and gives you direct access to the database models for debugging. Nautobot extends this slightly to automatically import models and other utilities.</p>
+<p>Run the Nautobot interactive shell with <code>invoke nbshell</code> (Docker) or the <code>nautobot-server nbshell</code> management command:</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invoke nbshell</code></td>
+<td><code>nautobot-server nbshell</code></td>
+</tr>
+</tbody>
+</table>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$ nautobot-server nbshell
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="c1">### Nautobot interactive shell (localhost)</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="c1">### Python 3.9.1 | Django 3.1.3 | Nautobot 1.0.0b1</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1">### lsmodels() will show available models. Use help(&lt;model&gt;) for more info.</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>&gt;&gt;&gt;
+</code></pre></div>
+<h3 id="post-upgrade-operations">Post-upgrade Operations<a class="headerlink" href="#post-upgrade-operations" title="Permanent link">&para;</a></h3>
+<p>There will be times where you're working with the bleeding edge of Nautobot from the <code>develop</code> branch or feature branches and will need to pull in database changes or run server operations.</p>
+<p>Get into the habit of running <code>nautobot-server post_upgrade</code> (or <code>invoke post-upgrade</code> when using Docker) after you pull in a major set of changes from Nautobot, which performs a handful of common operations (such as <code>migrate</code>) from a single command:</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invoke post-upgrade</code></td>
+<td><code>nautobot-server post_upgrade</code></td>
+</tr>
+</tbody>
+</table>
+<p>Please see the <a href="../administration/nautobot-server.html#post_upgrade">documentation on the <code>nautobot-server post_upgrade</code> command</a> for more information.</p>
+<h3 id="reinstalling-nautobot">Reinstalling Nautobot<a class="headerlink" href="#reinstalling-nautobot" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This mostly applies to working with Nautobot in a virtualenv, since Docker containers are typically rebuilt when the code changes.</p>
+</div>
+<p>Sometimes when files are renamed, moved, or deleted and you've been working in the same environment for a while, you can encounter weird behavior. If this happens, don't panic and nuke your environment.</p>
+<p>First, use <code>pip3</code> to explicitly uninstall the Nautobot package from the environment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$ pip3 uninstall -y nautobot
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>Found existing installation: nautobot 1.0.0b2
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>Uninstalling nautobot-1.0.0b2:
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>  Successfully uninstalled nautobot-1.0.0b2
+</code></pre></div>
+<p>Then try to just have Poetry do the right thing by telling it to install again:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>$ poetry install
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>Installing dependencies from lock file
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>No dependencies to install or update
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>Installing the current project: nautobot (1.0.0-beta.2)
+</code></pre></div>
+<h3 id="running-tests">Running Tests<a class="headerlink" href="#running-tests" title="Permanent link">&para;</a></h3>
+<p>Throughout the course of development, it's a good idea to occasionally run Nautobot's test suite to catch any potential errors. Tests come in two primary flavors: Unit tests and integration tests.</p>
+<h4 id="unit-tests">Unit Tests<a class="headerlink" href="#unit-tests" title="Permanent link">&para;</a></h4>
+<p>Unit tests are automated tests written and run to ensure that a section of the Nautobot application (known as the "unit") meets its design and behaves as intended and expected. Most commonly as a developer of or contributor to Nautobot you will be writing unit tests to exercise the code you have written. Unit tests are not meant to test how the application behaves, only the individual blocks of code, therefore use of mock data and phony connections is common in unit test code. As a guiding principle, unit tests should be fast, because they will be executed quite often.</p>
+<p>By Nautobot convention, unit tests must be <a href="https://docs.djangoproject.com/en/stable/topics/testing/tools/#tagging-tests">tagged</a> with <code>unit</code>. The base test case class <code>nautobot.utilities.testing.TestCase</code> has this tag, therefore any test cases inheriting from that class do not need to be explicitly tagged. All existing view and API test cases in the Nautobot test suite utilities inherit from this class.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>New unit tests <strong>must always</strong> inherit from <code>nautobot.utilities.testing.TestCase</code>. Do not use <code>django.test.TestCase</code>.</p>
+</div>
+<p>Wrong:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="k">class</span> <span class="nc">MyTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>    <span class="o">...</span>
+</code></pre></div>
+<p>Right:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kn">from</span> <span class="nn">nautobot.utilities.testing</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">class</span> <span class="nc">MyTestCase</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>    <span class="o">...</span>
+</code></pre></div>
+<p>Unit tests are run using the <code>invoke unittest</code> command (if using the Docker development environment) or the <code>nautobot-server test</code> command:</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invoke unittest</code></td>
+<td><code>nautobot-server --config=nautobot/core/tests/nautobot_config.py test nautobot</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>By default <code>invoke unittest</code> will start and run the unit tests inside the Docker development container; this ensures that PostgreSQL and Redis servers are available during the test. However, if you have your environment configured such that <code>nautobot-server</code> can run locally, outside of the Docker environment, you may wish to set the environment variable <code>INVOKE_NAUTOBOT_LOCAL=True</code> to execute these tests in your local environment instead.  See the <a href="#invoke-configuration">Invoke configuration</a> for more information.</p>
+</div>
+<p>In cases where you haven't made any changes to the database (which is most of the time), you can append the <code>--keepdb</code> argument to this command to reuse the test database between runs. This cuts down on the time it takes to run the test suite since the database doesn't have to be rebuilt each time.</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invoke unittest --keepdb</code></td>
+<td><code>nautobot-server --config=nautobot/core/tests/nautobot_config.py test --keepdb nautobot</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using the <code>--keepdb</code> argument will raise errors if you've modified any model fields since the previous test run.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In some cases when tests fail and exit uncleanly it may leave the test database in an inconsistent state. If you encounter errors about missing objects, remove <code>--keepdb</code> and run the tests again.</p>
+</div>
+<h4 id="integration-tests">Integration Tests<a class="headerlink" href="#integration-tests" title="Permanent link">&para;</a></h4>
+<p>Integration tests are automated tests written and run to ensure that the Nautobot application behaves as expected when being used as it would be in practice. By contrast to unit tests, where individual units of code are being tested, integration tests rely upon the server code actually running, and web UI clients or API clients to make real connections to the service to exercise actual workflows, such as navigating to the login page, filling out the username/passwords fields, and clicking the "Log In" button.</p>
+<p>Integration testing is much more involved, and builds on top of the foundation laid by unit testing. As a guiding principle, integration tests should be comprehensive, because they are the last mile to asserting that Nautobot does what it is advertised to do. Without integration testing, we have to do it all manually, and that's no fun for anyone!</p>
+<p>Running integrations tests requires the use of Docker at this time. They can be directly invoked using <code>nautobot-server test</code> just as unit tests can, however, a headless Firefox browser provided by Selenium is required. Because Selenium installation and setup is complicated, we have included a configuration for this to work out of the box using Docker.</p>
+<p>The Selenium container is running a standalone, headless Firefox "web driver" browser that can be remotely controlled by Nautobot for use in integration testing.</p>
+<p>Before running integration tests, the <code>selenium</code> container must be running. If you are using the Docker Compose workflow, it is automatically started for you. For the Virtual Environment workflow, you must start it manually.</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(automatic)</td>
+<td><code>invoke start --service selenium</code></td>
+</tr>
+</tbody>
+</table>
+<p>By Nautobot convention, integration tests must be <a href="https://docs.djangoproject.com/en/stable/topics/testing/tools/#tagging-tests">tagged</a> with <code>integration</code>. The base test case class <code>nautobot.utilities.testing.integration.SeleniumTestCase</code> has this tag, therefore any test cases inheriting from that class do not need to be explicitly tagged. All existing integration test cases in the Nautobot test suite utilities inherit from this class.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>New integration tests <strong>must always</strong> inherit from <code>nautobot.utilities.testing.integration.SeleniumTestCase</code> and added in the <code>integration</code> directory in the <code>tests</code> directory of an inner Nautobot application. Do not use any other base class for integration tests.</p>
+</div>
+<p>We never want to risk running the unit tests and integration tests at the same time. The isolation from each other is critical to a clean and manageable continuous development cycle.</p>
+<p>Wrong:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kn">from</span> <span class="nn">django.contrib.staticfiles.testing</span> <span class="kn">import</span> <span class="n">StaticLiveServerTestCase</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="k">class</span> <span class="nc">MyIntegrationTestCase</span><span class="p">(</span><span class="n">StaticLiveServerTestCase</span><span class="p">):</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>    <span class="o">...</span>
+</code></pre></div>
+<p>Right:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kn">from</span> <span class="nn">nautobot.utilities.testing.integration</span> <span class="kn">import</span> <span class="n">SeleniumTestCase</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="k">class</span> <span class="nc">MyIntegrationTestCase</span><span class="p">(</span><span class="n">SeleniumTestCase</span><span class="p">):</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>    <span class="o">...</span>
+</code></pre></div>
+<p>Integration tests are run using the <code>invoke integration-test</code> command. All integration tests must inherit from <code>nautobot.utilities.testing.integration.SeleniumTestCase</code>, which itself is tagged with <code>integration</code>. A custom test runner has been implemented to automatically skip any test case tagged with <code>integration</code> by default, so normal unit tests run without any concern. To run the integration tests the <code>--tag integration</code> argument must be passed to <code>nautobot-server test</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invoke integration-test</code></td>
+<td><code>nautobot-server --config=nautobot/core/tests/nautobot_config.py test --tag integration nautobot</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The same arguments supported by <code>invoke unittest</code> are supported by <code>invoke integration-test</code>. The key difference being the dependency upon the Selenium container, and inclusion of the <code>integration</code> tag.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You may also use <code>invoke integration-test</code> in the Virtual Environment workflow given that the <code>selenium</code> container is running, and that the <code>INVOKE_NAUTOBOT_LOCAL=True</code> environment variable has been set.</p>
+</div>
+<h5 id="customizing-integration-test-executions">Customizing Integration Test Executions<a class="headerlink" href="#customizing-integration-test-executions" title="Permanent link">&para;</a></h5>
+<p>The following environment variables can be provided when running tests to customize where Nautobot looks for Selenium and where Selenium looks for Nautobot. If using the default setup documented above, there is no need to customize these.</p>
+<ul>
+<li><code>NAUTOBOT_SELENIUM_URL</code> - The URL used by the Nautobot test runner to remotely control the headless Selenium Firefox node. You can provide your own, but it must be a <a href="https://selenium-python.readthedocs.io/getting-started.html#using-selenium-with-remote-webdriver"><code>Remote</code> WebDriver</a>. (Default: <code>http://localhost:4444/wd/hub</code>; for Docker: <code>http://selenium:4444/wd/hub</code>)</li>
+<li><code>NAUTOBOT_SELENIUM_HOST</code> - The hostname used by the Selenium WebDriver to access Nautobot using Firefox. (Default: <code>host.docker.internal</code>; for Docker: <code>nautobot</code>)</li>
+</ul>
+<h3 id="verifying-the-rest-api-schema">Verifying the REST API Schema<a class="headerlink" href="#verifying-the-rest-api-schema" title="Permanent link">&para;</a></h3>
+<p>If you make changes to the REST API, you should verify that the REST API OpenAPI schema renders correctly without errors. To verify that there are no errors, you can run the <code>invoke check-schema</code> command (if using the Docker development environment) or the <code>nautobot-server spectacular</code> command. In the latter case you should run the command for each supported REST API version that Nautobot provides (e.g. "1.2", "1.3")</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invoke check-schema</code></td>
+<td><code>nautobot-server spectacular --api-version 1.2 --validate --fail-on-warn --file /dev/null</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="verifying-code-style-and-static-analysis">Verifying Code Style and Static Analysis<a class="headerlink" href="#verifying-code-style-and-static-analysis" title="Permanent link">&para;</a></h3>
+<p>To enforce best practices around consistent <a href="style-guide.html">coding style</a>, Nautobot uses <a href="https://flake8.pycqa.org/">Flake8</a> and <a href="https://black.readthedocs.io/">Black</a>. Additionally, <a href="https://en.wikipedia.org/wiki/Static_program_analysis">static analysis</a> of Nautobot code is performed by <a href="https://pylint.pycqa.org/en/latest/">Pylint</a>. You should run all of these commands and ensure that they pass fully with regard to your code changes before opening a pull request upstream.</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invoke flake8</code></td>
+<td><code>flake8</code></td>
+</tr>
+<tr>
+<td><code>invoke black</code></td>
+<td><code>black</code></td>
+</tr>
+<tr>
+<td><code>invoke pylint</code></td>
+<td><code>nautobot-server pylint nautobot tasks.py &amp;&amp; nautobot-server pylint --recursive development/ examples/</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="handling-migrations">Handling Migrations<a class="headerlink" href="#handling-migrations" title="Permanent link">&para;</a></h3>
+<p>If you're unsure whether a database schema migration is needed based on your changes, you can run the following command:</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invoke check-migrations</code></td>
+<td><code>nautobot-server --config=nautobot/core/tests/nautobot_config.py makemigrations --dry-run --check</code></td>
+</tr>
+</tbody>
+</table>
+<p>If your branch modifies a Django model (and as a result requires a database schema modification), please be sure to provide a meaningful name to the migration before pushing.</p>
+<ul>
+<li>If you have yet to run <code>invoke makemigrations</code>, you can pass in a name for the migration with the <code>-n</code> option, example <code>invoke makemigrations -n provider_increase_account_length</code>.</li>
+<li>If you have already run <code>invoke makemigrations</code>, rename the generated migration files, for example <code>0004_provider_increase_account_length</code> instead of <code>0004_auto_20211220_2104</code>.</li>
+</ul>
+<p>You’ll also want to run <code>black</code> against the generated migration file as the autogenerated code doesn’t follow our style guide by default.</p>
+<p>When modifying model field attributes, modify the test data in the tests too to reflect these changes and also any forms which refer to the model.</p>
+<h2 id="working-on-documentation">Working on Documentation<a class="headerlink" href="#working-on-documentation" title="Permanent link">&para;</a></h2>
+<p>Some features require documentation updates or new documentation to be written. The documentation files can be found in the <code>docs</code> directory. To preview these changes locally, you can use <code>mkdocs</code>.</p>
+<p>For substantial changes to the code (including new features, removal of existing features, or significant changes in behavior) you should always make corresponding documentation updates. Nautobot's documentation pipeline includes a custom plugin for <code>mkdocs</code> that adds a few useful macros for annotating such changes:</p>
+<ul>
+<li><code>+++ 1.4.3</code>, on a line by itself, is a shorthand for <code>!!! version-added "Added in version 1.4.3"</code></li>
+<li><code>+/- 1.4.3</code>, on a line by itself, is a shorthand for <code>!!! version-changed "Changed in version 1.4.3"</code></li>
+<li><code>--- 1.4.3</code>, on a line by itself, is a shorthand for <code>!!! version-removed "Removed in version 1.4.3"</code></li>
+</ul>
+<p>These admonitions in turn appear in the rendered documentation as follows:</p>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.4.3</p>
+</div>
+<div class="admonition version-changed">
+<p class="admonition-title">Changed in version 1.4.3</p>
+</div>
+<div class="admonition version-removed">
+<p class="admonition-title">Removed in version 1.4.3</p>
+</div>
+<p>You can also add text to any of these admonitions for further clarity, for example:</p>
+<div class="highlight"><pre><span></span><code>+++ 1.4.3
+    The custom `mkdocs` plugin was added.
+</code></pre></div>
+<p>will render as:</p>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.4.3</p>
+<p>The custom <code>mkdocs</code> plugin was added.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>While you <em>can</em> use the <code>version-added</code> / <code>version-changed</code> / <code>version-removed</code> admonitions directly to add a custom title to a specific admonition, in general, you should use the macros for consistency across the documentation.</p>
+</div>
+<h3 id="writing-documentation">Writing Documentation<a class="headerlink" href="#writing-documentation" title="Permanent link">&para;</a></h3>
+<p>You can preview the documentation using the server built into mkdocs, which should start a web server at <code>http://localhost:8001</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invoke start -s mkdocs</code></td>
+<td><code>mkdocs serve</code></td>
+</tr>
+</tbody>
+</table>
+<p>Documentation is written in Markdown. If you need to add additional pages or sections to the documentation, you can add them to <code>mkdocs.yml</code> at the root of the repository.</p>
+<h3 id="verifying-documentation">Verifying Documentation<a class="headerlink" href="#verifying-documentation" title="Permanent link">&para;</a></h3>
+<p>Nautobot uses <a href="https://github.com/igorshubovych/markdownlint-cli"><code>markdownlint-cli</code></a> to verify correctness of the documentation. You should run this command and ensure that it passes fully with regard to your documentation changes before opening a pull request upstream.</p>
+<table>
+<thead>
+<tr>
+<th>Docker Compose Workflow</th>
+<th>Virtual Environment Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invoke markdownlint</code></td>
+<td><code>markdownlint --ignore nautobot/project-static --config .markdownlint.yml nautobot examples *.md</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="submitting-pull-requests">Submitting Pull Requests<a class="headerlink" href="#submitting-pull-requests" title="Permanent link">&para;</a></h2>
+<p>Once you're happy with your work and have verified that all tests pass, commit your changes and push it upstream to your fork. Always provide descriptive (but not excessively verbose) commit messages. When working on a specific issue, be sure to reference it.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>$ git commit -m &quot;Closes #1234: Add IPv5 support&quot;
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>$ git push origin
+</code></pre></div>
+<p>Once your fork has the new commit, submit a <a href="https://github.com/nautobot/nautobot/compare">pull request</a> to the Nautobot repo to propose the changes. Be sure to provide a detailed accounting of the changes being made and the reasons for doing so.</p>
+<p>Once submitted, a maintainer will review your pull request and either merge it or request changes. If changes are needed, you can make them via new commits to your fork: The pull request will update automatically.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember, pull requests are entertained only for <strong>accepted</strong> issues. If an issue you want to work on hasn't been approved by a maintainer yet, it's best to avoid risking your time and effort on a change that might not be accepted.</p>
+</div>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>Below are common issues you might encounter in your development environment and how to address them.</p>
+<h3 id="fatal-sorry-too-many-clients-already">FATAL: sorry, too many clients already<a class="headerlink" href="#fatal-sorry-too-many-clients-already" title="Permanent link">&para;</a></h3>
+<p>When using <code>nautobot-server runserver</code> to do development you might run into a traceback that looks something like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Exception Type: OperationalError at /extras/tags/
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>Exception Value: FATAL:  sorry, too many clients already
+</code></pre></div>
+<p>The <code>runserver</code> development server is multi-threaded by default, which means that every request is creating its own connection. If you are doing some local testing or development that is resulting in a lot of connections to the database, pass <code>--nothreading</code> to the runserver command to disable threading:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>$ nautobot-server runserver --nothreading
+</code></pre></div>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Introduction
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="docker-compose-advanced-use-cases.html" class="md-footer__link md-footer__link--next" aria-label="Next: Advanced Docker Compose Usage" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Advanced Docker Compose Usage
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    
+    <div class="md-copyright__highlight">
+        Copyright &copy; The Authors
+    </div>
+    <a href="https://github.com/nautobot/nautobot/blob/main/LICENSE.txt">Apache-2.0 LICENSE</a>
+    
+</div>
+
+<div class="md-copyright">
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Made with Material for MkDocs</a>
+    | <a href="https://www.networktocode.com/community/" target="_blank" rel="noopener">Join Nautobot Slack</a>
+    
+    | <a href="https://networktocode.com" target="_blank" rel="noopener">Sponsored by <img
+            src=../assets/networktocode_bw.png class="copyright-logo"></a>
+    
+</div>
+
+<!-- RTD version flyout injected on live site -->
+<div id="readthedocs-embed-flyout"></div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://blog.networktocode.com/blog/tags/nautobot" target="_blank" rel="noopener" title="Network to Code Blog" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M25.57 176.1C12.41 175.4.912 185.2.052 198.4s9.173 24.65 22.39 25.5c120.1 7.875 225.7 112.7 233.6 233.6C256.9 470.3 267.4 480 279.1 480c.531 0 1.062-.031 1.594-.063 13.22-.843 23.25-12.28 22.39-25.5C294.6 310.3 169.7 185.4 25.57 176.1zM32 32C14.33 32 0 46.31 0 64s14.33 32 32 32c194.1 0 352 157.9 352 352 0 17.69 14.33 32 32 32s32-14.31 32-32C448 218.6 261.4 32 32 32zm31.1 319.9C28.63 351.9 0 380.6 0 416s28.63 64 63.1 64 64.08-28.62 64.08-64-27.81-64.1-64.08-64.1z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.youtube.com/playlist?list=PLjA0bhxgryJ2Ts4GJMDA-tPzVWEncv4pb" target="_blank" rel="noopener" title="Nautobot Videos" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.networktocode.com/community/" target="_blank" rel="noopener" title="Network to Code Community" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://github.com/nautobot/nautobot" target="_blank" rel="noopener" title="GitHub Repo" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://twitter.com/networktocode" target="_blank" rel="noopener" title="Network to Code Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      
+    
+  </body>
+</html>

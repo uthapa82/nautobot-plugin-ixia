@@ -1,0 +1,4206 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.nautobot.com/en/stable/configuration/optional-settings.html">
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>Optional Settings - Nautobot Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#optional-configuration-settings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Nautobot Documentation" class="md-header__button md-logo" aria-label="Nautobot Documentation" data-md-component="logo">
+      
+  <img src="../assets/nautobot_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nautobot Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Optional Settings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nautobot/nautobot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Overview
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../installation/index.html" class="md-tabs__link md-tabs__link--active">
+        Documentation
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../development/index.html" class="md-tabs__link">
+        Developer Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../release-notes/index.html" class="md-tabs__link">
+        Release Notes
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../apps/index.html" class="md-tabs__link">
+        Nautobot Apps
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://docs.nautobot.com/" class="md-tabs__link">
+      Nautobot Docs Home ↗︎
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Nautobot Documentation" class="md-nav__button md-logo" aria-label="Nautobot Documentation" data-md-component="logo">
+      
+  <img src="../assets/nautobot_logo.svg" alt="logo">
+
+    </a>
+    Nautobot Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nautobot/nautobot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/index.html" class="md-nav__link">
+        Installing Prerequisites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/nautobot.html" class="md-nav__link">
+        Installing Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/services.html" class="md-nav__link">
+        Deploying Nautobot Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/http-server.html" class="md-nav__link">
+        Configuring an HTTP Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/external-authentication.html" class="md-nav__link">
+        External Authentication (Optional)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/index.html" class="md-nav__link">
+        Nautobot Docker Images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Migration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Migration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Migration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/migrating-from-netbox.html" class="md-nav__link">
+        Migrating from NetBox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/upgrading.html" class="md-nav__link">
+        Upgrading Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/migrating-from-postgresql.html" class="md-nav__link">
+        Migrating from PostgreSQL to MySQL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configuration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Configuring Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="required-settings.html" class="md-nav__link">
+        Required Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Optional Settings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="optional-settings.html" class="md-nav__link md-nav__link--active">
+        Optional Settings
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#administratively-configurable-settings" class="md-nav__link">
+    Administratively Configurable Settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-applications" class="md-nav__link">
+    Extra Applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowed_url_schemes" class="md-nav__link">
+    ALLOWED_URL_SCHEMES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banner_top" class="md-nav__link">
+    BANNER_TOP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banner_bottom" class="md-nav__link">
+    BANNER_BOTTOM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banner_login" class="md-nav__link">
+    BANNER_LOGIN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branding_filepaths" class="md-nav__link">
+    BRANDING_FILEPATHS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branding_prepended_filename" class="md-nav__link">
+    BRANDING_PREPENDED_FILENAME
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branding_title" class="md-nav__link">
+    BRANDING_TITLE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branding_urls" class="md-nav__link">
+    BRANDING_URLS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cacheops_defaults" class="md-nav__link">
+    CACHEOPS_DEFAULTS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cacheops_enabled" class="md-nav__link">
+    CACHEOPS_ENABLED
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cacheops_health_check_enabled" class="md-nav__link">
+    CACHEOPS_HEALTH_CHECK_ENABLED
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cacheops_redis" class="md-nav__link">
+    CACHEOPS_REDIS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery_broker_transport_options" class="md-nav__link">
+    CELERY_BROKER_TRANSPORT_OPTIONS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery_broker_url" class="md-nav__link">
+    CELERY_BROKER_URL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery_result_backend" class="md-nav__link">
+    CELERY_RESULT_BACKEND
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery_result_backend_transport_options" class="md-nav__link">
+    CELERY_RESULT_BACKEND_TRANSPORT_OPTIONS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery_task_soft_time_limit" class="md-nav__link">
+    CELERY_TASK_SOFT_TIME_LIMIT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery_task_time_limit" class="md-nav__link">
+    CELERY_TASK_TIME_LIMIT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changelog_retention" class="md-nav__link">
+    CHANGELOG_RETENTION
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors_allow_all_origins" class="md-nav__link">
+    CORS_ALLOW_ALL_ORIGINS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors_allowed_origins" class="md-nav__link">
+    CORS_ALLOWED_ORIGINS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors_allowed_origin_regexes" class="md-nav__link">
+    CORS_ALLOWED_ORIGIN_REGEXES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable_prefix_list_hierarchy" class="md-nav__link">
+    DISABLE_PREFIX_LIST_HIERARCHY
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforce_global_unique" class="md-nav__link">
+    ENFORCE_GLOBAL_UNIQUE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exempt_view_permissions" class="md-nav__link">
+    EXEMPT_VIEW_PERMISSIONS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external_auth_default_groups" class="md-nav__link">
+    EXTERNAL_AUTH_DEFAULT_GROUPS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external_auth_default_permissions" class="md-nav__link">
+    EXTERNAL_AUTH_DEFAULT_PERMISSIONS
+  </a>
+  
+    <nav class="md-nav" aria-label="EXTERNAL_AUTH_DEFAULT_PERMISSIONS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-permissions" class="md-nav__link">
+    Example Permissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git_root" class="md-nav__link">
+    GIT_ROOT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphql_custom_field_prefix" class="md-nav__link">
+    GRAPHQL_CUSTOM_FIELD_PREFIX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide_restricted_ui" class="md-nav__link">
+    HIDE_RESTRICTED_UI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http_proxies" class="md-nav__link">
+    HTTP_PROXIES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobs_root" class="md-nav__link">
+    JOBS_ROOT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance_mode" class="md-nav__link">
+    MAINTENANCE_MODE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max_page_size" class="md-nav__link">
+    MAX_PAGE_SIZE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics_enabled" class="md-nav__link">
+    METRICS_ENABLED
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#napalm_username" class="md-nav__link">
+    NAPALM_USERNAME
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#napalm_password" class="md-nav__link">
+    NAPALM_PASSWORD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#napalm_args" class="md-nav__link">
+    NAPALM_ARGS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#napalm_timeout" class="md-nav__link">
+    NAPALM_TIMEOUT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paginate_count" class="md-nav__link">
+    PAGINATE_COUNT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per_page_defaults" class="md-nav__link">
+    PER_PAGE_DEFAULTS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    PLUGINS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins_config" class="md-nav__link">
+    PLUGINS_CONFIG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefer_ipv4" class="md-nav__link">
+    PREFER_IPV4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rack_elevation_default_unit_height" class="md-nav__link">
+    RACK_ELEVATION_DEFAULT_UNIT_HEIGHT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rack_elevation_default_unit_width" class="md-nav__link">
+    RACK_ELEVATION_DEFAULT_UNIT_WIDTH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis_lock_timeout" class="md-nav__link">
+    REDIS_LOCK_TIMEOUT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release_check_timeout" class="md-nav__link">
+    RELEASE_CHECK_TIMEOUT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release_check_url" class="md-nav__link">
+    RELEASE_CHECK_URL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sanitizer_patterns" class="md-nav__link">
+    SANITIZER_PATTERNS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage_backend" class="md-nav__link">
+    STORAGE_BACKEND
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage_config" class="md-nav__link">
+    STORAGE_CONFIG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strict_filtering" class="md-nav__link">
+    STRICT_FILTERING
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui_rack_view_truncate_function" class="md-nav__link">
+    UI_RACK_VIEW_TRUNCATE_FUNCTION
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variable-only-settings" class="md-nav__link">
+    Environment-Variable-Only Settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment-Variable-Only Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git_ssl_no_verify" class="md-nav__link">
+    GIT_SSL_NO_VERIFY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nautobot_root" class="md-nav__link">
+    NAUTOBOT_ROOT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#django-configuration-settings" class="md-nav__link">
+    Django Configuration Settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Django Configuration Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admins" class="md-nav__link">
+    ADMINS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csrf_trusted_origins" class="md-nav__link">
+    CSRF_TRUSTED_ORIGINS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-and-time-formatting" class="md-nav__link">
+    Date and Time Formatting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    DEBUG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#force_script_name" class="md-nav__link">
+    FORCE_SCRIPT_NAME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal_ips" class="md-nav__link">
+    INTERNAL_IPS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    LOGGING
+  </a>
+  
+    <nav class="md-nav" aria-label="LOGGING">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-loggers" class="md-nav__link">
+    Available Loggers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#media_root" class="md-nav__link">
+    MEDIA_ROOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session_cookie_age" class="md-nav__link">
+    SESSION_COOKIE_AGE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session_engine" class="md-nav__link">
+    SESSION_ENGINE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session_file_path" class="md-nav__link">
+    SESSION_FILE_PATH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_root" class="md-nav__link">
+    STATIC_ROOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time_zone" class="md-nav__link">
+    TIME_ZONE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          External Authentication
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="External Authentication" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          External Authentication
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="authentication/ldap.html" class="md-nav__link">
+        LDAP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="authentication/sso.html" class="md-nav__link">
+        SSO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="authentication/remote.html" class="md-nav__link">
+        Remote Header
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          Administration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Administration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Administration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/nautobot-server.html" class="md-nav__link">
+        Nautobot Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/nautobot-shell.html" class="md-nav__link">
+        Nautobot Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/permissions.html" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/replicating-nautobot.html" class="md-nav__link">
+        Replicating Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          User Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="User Guides" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          User Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/index.html" class="md-nav__link">
+        Getting Started In the Web UI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/creating-devices.html" class="md-nav__link">
+        Creating Devices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/regions.html" class="md-nav__link">
+        Regions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/platforms.html" class="md-nav__link">
+        Platforms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/tenants.html" class="md-nav__link">
+        Tenants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/vlans-and-vlan-groups.html" class="md-nav__link">
+        VLANS and VLAN Groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/ipam.html" class="md-nav__link">
+        IP Address Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/search-bar.html" class="md-nav__link">
+        The Search Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/git-data-source.html" class="md-nav__link">
+        Git as a Data Source
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/graphql.html" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          Core Functionality
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Core Functionality" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Core Functionality
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/circuits.html" class="md-nav__link">
+        Circuits
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/devices.html" class="md-nav__link">
+        Devices and Cabling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/device-types.html" class="md-nav__link">
+        Device Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/ipam.html" class="md-nav__link">
+        IP Address Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/power.html" class="md-nav__link">
+        Power Tracking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/secrets.html" class="md-nav__link">
+        Secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/services.html" class="md-nav__link">
+        Service Mapping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/sites-and-racks.html" class="md-nav__link">
+        Sites, Locations, and Racks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/tenancy.html" class="md-nav__link">
+        Tenancy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/virtualization.html" class="md-nav__link">
+        Virtualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/vlans.html" class="md-nav__link">
+        VLAN Management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          Additional Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Additional Features" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Additional Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/caching.html" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/change-logging.html" class="md-nav__link">
+        Change Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/computedfield.html" class="md-nav__link">
+        Computed Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/config-contexts.html" class="md-nav__link">
+        Context Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/customfield.html" class="md-nav__link">
+        Custom Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/customlink.html" class="md-nav__link">
+        Custom Links
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/dynamicgroup.html" class="md-nav__link">
+        Dynamic Groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/exporttemplate.html" class="md-nav__link">
+        Export Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/gitrepository.html" class="md-nav__link">
+        Git Repositories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/healthcheck.html" class="md-nav__link">
+        Health Check
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/jobs.html" class="md-nav__link">
+        Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/jobhook.html" class="md-nav__link">
+        Job Hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/job-scheduling-and-approvals.html" class="md-nav__link">
+        Job Scheduling and Approvals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/napalm.html" class="md-nav__link">
+        NAPALM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/note.html" class="md-nav__link">
+        Notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/prometheus-metrics.html" class="md-nav__link">
+        Prometheus Metrics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/relationship.html" class="md-nav__link">
+        Relationships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/status.html" class="md-nav__link">
+        Statuses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/tag.html" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/template-filters.html" class="md-nav__link">
+        Template Filters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/webhook.html" class="md-nav__link">
+        Webhooks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          REST API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="REST API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          REST API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/filtering.html" class="md-nav__link">
+        Filtering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/authentication.html" class="md-nav__link">
+        Authentication
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_10">
+          GraphQL API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GraphQL API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          GraphQL API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/graphql.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/index.html" class="md-nav__link">
+        Installing and Using Plugins
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Developer Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Developer Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/index.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/getting-started.html" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/docker-compose-advanced-use-cases.html" class="md-nav__link">
+        Advanced Docker Compose Usage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Plugins
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Plugins" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/development.html" class="md-nav__link">
+        Developing Plugins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/porting-from-netbox.html" class="md-nav__link">
+        Porting NetBox Plugins to Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/best-practices.html" class="md-nav__link">
+        Best Practices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/style-guide.html" class="md-nav__link">
+        Style Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/extending-models.html" class="md-nav__link">
+        Extending Models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/application-registry.html" class="md-nav__link">
+        Application Registry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/templates.html" class="md-nav__link">
+        Page Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/navigation-menu.html" class="md-nav__link">
+        Navigation Menu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/homepage.html" class="md-nav__link">
+        Home Page Panels
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/user-preferences.html" class="md-nav__link">
+        User Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/release-checklist.html" class="md-nav__link">
+        Release Checklist
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Release Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Release Notes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.4.html" class="md-nav__link">
+        Version 1.4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.3.html" class="md-nav__link">
+        Version 1.3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.2.html" class="md-nav__link">
+        Version 1.2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.1.html" class="md-nav__link">
+        Version 1.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/version-1.0.html" class="md-nav__link">
+        Version 1.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Nautobot Apps
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Nautobot Apps" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Nautobot Apps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          Network to Code App Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Network to Code App Docs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Network to Code App Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.nautobot.com/projects/golden-config/" class="md-nav__link">
+        Nautobot Golden Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://nautobot-plugin-ssot.readthedocs.io/en/latest/" class="md-nav__link">
+        Nautobot Single Source of Truth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://nautobot-plugin-firewall-models.readthedocs.io/en/latest/" class="md-nav__link">
+        Nautobot Firewall Models
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/nautobot-apps.html" class="md-nav__link">
+        Community Apps
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.nautobot.com/" class="md-nav__link">
+        Nautobot Docs Home ↗︎
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#administratively-configurable-settings" class="md-nav__link">
+    Administratively Configurable Settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-applications" class="md-nav__link">
+    Extra Applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allowed_url_schemes" class="md-nav__link">
+    ALLOWED_URL_SCHEMES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banner_top" class="md-nav__link">
+    BANNER_TOP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banner_bottom" class="md-nav__link">
+    BANNER_BOTTOM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banner_login" class="md-nav__link">
+    BANNER_LOGIN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branding_filepaths" class="md-nav__link">
+    BRANDING_FILEPATHS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branding_prepended_filename" class="md-nav__link">
+    BRANDING_PREPENDED_FILENAME
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branding_title" class="md-nav__link">
+    BRANDING_TITLE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branding_urls" class="md-nav__link">
+    BRANDING_URLS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cacheops_defaults" class="md-nav__link">
+    CACHEOPS_DEFAULTS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cacheops_enabled" class="md-nav__link">
+    CACHEOPS_ENABLED
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cacheops_health_check_enabled" class="md-nav__link">
+    CACHEOPS_HEALTH_CHECK_ENABLED
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cacheops_redis" class="md-nav__link">
+    CACHEOPS_REDIS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery_broker_transport_options" class="md-nav__link">
+    CELERY_BROKER_TRANSPORT_OPTIONS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery_broker_url" class="md-nav__link">
+    CELERY_BROKER_URL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery_result_backend" class="md-nav__link">
+    CELERY_RESULT_BACKEND
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery_result_backend_transport_options" class="md-nav__link">
+    CELERY_RESULT_BACKEND_TRANSPORT_OPTIONS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery_task_soft_time_limit" class="md-nav__link">
+    CELERY_TASK_SOFT_TIME_LIMIT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celery_task_time_limit" class="md-nav__link">
+    CELERY_TASK_TIME_LIMIT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changelog_retention" class="md-nav__link">
+    CHANGELOG_RETENTION
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors_allow_all_origins" class="md-nav__link">
+    CORS_ALLOW_ALL_ORIGINS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors_allowed_origins" class="md-nav__link">
+    CORS_ALLOWED_ORIGINS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors_allowed_origin_regexes" class="md-nav__link">
+    CORS_ALLOWED_ORIGIN_REGEXES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable_prefix_list_hierarchy" class="md-nav__link">
+    DISABLE_PREFIX_LIST_HIERARCHY
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforce_global_unique" class="md-nav__link">
+    ENFORCE_GLOBAL_UNIQUE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exempt_view_permissions" class="md-nav__link">
+    EXEMPT_VIEW_PERMISSIONS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external_auth_default_groups" class="md-nav__link">
+    EXTERNAL_AUTH_DEFAULT_GROUPS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external_auth_default_permissions" class="md-nav__link">
+    EXTERNAL_AUTH_DEFAULT_PERMISSIONS
+  </a>
+  
+    <nav class="md-nav" aria-label="EXTERNAL_AUTH_DEFAULT_PERMISSIONS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-permissions" class="md-nav__link">
+    Example Permissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git_root" class="md-nav__link">
+    GIT_ROOT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphql_custom_field_prefix" class="md-nav__link">
+    GRAPHQL_CUSTOM_FIELD_PREFIX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide_restricted_ui" class="md-nav__link">
+    HIDE_RESTRICTED_UI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http_proxies" class="md-nav__link">
+    HTTP_PROXIES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobs_root" class="md-nav__link">
+    JOBS_ROOT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance_mode" class="md-nav__link">
+    MAINTENANCE_MODE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#max_page_size" class="md-nav__link">
+    MAX_PAGE_SIZE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics_enabled" class="md-nav__link">
+    METRICS_ENABLED
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#napalm_username" class="md-nav__link">
+    NAPALM_USERNAME
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#napalm_password" class="md-nav__link">
+    NAPALM_PASSWORD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#napalm_args" class="md-nav__link">
+    NAPALM_ARGS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#napalm_timeout" class="md-nav__link">
+    NAPALM_TIMEOUT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paginate_count" class="md-nav__link">
+    PAGINATE_COUNT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per_page_defaults" class="md-nav__link">
+    PER_PAGE_DEFAULTS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    PLUGINS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins_config" class="md-nav__link">
+    PLUGINS_CONFIG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefer_ipv4" class="md-nav__link">
+    PREFER_IPV4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rack_elevation_default_unit_height" class="md-nav__link">
+    RACK_ELEVATION_DEFAULT_UNIT_HEIGHT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rack_elevation_default_unit_width" class="md-nav__link">
+    RACK_ELEVATION_DEFAULT_UNIT_WIDTH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis_lock_timeout" class="md-nav__link">
+    REDIS_LOCK_TIMEOUT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release_check_timeout" class="md-nav__link">
+    RELEASE_CHECK_TIMEOUT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release_check_url" class="md-nav__link">
+    RELEASE_CHECK_URL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sanitizer_patterns" class="md-nav__link">
+    SANITIZER_PATTERNS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage_backend" class="md-nav__link">
+    STORAGE_BACKEND
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage_config" class="md-nav__link">
+    STORAGE_CONFIG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strict_filtering" class="md-nav__link">
+    STRICT_FILTERING
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui_rack_view_truncate_function" class="md-nav__link">
+    UI_RACK_VIEW_TRUNCATE_FUNCTION
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variable-only-settings" class="md-nav__link">
+    Environment-Variable-Only Settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment-Variable-Only Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git_ssl_no_verify" class="md-nav__link">
+    GIT_SSL_NO_VERIFY
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nautobot_root" class="md-nav__link">
+    NAUTOBOT_ROOT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#django-configuration-settings" class="md-nav__link">
+    Django Configuration Settings
+  </a>
+  
+    <nav class="md-nav" aria-label="Django Configuration Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admins" class="md-nav__link">
+    ADMINS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csrf_trusted_origins" class="md-nav__link">
+    CSRF_TRUSTED_ORIGINS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-and-time-formatting" class="md-nav__link">
+    Date and Time Formatting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    DEBUG
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#force_script_name" class="md-nav__link">
+    FORCE_SCRIPT_NAME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal_ips" class="md-nav__link">
+    INTERNAL_IPS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    LOGGING
+  </a>
+  
+    <nav class="md-nav" aria-label="LOGGING">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-loggers" class="md-nav__link">
+    Available Loggers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#media_root" class="md-nav__link">
+    MEDIA_ROOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session_cookie_age" class="md-nav__link">
+    SESSION_COOKIE_AGE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session_engine" class="md-nav__link">
+    SESSION_ENGINE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session_file_path" class="md-nav__link">
+    SESSION_FILE_PATH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static_root" class="md-nav__link">
+    STATIC_ROOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time_zone" class="md-nav__link">
+    TIME_ZONE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/nautobot/nautobot/edit/main/nautobot/docs/configuration/optional-settings.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="optional-configuration-settings">Optional Configuration Settings<a class="headerlink" href="#optional-configuration-settings" title="Permanent link">&para;</a></h1>
+<h2 id="administratively-configurable-settings">Administratively Configurable Settings<a class="headerlink" href="#administratively-configurable-settings" title="Permanent link">&para;</a></h2>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.2.0</p>
+</div>
+<p>A number of settings can alternatively be configured via the Nautobot Admin UI. To do so, these settings must <strong>not</strong> be defined in your <code>nautobot_config.py</code>, as any settings defined there will take precedence over any values defined in the Admin UI. Settings that are currently configurable via the Admin UI include:</p>
+<ul>
+<li><a href="#banner_bottom">BANNER_BOTTOM</a></li>
+<li><a href="#banner_login">BANNER_LOGIN</a></li>
+<li><a href="#banner_top">BANNER_TOP</a></li>
+<li><a href="#changelog_retention">CHANGELOG_RETENTION</a></li>
+<li><a href="#hide_restricted_ui">HIDE_RESTRICTED_UI</a></li>
+<li><a href="#max_page_size">MAX_PAGE_SIZE</a></li>
+<li><a href="#paginate_count">PAGINATE_COUNT</a></li>
+<li><a href="#per_page_defaults">PER_PAGE_DEFAULTS</a></li>
+<li><a href="#prefer_ipv4">PREFER_IPV4</a></li>
+<li><a href="#rack_elevation_default_unit_height">RACK_ELEVATION_DEFAULT_UNIT_HEIGHT</a></li>
+<li><a href="#rack_elevation_default_unit_width">RACK_ELEVATION_DEFAULT_UNIT_WIDTH</a></li>
+<li><a href="#release_check_timeout">RELEASE_CHECK_TIMEOUT</a></li>
+<li><a href="#release_check_url">RELEASE_CHECK_URL</a></li>
+</ul>
+<h2 id="extra-applications">Extra Applications<a class="headerlink" href="#extra-applications" title="Permanent link">&para;</a></h2>
+<p>A need may arise to allow the user to register additional settings. These will automatically apply
+based on keynames prefixed with <code>EXTRA_</code> assuming the base key (the latter part of the setting name) is
+of type list or tuple.</p>
+<p>For example, to register additional <code>INSTALLED_APPS</code>, you would simply specify this in your custom
+(user) configuration::</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">EXTRA_INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="s1">&#39;foo.bar&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">]</span>
+</code></pre></div>
+<p>This will ensure your default setting's <code>INSTALLED_APPS</code> do not have to be modified, and the user
+can specify additional apps with ease.  Similarly, additional <code>MIDDLEWARE</code> can be added using <code>EXTRA_MIDDLEWARE</code>.</p>
+<h2 id="allowed_url_schemes">ALLOWED_URL_SCHEMES<a class="headerlink" href="#allowed_url_schemes" title="Permanent link">&para;</a></h2>
+<p>Default: <code>('file', 'ftp', 'ftps', 'http', 'https', 'irc', 'mailto', 'sftp', 'ssh', 'tel', 'telnet', 'tftp', 'vnc', 'xmpp')</code></p>
+<p>A list of permitted URL schemes referenced when rendering links within Nautobot. Note that only the schemes specified in this list will be accepted: If adding your own, be sure to replicate all of the default values as well (excluding those schemes which are not desirable).</p>
+<hr />
+<h2 id="banner_top">BANNER_TOP<a class="headerlink" href="#banner_top" title="Permanent link">&para;</a></h2>
+<h2 id="banner_bottom">BANNER_BOTTOM<a class="headerlink" href="#banner_bottom" title="Permanent link">&para;</a></h2>
+<p>Default: <code>""</code> (Empty string)</p>
+<p>Setting these variables will display custom content in a banner at the top and/or bottom of the page, respectively. HTML is allowed. To replicate the content of the top banner in the bottom banner, set:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">BANNER_TOP</span> <span class="o">=</span> <span class="s1">&#39;Your banner text&#39;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">BANNER_BOTTOM</span> <span class="o">=</span> <span class="n">BANNER_TOP</span>
+</code></pre></div>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.2.0</p>
+<p>If you do not set a value for these settings in your <code>nautobot_config.py</code>, they can be configured dynamically by an admin user via the Nautobot Admin UI. If you do have a value for either setting in <code>nautobot_config.py</code>, it will override any dynamically configured value.</p>
+</div>
+<hr />
+<h2 id="banner_login">BANNER_LOGIN<a class="headerlink" href="#banner_login" title="Permanent link">&para;</a></h2>
+<p>Default: <code>""</code> (Empty string)</p>
+<p>This defines custom content to be displayed on the login page above the login form. HTML is allowed.</p>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.2.0</p>
+<p>If you do not set a value for this setting in your <code>nautobot_config.py</code>, it can be configured dynamically by an admin user via the Nautobot Admin UI. If you do have a value for this setting in <code>nautobot_config.py</code>, it will override any dynamically configured value.</p>
+</div>
+<hr />
+<h2 id="branding_filepaths">BRANDING_FILEPATHS<a class="headerlink" href="#branding_filepaths" title="Permanent link">&para;</a></h2>
+<p>Default:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="s2">&quot;logo&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NAUTOBOT_BRANDING_FILEPATHS_LOGO&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>  <span class="c1"># Navbar logo</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="s2">&quot;favicon&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NAUTOBOT_BRANDING_FILEPATHS_FAVICON&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>  <span class="c1"># Browser favicon</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="s2">&quot;icon_16&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NAUTOBOT_BRANDING_FILEPATHS_ICON_16&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>  <span class="c1"># 16x16px icon</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="s2">&quot;icon_32&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NAUTOBOT_BRANDING_FILEPATHS_ICON_32&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>  <span class="c1"># 32x32px icon</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="s2">&quot;icon_180&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NAUTOBOT_BRANDING_FILEPATHS_ICON_180&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>  <span class="c1"># 180x180px icon - used for the apple-touch-icon header</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="s2">&quot;icon_192&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NAUTOBOT_BRANDING_FILEPATHS_ICON_192&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>  <span class="c1"># 192x192px icon</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="s2">&quot;icon_mask&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NAUTOBOT_BRANDING_FILEPATHS_ICON_MASK&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>  <span class="c1"># mono-chrome icon used for the mask-icon header</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+</code></pre></div>
+<p>A set of filepaths relative to the <a href="#media_root"><code>MEDIA_ROOT</code></a> which locate image assets used for custom branding. Each of these assets takes the place of the corresponding stock Nautobot asset. This allows for instance, providing your own navbar logo and favicon.</p>
+<p>These environment variables may be used to specify the values:</p>
+<ul>
+<li><code>NAUTOBOT_BRANDING_FILEPATHS_LOGO</code></li>
+<li><code>NAUTOBOT_BRANDING_FILEPATHS_FAVICON</code></li>
+<li><code>NAUTOBOT_BRANDING_FILEPATHS_ICON_16</code></li>
+<li><code>NAUTOBOT_BRANDING_FILEPATHS_ICON_32</code></li>
+<li><code>NAUTOBOT_BRANDING_FILEPATHS_ICON_180</code></li>
+<li><code>NAUTOBOT_BRANDING_FILEPATHS_ICON_192</code></li>
+<li><code>NAUTOBOT_BRANDING_FILEPATHS_ICON_MASK</code></li>
+</ul>
+<p>If a custom image asset is not provided for any of the above options, the stock Nautobot asset is used.</p>
+<hr />
+<h2 id="branding_prepended_filename">BRANDING_PREPENDED_FILENAME<a class="headerlink" href="#branding_prepended_filename" title="Permanent link">&para;</a></h2>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.3.4</p>
+</div>
+<p>Default: <code>"nautobot_"</code></p>
+<p>Environment Variable: <code>NAUTOBOT_BRANDING_PREPENDED_FILENAME</code></p>
+<p>Defines the prefix of the filename when exporting to CSV/YAML or export templates.</p>
+<hr />
+<h2 id="branding_title">BRANDING_TITLE<a class="headerlink" href="#branding_title" title="Permanent link">&para;</a></h2>
+<p>Default: <code>"Nautobot"</code></p>
+<p>Environment Variable: <code>NAUTOBOT_BRANDING_TITLE</code></p>
+<p>The defines the custom branding title that should be used in place of "Nautobot" within user facing areas of the application like the HTML title of web pages.</p>
+<hr />
+<h2 id="branding_urls">BRANDING_URLS<a class="headerlink" href="#branding_urls" title="Permanent link">&para;</a></h2>
+<p>Default:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NAUTOBOT_BRANDING_URLS_CODE&quot;</span><span class="p">,</span> <span class="s2">&quot;https://github.com/nautobot/nautobot&quot;</span><span class="p">),</span>  <span class="c1"># Code link in the footer</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="s2">&quot;docs&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NAUTOBOT_BRANDING_URLS_DOCS&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;STATIC_URL&gt;docs/index.html&quot;</span><span class="p">),</span>  <span class="c1"># Docs link in the footer</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="s2">&quot;help&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;NAUTOBOT_BRANDING_URLS_HELP&quot;</span><span class="p">,</span> <span class="s2">&quot;https://github.com/nautobot/nautobot/wiki&quot;</span><span class="p">),</span>  <span class="c1"># Help link in the footer</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>A set of URLs that correspond to helpful links in the right of the footer on every web page.</p>
+<p>These environment variables may be used to specify the values:</p>
+<ul>
+<li><code>NAUTOBOT_BRANDING_URLS_CODE</code></li>
+<li><code>NAUTOBOT_BRANDING_URLS_DOCS</code></li>
+<li><code>NAUTOBOT_BRANDING_URLS_HELP</code></li>
+</ul>
+<p>If a custom URL is not provided for any of the links, the default link within the Nautobot community is used.</p>
+<hr />
+<h2 id="cacheops_defaults">CACHEOPS_DEFAULTS<a class="headerlink" href="#cacheops_defaults" title="Permanent link">&para;</a></h2>
+<p>Default: <code>{'timeout': 900}</code> (15 minutes, in seconds)</p>
+<p>Environment Variable: <code>NAUTOBOT_CACHEOPS_TIMEOUT</code> (timeout value only)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is an error to set the timeout value to <code>0</code>. If you wish to disable caching, please use <a href="#cacheops_enabled"><code>CACHEOPS_ENABLED</code></a>.</p>
+</div>
+<p>Various defaults for caching, the most important of which being the cache timeout. The <code>timeout</code> is the number of seconds that cache entries will be retained before expiring.</p>
+<hr />
+<h2 id="cacheops_enabled">CACHEOPS_ENABLED<a class="headerlink" href="#cacheops_enabled" title="Permanent link">&para;</a></h2>
+<p>Default: <code>True</code></p>
+<p>Environment Variable: <code>NAUTOBOT_CACHEOPS_ENABLED</code></p>
+<p>A boolean that turns on/off caching.</p>
+<p>If set to <code>False</code>, all caching is bypassed and Nautobot operates as if there is no cache.</p>
+<hr />
+<h2 id="cacheops_health_check_enabled">CACHEOPS_HEALTH_CHECK_ENABLED<a class="headerlink" href="#cacheops_health_check_enabled" title="Permanent link">&para;</a></h2>
+<p>Default: <code>False</code></p>
+<p>A boolean that turns on/off health checks for the Redis server connection utilized by Cacheops. Most deployments share a Redis server with <code>django-redis</code> as such we only need to check the health of Redis one time.  If you are using a separate Redis deployment for Cacheops, please consider enabling this to monitor that Redis deployment.  Keep in mind the more health checks enabled the longer the health checks will take and timeouts might need to be increased.</p>
+<hr />
+<h2 id="cacheops_redis">CACHEOPS_REDIS<a class="headerlink" href="#cacheops_redis" title="Permanent link">&para;</a></h2>
+<p>Default: <code>'redis://localhost:6379/1'</code></p>
+<p>Environment Variable: <code>NAUTOBOT_CACHEOPS_REDIS</code></p>
+<p>The Redis connection string to use for caching.</p>
+<hr />
+<h2 id="celery_broker_transport_options">CELERY_BROKER_TRANSPORT_OPTIONS<a class="headerlink" href="#celery_broker_transport_options" title="Permanent link">&para;</a></h2>
+<p>Default: <code>{}</code></p>
+<p>A dict of additional options passed to the Celery broker transport. This is only required when <a href="../additional-features/caching.html#celery-sentinel-configuration">configuring Celery to utilize Redis Sentinel</a>.</p>
+<hr />
+<h2 id="celery_broker_url">CELERY_BROKER_URL<a class="headerlink" href="#celery_broker_url" title="Permanent link">&para;</a></h2>
+<p>Environment Variable: <code>NAUTOBOT_CELERY_BROKER_URL</code></p>
+<p>Default: <code>'redis://localhost:6379/0'</code></p>
+<p>Celery broker URL used to tell workers where queues are located.</p>
+<hr />
+<h2 id="celery_result_backend">CELERY_RESULT_BACKEND<a class="headerlink" href="#celery_result_backend" title="Permanent link">&para;</a></h2>
+<p>Environment Variable: <code>NAUTOBOT_CELERY_RESULT_BACKEND</code></p>
+<p>Default: <code>'redis://localhost:6379/0'</code></p>
+<p>Celery result backend used to tell workers where to store task results (tombstones).</p>
+<hr />
+<h2 id="celery_result_backend_transport_options">CELERY_RESULT_BACKEND_TRANSPORT_OPTIONS<a class="headerlink" href="#celery_result_backend_transport_options" title="Permanent link">&para;</a></h2>
+<p>Default: <code>{}</code></p>
+<p>A dict of additional options passed to the Celery result backend transport. This is only required when <a href="../additional-features/caching.html#celery-sentinel-configuration">configuring Celery to utilize Redis Sentinel</a>.</p>
+<hr />
+<h2 id="celery_task_soft_time_limit">CELERY_TASK_SOFT_TIME_LIMIT<a class="headerlink" href="#celery_task_soft_time_limit" title="Permanent link">&para;</a></h2>
+<p>Default: <code>300</code> (5 minutes)</p>
+<p>Environment Variable: <code>NAUTOBOT_CELERY_TASK_SOFT_TIME_LIMIT</code></p>
+<p>The global Celery task soft timeout (in seconds). Any background task that exceeds this duration will receive a <code>SoftTimeLimitExceeded</code> exception and is responsible for handling this exception and performing any necessary cleanup or final operations before ending. See also <code>CELERY_TASK_TIME_LIMIT</code> below.</p>
+<hr />
+<h2 id="celery_task_time_limit">CELERY_TASK_TIME_LIMIT<a class="headerlink" href="#celery_task_time_limit" title="Permanent link">&para;</a></h2>
+<p>Default: <code>600</code> (10 minutes)</p>
+<p>Environment Variable: <code>NAUTOBOT_CELERY_TASK_TIME_LIMIT</code></p>
+<p>The global Celery task hard timeout (in seconds). Any background task that exceeds this duration will be forcibly killed with a <code>SIGKILL</code> signal.</p>
+<hr />
+<h2 id="changelog_retention">CHANGELOG_RETENTION<a class="headerlink" href="#changelog_retention" title="Permanent link">&para;</a></h2>
+<p>Default: <code>90</code></p>
+<p>The number of days to retain logged changes (object creations, updates, and deletions). Set this to <code>0</code> to retain changes in the database indefinitely.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If enabling indefinite changelog retention, it is recommended to periodically delete old entries. Otherwise, the database may eventually exceed capacity.</p>
+</div>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.2.0</p>
+<p>If you do not set a value for this setting in your <code>nautobot_config.py</code>, it can be configured dynamically by an admin user via the Nautobot Admin UI. If you do have a value for this setting in <code>nautobot_config.py</code>, it will override any dynamically configured value.</p>
+</div>
+<hr />
+<h2 id="cors_allow_all_origins">CORS_ALLOW_ALL_ORIGINS<a class="headerlink" href="#cors_allow_all_origins" title="Permanent link">&para;</a></h2>
+<p>Default: <code>False</code></p>
+<p>Environment Variable: <code>NAUTOBOT_CORS_ALLOW_ALL_ORIGINS</code></p>
+<p>If <code>True</code>, all origins will be allowed. Other settings restricting allowed origins will be ignored.</p>
+<p>Setting this to <code>True</code> can be dangerous, as it allows any website to make cross-origin requests to yours. Generally you'll want to restrict the list of allowed origins with <a href="#cors_allowed_origins"><code>CORS_ALLOWED_ORIGINS</code></a> or <a href="#cors_allowed_origin_regexes"><code>CORS_ALLOWED_ORIGIN_REGEXES</code></a>.</p>
+<p>Previously this setting was called <code>CORS_ORIGIN_ALLOW_ALL</code>, which still works as an alias, with the new name taking precedence.</p>
+<hr />
+<h2 id="cors_allowed_origins">CORS_ALLOWED_ORIGINS<a class="headerlink" href="#cors_allowed_origins" title="Permanent link">&para;</a></h2>
+<p>Default: <code>[]</code> (Empty list)</p>
+<p>A list of origins that are authorized to make cross-site HTTP requests.</p>
+<p>An Origin is defined by <a href="https://tools.ietf.org/html/rfc6454#section-3.2">the CORS RFC Section 3.2</a> as a URI <code>scheme + hostname + port</code>, or one of the special values <code>'null'</code> or <code>'file://'</code>. Default ports (HTTPS = 443, HTTP = 80) are optional here.</p>
+<p>The special value <code>null</code> is sent by the browser in <a href="https://tools.ietf.org/html/rfc6454#section-6">"privacy-sensitive contexts"</a>, such as when the client is running from a <code>file://</code> domain. The special value <code>file://</code> is sent accidentally by some versions of Chrome on Android as per this bug.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">CORS_ALLOWED_ORIGINS</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="s2">&quot;https://sub.example.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="s2">&quot;http://localhost:8080&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="s2">&quot;http://127.0.0.1:9000&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">]</span>
+</code></pre></div>
+<p>Previously this setting was called <code>CORS_ORIGIN_WHITELIST</code>, which still works as an alias, with the new name taking precedence.</p>
+<hr />
+<h2 id="cors_allowed_origin_regexes">CORS_ALLOWED_ORIGIN_REGEXES<a class="headerlink" href="#cors_allowed_origin_regexes" title="Permanent link">&para;</a></h2>
+<p>Default: <code>[]</code></p>
+<p>A list of strings representing regexes that match Origins that are authorized to make cross-site HTTP requests. Useful when <a href="#cors_allowed_origins"><code>CORS_ALLOWED_ORIGINS</code></a> is impractical, such as when you have a large number of subdomains.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">CORS_ALLOWED_ORIGIN_REGEXES</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="sa">r</span><span class="s2">&quot;^https://\w+\.example\.com$&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">]</span>
+</code></pre></div>
+<p>Previously this setting was called <code>CORS_ORIGIN_REGEX_WHITELIST</code>, which still works as an alias, with the new name taking precedence.</p>
+<hr />
+<h2 id="disable_prefix_list_hierarchy">DISABLE_PREFIX_LIST_HIERARCHY<a class="headerlink" href="#disable_prefix_list_hierarchy" title="Permanent link">&para;</a></h2>
+<p>Default: <code>False</code></p>
+<p>Environment Variable: <code>NAUTOBOT_DISABLE_PREFIX_LIST_HIERARCHY</code></p>
+<p>This setting disables rendering of the IP prefix hierarchy (parent/child relationships) in the IPAM prefix list view. With large sets of prefixes, users may encounter a performance penalty when trying to load the prefix list view due to the nature of calculating the parent/child relationships. This setting allows users to disable the hierarchy and instead only render a flat list of all prefixes in the table.</p>
+<p>A later release of Nautobot will address the underlying performance issues, and likely remove this configuration option.</p>
+<hr />
+<h2 id="enforce_global_unique">ENFORCE_GLOBAL_UNIQUE<a class="headerlink" href="#enforce_global_unique" title="Permanent link">&para;</a></h2>
+<p>Default: <code>False</code></p>
+<p>Environment Variable: <code>NAUTOBOT_ENFORCE_GLOBAL_UNIQUE</code></p>
+<p>By default, Nautobot will permit users to create duplicate prefixes and IP addresses in the global table (that is, those which are not assigned to any VRF). This behavior can be disabled by setting <code>ENFORCE_GLOBAL_UNIQUE</code> to <code>True</code>.</p>
+<hr />
+<h2 id="exempt_view_permissions">EXEMPT_VIEW_PERMISSIONS<a class="headerlink" href="#exempt_view_permissions" title="Permanent link">&para;</a></h2>
+<p>Default: <code>[]</code> (Empty list)</p>
+<p>A list of Nautobot models to exempt from the enforcement of view permissions. Models listed here will be viewable by all users, both authenticated and anonymous.</p>
+<p>List models in the form <code>&lt;app&gt;.&lt;model&gt;</code>. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">EXEMPT_VIEW_PERMISSIONS</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="s1">&#39;dcim.site&#39;</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="s1">&#39;dcim.region&#39;</span><span class="p">,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="s1">&#39;ipam.prefix&#39;</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">]</span>
+</code></pre></div>
+<p>To exempt <em>all</em> models from view permission enforcement, set the following. (Note that <code>EXEMPT_VIEW_PERMISSIONS</code> must be an iterable.)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">EXEMPT_VIEW_PERMISSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using a wildcard will not affect certain potentially sensitive models, such as user permissions. If there is a need to exempt these models, they must be specified individually.</p>
+</div>
+<hr />
+<h2 id="external_auth_default_groups">EXTERNAL_AUTH_DEFAULT_GROUPS<a class="headerlink" href="#external_auth_default_groups" title="Permanent link">&para;</a></h2>
+<p>Default: <code>[]</code> (Empty list)</p>
+<p>The list of group names to assign a new user account when created using 3rd-party authentication.</p>
+<hr />
+<h2 id="external_auth_default_permissions">EXTERNAL_AUTH_DEFAULT_PERMISSIONS<a class="headerlink" href="#external_auth_default_permissions" title="Permanent link">&para;</a></h2>
+<p>Default: <code>{}</code> (Empty dictionary)</p>
+<p>A mapping of permissions to assign a new user account when created using SSO authentication. Each key in the dictionary will be the permission name specified as <code>&lt;app_label&gt;.&lt;action&gt;_&lt;model&gt;</code>, and the value should be set to the permission <a href="../administration/permissions.html#constraints">constraints</a>, or <code>None</code> to allow all objects.</p>
+<h3 id="example-permissions">Example Permissions<a class="headerlink" href="#example-permissions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{'dcim.view_device': {}}</code> or <code>{'dcim.view_device': None}</code></td>
+<td>Users can view all devices</td>
+</tr>
+<tr>
+<td><code>{'dcim.add_device': {}}</code></td>
+<td>Users can add devices, see note below</td>
+</tr>
+<tr>
+<td><code>{'dcim.view_device': {"site__name__in":  ["HQ"]}}</code></td>
+<td>Users can view all devices in the HQ site</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Permissions can be complicated! Be careful when restricting permissions to also add any required prerequisite permissions.</p>
+<p>For example, when adding Devices the Device Role, Device Type, Site, and Status fields are all required fields in order for the UI to function properly. Users will also need view permissions for those fields or the corresponding field selections in the UI will be unavailable and potentially prevent objects from being able to be created or edited.</p>
+</div>
+<p>The following example gives a user a reasonable amount of access to add devices to a single site (HQ in this case):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="s1">&#39;dcim.add_device&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;site__name__in&quot;</span><span class="p">:</span>  <span class="p">[</span><span class="s2">&quot;HQ&quot;</span><span class="p">]},</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="s1">&#39;dcim.view_device&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;site__name__in&quot;</span><span class="p">:</span>  <span class="p">[</span><span class="s2">&quot;HQ&quot;</span><span class="p">]},</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="s1">&#39;dcim.view_devicerole&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="s1">&#39;dcim.view_devicetype&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="s1">&#39;extras.view_status&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="s1">&#39;dcim.view_site&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name__in&quot;</span><span class="p">:</span>  <span class="p">[</span><span class="s2">&quot;HQ&quot;</span><span class="p">]},</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="s1">&#39;dcim.view_manufacturer&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="s1">&#39;dcim.view_region&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="s1">&#39;dcim.view_rack&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="s1">&#39;dcim.view_rackgroup&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="s1">&#39;dcim.view_platform&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    <span class="s1">&#39;virtualization.view_cluster&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="s1">&#39;virtualization.view_clustergroup&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    <span class="s1">&#39;tenancy.view_tenant&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    <span class="s1">&#39;tenancy.view_tenantgroup&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="p">}</span>
+</code></pre></div>
+<p>Please see <a href="../administration/permissions.html">the object permissions page</a> for more information.</p>
+<hr />
+<h2 id="git_root">GIT_ROOT<a class="headerlink" href="#git_root" title="Permanent link">&para;</a></h2>
+<p>Default: <code>os.path.join(NAUTOBOT_ROOT, "git")</code></p>
+<p>Environment Variable: <code>NAUTOBOT_GIT_ROOT</code></p>
+<p>The file path to a directory where cloned <a href="../models/extras/gitrepository.html">Git repositories</a> will be located.</p>
+<p>The value of this variable can also be customized by setting the environment variable <code>NAUTOBOT_GIT_ROOT</code> to a directory path of your choosing.</p>
+<hr />
+<h2 id="graphql_custom_field_prefix">GRAPHQL_CUSTOM_FIELD_PREFIX<a class="headerlink" href="#graphql_custom_field_prefix" title="Permanent link">&para;</a></h2>
+<p>Default: <code>cf</code></p>
+<p>By default, all custom fields in GraphQL will be prefixed with <code>cf</code>. A custom field name <code>my_field</code> will appear in GraphQL as <code>cf_my_field</code> by default. It's possible to change or remove the prefix by setting the value of <code>GRAPHQL_CUSTOM_FIELD_PREFIX</code>.</p>
+<hr />
+<h2 id="hide_restricted_ui">HIDE_RESTRICTED_UI<a class="headerlink" href="#hide_restricted_ui" title="Permanent link">&para;</a></h2>
+<p>Default: <code>False</code></p>
+<p>When set to <code>True</code>, users with limited permissions will only be able to see items in the UI they have access to.</p>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.2.0</p>
+<p>If you do not set a value for this setting in your <code>nautobot_config.py</code>, it can be configured dynamically by an admin user via the Nautobot Admin UI. If you do have a value for this setting in <code>nautobot_config.py</code>, it will override any dynamically configured value.</p>
+</div>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.3.10</p>
+<p>When this setting is set to <code>True</code>, logged out users will be redirected to the login page when navigating to the Nautobot home page.</p>
+</div>
+<hr />
+<h2 id="http_proxies">HTTP_PROXIES<a class="headerlink" href="#http_proxies" title="Permanent link">&para;</a></h2>
+<p>Default: <code>None</code> (Disabled)</p>
+<p>A dictionary of HTTP proxies to use for outbound requests originating from Nautobot (e.g. when sending webhook requests). Proxies should be specified by schema (HTTP and HTTPS) as per the <a href="https://2.python-requests.org/en/master/user/advanced/">Python requests library documentation</a>. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">HTTP_PROXIES</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="s1">&#39;http&#39;</span><span class="p">:</span> <span class="s1">&#39;http://10.10.1.10:3128&#39;</span><span class="p">,</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="s1">&#39;https&#39;</span><span class="p">:</span> <span class="s1">&#39;http://10.10.1.10:1080&#39;</span><span class="p">,</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using Git repositories within Nautobot the Python library <code>GitPython</code> needs extra proxy configuration:</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git config --global http.proxy http://192.0.2.1:3128
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>git config --global https.proxy http://192.0.2.1:3128
+</code></pre></div>
+<hr />
+<h2 id="jobs_root">JOBS_ROOT<a class="headerlink" href="#jobs_root" title="Permanent link">&para;</a></h2>
+<p>Default: <code>os.path.join(NAUTOBOT_ROOT, "jobs")</code></p>
+<p>Environment Variable: <code>NAUTOBOT_JOBS_ROOT</code></p>
+<p>The file path to a directory where <a href="../additional-features/jobs.html">Jobs</a> can be discovered.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This directory <strong>must</strong> contain an <code>__init__.py</code> file.</p>
+</div>
+<hr />
+<h2 id="maintenance_mode">MAINTENANCE_MODE<a class="headerlink" href="#maintenance_mode" title="Permanent link">&para;</a></h2>
+<p>Default: <code>False</code></p>
+<p>Environment Variable: <code>NAUTOBOT_MAINTENANCE_MODE</code></p>
+<p>Setting this to <code>True</code> will display a "maintenance mode" banner at the top of every page. Additionally, Nautobot will no longer update a user's "last active" time upon login. This is to allow new logins when the database is in a read-only state. Recording of login times will resume when maintenance mode is disabled.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default <a href="#session_engine"><code>SESSION_ENGINE</code></a> configuration will store sessions in the database, this obviously will not work when <code>MAINTENANCE_MODE</code> is <code>True</code> and the database is in a read-only state for maintenance.  Consider setting <code>SESSION_ENGINE</code> to <code>django.contrib.sessions.backends.cache</code> when enabling <code>MAINTENANCE_MODE</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Docker container normally attempts to run migrations on startup; however, if the database is in a read-only state the Docker container will fail to start.  Setting the environment variable <a href="../docker/index.html#nautobot_docker_skip_init"><code>NAUTOBOT_DOCKER_SKIP_INIT</code></a> to <code>true</code> will prevent the migrations from occurring.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using <code>django-auth-ldap</code> for LDAP authentication, <code>django-auth-ldap</code> by default will try to update a user object on every log in.  If the database is in a read-only state <code>django-auth-ldap</code> will fail.  You will also need to set <code>AUTH_LDAP_ALWAYS_UPDATE_USER=False</code> and <code>AUTH_LDAP_NO_NEW_USERS=True</code> to avoid this, please see the <a href="https://django-auth-ldap.readthedocs.io/en/stable/reference.html"><code>django-auth-ldap</code> documentation</a> for more information.</p>
+</div>
+<hr />
+<h2 id="max_page_size">MAX_PAGE_SIZE<a class="headerlink" href="#max_page_size" title="Permanent link">&para;</a></h2>
+<p>Default: <code>1000</code></p>
+<p>A web user or API consumer can request an arbitrary number of objects by appending the "limit" parameter to the URL (e.g. <code>?limit=1000</code>). This parameter defines the maximum acceptable limit. Setting this to <code>0</code> or <code>None</code> will allow a client to retrieve <em>all</em> matching objects at once with no limit by specifying <code>?limit=0</code>.</p>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.2.0</p>
+<p>If you do not set a value for this setting in your <code>nautobot_config.py</code>, it can be configured dynamically by an admin user via the Nautobot Admin UI. If you do have a value for this setting in <code>nautobot_config.py</code>, it will override any dynamically configured value.</p>
+</div>
+<hr />
+<h2 id="metrics_enabled">METRICS_ENABLED<a class="headerlink" href="#metrics_enabled" title="Permanent link">&para;</a></h2>
+<p>Default: <code>False</code></p>
+<p>Environment Variable: <code>NAUTOBOT_METRICS_ENABLED</code></p>
+<p>Toggle the availability Prometheus-compatible metrics at <code>/metrics</code>. See the <a href="../additional-features/prometheus-metrics.html">Prometheus Metrics</a> documentation for more details.</p>
+<hr />
+<h2 id="napalm_username">NAPALM_USERNAME<a class="headerlink" href="#napalm_username" title="Permanent link">&para;</a></h2>
+<h2 id="napalm_password">NAPALM_PASSWORD<a class="headerlink" href="#napalm_password" title="Permanent link">&para;</a></h2>
+<p>Default: <code>""</code> (Empty string)</p>
+<p>Environment Variables: <code>NAUTOBOT_NAPALM_USERNAME</code> and <code>NAUTOBOT_NAPALM_PASSWORD</code></p>
+<p>Nautobot will use these credentials when authenticating to remote devices via the <a href="https://napalm.readthedocs.io">NAPALM library</a>, if installed. Both parameters are optional.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If SSH public key authentication has been set up on the remote device(s) for the system account under which Nautobot runs, these parameters are not needed.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a given device has an appropriately populated <a href="../models/extras/secretsgroup.html">secrets group</a> assigned to it, the <a href="../models/extras/secret.html">secrets</a> defined in that group will take precedence over these default values.</p>
+</div>
+<hr />
+<h2 id="napalm_args">NAPALM_ARGS<a class="headerlink" href="#napalm_args" title="Permanent link">&para;</a></h2>
+<p>Default: <code>{}</code> (Empty dictionary)</p>
+<p>A dictionary of optional arguments to pass to NAPALM when instantiating a network driver. See the NAPALM documentation for a <a href="https://napalm.readthedocs.io/en/latest/support/#optional-arguments">complete list of optional arguments</a>. An example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">NAPALM_ARGS</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="s1">&#39;api_key&#39;</span><span class="p">:</span> <span class="s1">&#39;472071a93b60a1bd1fafb401d9f8ef41&#39;</span><span class="p">,</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">2222</span><span class="p">,</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>Some platforms (e.g. Cisco IOS) require an enable password to be passed in addition to the normal password. If desired, you can use the configured <code>NAPALM_PASSWORD</code> as the value for this argument:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">NAPALM_USERNAME</span> <span class="o">=</span> <span class="s1">&#39;username&#39;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">NAPALM_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;MySecretPassword&#39;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">NAPALM_ARGS</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="s1">&#39;secret&#39;</span><span class="p">:</span> <span class="n">NAPALM_PASSWORD</span><span class="p">,</span>          <span class="c1"># ios and nxos_ssh</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="s1">&#39;enable_password&#39;</span><span class="p">:</span> <span class="n">NAPALM_PASSWORD</span><span class="p">,</span> <span class="c1"># eos</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="c1"># Include any additional args here</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a given device has an appropriately populated <a href="../models/extras/secretsgroup.html">secrets group</a> assigned to it, a <a href="../models/extras/secret.html">secret</a> defined in that group can override the <code>NAPALM_ARGS["secret"]</code> or <code>NAPALM_ARGS["enable_password"]</code> default value defined here.</p>
+</div>
+<hr />
+<h2 id="napalm_timeout">NAPALM_TIMEOUT<a class="headerlink" href="#napalm_timeout" title="Permanent link">&para;</a></h2>
+<p>Default: <code>30</code></p>
+<p>Environment Variable: <code>NAUTOBOT_NAPALM_TIMEOUT</code></p>
+<p>The amount of time (in seconds) to wait for NAPALM to connect to a device.</p>
+<hr />
+<h2 id="paginate_count">PAGINATE_COUNT<a class="headerlink" href="#paginate_count" title="Permanent link">&para;</a></h2>
+<p>Default: <code>50</code></p>
+<p>The default maximum number of objects to display per page within each list of objects. Applies to both the UI and the REST API.</p>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.2.0</p>
+<p>If you do not set a value for this setting in your <code>nautobot_config.py</code>, it can be configured dynamically by an admin user via the Nautobot Admin UI. If you do have a value for this setting in <code>nautobot_config.py</code>, it will override any dynamically configured value.</p>
+</div>
+<hr />
+<h2 id="per_page_defaults">PER_PAGE_DEFAULTS<a class="headerlink" href="#per_page_defaults" title="Permanent link">&para;</a></h2>
+<p>Default: <code>[25, 50, 100, 250, 500, 1000]</code></p>
+<p>The options displayed in the web interface dropdown to limit the number of objects per page. For proper user experience, this list should include the <a href="#paginate_count"><code>PAGINATE_COUNT</code></a> and <a href="#max_page_size"><code>MAX_PAGE_SIZE</code></a> values as options.</p>
+<hr />
+<h2 id="plugins">PLUGINS<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h2>
+<p>Default: <code>[]</code> (Empty list)</p>
+<p>A list of installed <a href="../plugins/index.html">Nautobot plugins</a> to enable. Plugins will not take effect unless they are listed here.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Plugins extend Nautobot by allowing external code to run with the same access and privileges as Nautobot itself. Only install plugins from trusted sources. The Nautobot maintainers make absolutely no guarantees about the integrity or security of your installation with plugins enabled.</p>
+</div>
+<hr />
+<h2 id="plugins_config">PLUGINS_CONFIG<a class="headerlink" href="#plugins_config" title="Permanent link">&para;</a></h2>
+<p>Default: <code>{}</code> (Empty dictionary)</p>
+<p>This parameter holds configuration settings for individual Nautobot plugins. It is defined as a dictionary, with each key using the name of an installed plugin. The specific parameters supported are unique to each plugin: Reference the plugin's documentation to determine the supported parameters. An example configuration is shown below:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">PLUGINS_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="s1">&#39;plugin1&#39;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>        <span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>        <span class="s1">&#39;bar&#39;</span><span class="p">:</span> <span class="kc">True</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="p">},</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="s1">&#39;plugin2&#39;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        <span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">456</span><span class="p">,</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    <span class="p">},</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="p">}</span>
+</code></pre></div>
+<p>Note that a plugin must be listed in <code>PLUGINS</code> for its configuration to take effect.</p>
+<hr />
+<h2 id="prefer_ipv4">PREFER_IPV4<a class="headerlink" href="#prefer_ipv4" title="Permanent link">&para;</a></h2>
+<p>Default: <code>False</code></p>
+<p>When determining the primary IP address for a device, IPv6 is preferred over IPv4 by default. Set this to True to prefer IPv4 instead.</p>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.2.0</p>
+<p>If you do not set a value for this setting in your <code>nautobot_config.py</code>, it can be configured dynamically by an admin user via the Nautobot Admin UI. If you do have a value for this setting in <code>nautobot_config.py</code>, it will override any dynamically configured value.</p>
+</div>
+<hr />
+<h2 id="rack_elevation_default_unit_height">RACK_ELEVATION_DEFAULT_UNIT_HEIGHT<a class="headerlink" href="#rack_elevation_default_unit_height" title="Permanent link">&para;</a></h2>
+<p>Default: <code>22</code></p>
+<p>Default height (in pixels) of a unit within a rack elevation. For best results, this should be approximately one tenth of <code>RACK_ELEVATION_DEFAULT_UNIT_WIDTH</code>.</p>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.2.0</p>
+<p>If you do not set a value for this setting in your <code>nautobot_config.py</code>, it can be configured dynamically by an admin user via the Nautobot Admin UI. If you do have a value for this setting in <code>nautobot_config.py</code>, it will override any dynamically configured value.</p>
+</div>
+<hr />
+<h2 id="rack_elevation_default_unit_width">RACK_ELEVATION_DEFAULT_UNIT_WIDTH<a class="headerlink" href="#rack_elevation_default_unit_width" title="Permanent link">&para;</a></h2>
+<p>Default: <code>220</code></p>
+<p>Default width (in pixels) of a unit within a rack elevation.</p>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.2.0</p>
+<p>If you do not set a value for this setting in your <code>nautobot_config.py</code>, it can be configured dynamically by an admin user via the Nautobot Admin UI. If you do have a value for this setting in <code>nautobot_config.py</code>, it will override any dynamically configured value.</p>
+</div>
+<hr />
+<h2 id="redis_lock_timeout">REDIS_LOCK_TIMEOUT<a class="headerlink" href="#redis_lock_timeout" title="Permanent link">&para;</a></h2>
+<p>Default: <code>600</code></p>
+<p>Environment Variable: <code>NAUTOBOT_REDIS_LOCK_TIMEOUT</code></p>
+<p>Maximum duration of a Redis lock created when calling <code>/api/ipam/prefixes/{id}/available-prefixes/</code> or <code>/api/ipam/prefixes/{id}/available-ips/</code> to avoid inadvertently allocating the same prefix or IP to multiple simultaneous callers. Default is set to 600 seconds (10 minutes) to be longer than any theoretical API call time. This is to prevent a deadlock scenario where the server did not gracefully exit the <code>with</code> block when acquiring the Redis lock.</p>
+<hr />
+<h2 id="release_check_timeout">RELEASE_CHECK_TIMEOUT<a class="headerlink" href="#release_check_timeout" title="Permanent link">&para;</a></h2>
+<p>Default: <code>86400</code> (24 hours)</p>
+<p>The number of seconds to retain the latest version that is fetched from the GitHub API before automatically invalidating it and fetching it from the API again.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This must be set to at least one hour (<code>3600</code> seconds). Setting it to a value lower than this is an error.</p>
+</div>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.2.0</p>
+<p>If you do not set a value for this setting in your <code>nautobot_config.py</code>, it can be configured dynamically by an admin user via the Nautobot Admin UI. If you do have a value for this setting in <code>nautobot_config.py</code>, it will override any dynamically configured value.</p>
+</div>
+<hr />
+<h2 id="release_check_url">RELEASE_CHECK_URL<a class="headerlink" href="#release_check_url" title="Permanent link">&para;</a></h2>
+<p>Default: <code>None</code> (disabled)</p>
+<p>This parameter defines the URL of the repository that will be checked periodically for new Nautobot releases. When a new release is detected, a message will be displayed to administrative users on the home page. This can be set to the official repository (<code>'https://api.github.com/repos/nautobot/nautobot/releases'</code>) or a custom fork. Set this to <code>None</code> to disable automatic update checks.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The URL provided <strong>must</strong> be compatible with the <a href="https://docs.github.com/en/rest">GitHub REST API</a>.</p>
+</div>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.2.0</p>
+<p>If you do not set a value for this setting in your <code>nautobot_config.py</code>, it can be configured dynamically by an admin user via the Nautobot Admin UI. If you do have a value for this setting in <code>nautobot_config.py</code>, it will override any dynamically configured value.</p>
+</div>
+<hr />
+<h2 id="sanitizer_patterns">SANITIZER_PATTERNS<a class="headerlink" href="#sanitizer_patterns" title="Permanent link">&para;</a></h2>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.3.4</p>
+</div>
+<p>Default:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">[</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(https?://)?\S+\s*@&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">),</span> <span class="sa">r</span><span class="s2">&quot;\1</span><span class="si">{replacement}</span><span class="s2">@&quot;</span><span class="p">),</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(username|password|passwd|pwd)(\s*i?s?\s*:?\s*)?\S+&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">),</span> <span class="sa">r</span><span class="s2">&quot;\1\2</span><span class="si">{replacement}</span><span class="s2">&quot;</span><span class="p">),</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">]</span>
+</code></pre></div>
+<p>List of (regular expression, replacement pattern) tuples used by the <code>nautobot.utilities.logging.sanitize()</code> function. As of Nautobot 1.3.4 this function is used primarily for sanitization of Job log entries, but it may be used in other scopes in the future.</p>
+<hr />
+<h2 id="storage_backend">STORAGE_BACKEND<a class="headerlink" href="#storage_backend" title="Permanent link">&para;</a></h2>
+<p>Default: <code>None</code> (local storage)</p>
+<p>The backend storage engine for handling uploaded files (e.g. image attachments). Nautobot supports integration with the <a href="https://django-storages.readthedocs.io/en/stable/"><code>django-storages</code></a> package, which provides backends for several popular file storage services. If not configured, local filesystem storage will be used.</p>
+<p>The configuration parameters for the specified storage backend are defined under the <a href="#storage_config"><code>STORAGE_CONFIG</code></a> setting.</p>
+<hr />
+<h2 id="storage_config">STORAGE_CONFIG<a class="headerlink" href="#storage_config" title="Permanent link">&para;</a></h2>
+<p>Default: <code>{}</code> (Empty dictionary)</p>
+<p>A dictionary of configuration parameters for the storage backend configured as <a href="#storage_backend"><code>STORAGE_BACKEND</code></a>. The specific parameters to be used here are specific to each backend; see the <a href="https://django-storages.readthedocs.io/en/stable/"><code>django-storages</code> documentation</a> for more detail.</p>
+<p>If <a href="#storage_backend"><code>STORAGE_BACKEND</code></a> is not defined, this setting will be ignored.</p>
+<hr />
+<h2 id="strict_filtering">STRICT_FILTERING<a class="headerlink" href="#strict_filtering" title="Permanent link">&para;</a></h2>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.4.0</p>
+</div>
+<p>Default: <code>True</code></p>
+<p>Environment Variable: <code>NAUTOBOT_STRICT_FILTERING</code></p>
+<p>If set to <code>True</code> (default), UI and REST API filtering of object lists will fail if an unknown/unrecognized filter parameter is provided as a URL parameter. (For example, <code>/dcim/devices/?ice_cream_flavor=chocolate</code> or <code>/api/dcim/sites/?ice_cream_flavor=chocolate</code>). UI list (table) views will report an error message in this case and display no filtered objects; REST API list endpoints will return a 400 Bad Request response with an explanatory error message.</p>
+<p>If set to <code>False</code>, unknown/unrecognized filter parameters will be discarded and ignored, although Nautobot will log a warning message.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Setting this to <code>False</code> can result in unexpected filtering results in the case of user error, for example <code>/dcim/devices/?has_primry_ip=false</code> (note the typo <code>primry</code>) will result in a list of all devices, rather than the intended list of only devices that lack a primary IP address. In the case of Jobs or external automation making use of such a filter, this could have wide-ranging consequences.</p>
+</div>
+<hr />
+<h2 id="ui_rack_view_truncate_function">UI_RACK_VIEW_TRUNCATE_FUNCTION<a class="headerlink" href="#ui_rack_view_truncate_function" title="Permanent link">&para;</a></h2>
+<div class="admonition version-added">
+<p class="admonition-title">Added in version 1.4.0</p>
+</div>
+<p>Default:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">def</span> <span class="nf">UI_RACK_VIEW_TRUNCATE_FUNCTION</span><span class="p">(</span><span class="n">device_display_name</span><span class="p">):</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">device_display_name</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<p>This setting function is used to perform the rack elevation truncation feature. This provides a way to tailor the truncation behavior to best suit the needs of the installation.</p>
+<p>The function must take only one argument: the device display name, as a string, attempting to be rendered on the rack elevation.</p>
+<p>The function must return only one argument: a string of the truncated device display name.</p>
+<h2 id="environment-variable-only-settings">Environment-Variable-Only Settings<a class="headerlink" href="#environment-variable-only-settings" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The following settings are <strong>only</strong> configurable as environment variables, and not via <code>nautobot_config.py</code> or similar.</p>
+</div>
+<hr />
+<h3 id="git_ssl_no_verify">GIT_SSL_NO_VERIFY<a class="headerlink" href="#git_ssl_no_verify" title="Permanent link">&para;</a></h3>
+<p>Default: Unset</p>
+<p>If you are using a self-signed git repository, you will need to set the environment variable <code>GIT_SSL_NO_VERIFY="1"</code>
+in order for the repository to sync.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This <em>must</em> be specified as an environment variable. Setting it in <code>nautobot_config.py</code> will not have the desired effect.</p>
+</div>
+<hr />
+<h3 id="nautobot_root">NAUTOBOT_ROOT<a class="headerlink" href="#nautobot_root" title="Permanent link">&para;</a></h3>
+<p>Default: <code>~/.nautobot/</code></p>
+<p>The filesystem path to use to store Nautobot files (Jobs, uploaded images, Git repositories, etc.).</p>
+<p>This setting is used internally in the core settings to provide default locations for <a href="index.html#file-storage">features that require file storage</a>, and the <a href="index.html#specifying-your-configuration">default location of the <code>nautobot_config.py</code></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not override <code>NAUTOBOT_ROOT</code> in your <code>nautobot_config.py</code>. It will not work as expected. If you need to customize this setting, please always set the <code>NAUTOBOT_ROOT</code> environment variable.</p>
+</div>
+<h2 id="django-configuration-settings">Django Configuration Settings<a class="headerlink" href="#django-configuration-settings" title="Permanent link">&para;</a></h2>
+<p>While the <a href="https://docs.djangoproject.com/en/stable/ref/settings/">official Django documentation</a> documents all Django settings, the below is provided where either the setting is common in Nautobot deployments and/or there is a supported <code>NAUTOBOT_*</code> environment variable.</p>
+<h3 id="admins">ADMINS<a class="headerlink" href="#admins" title="Permanent link">&para;</a></h3>
+<p>Default: <code>[]</code> (Empty list)</p>
+<p>Nautobot will email details about critical errors to the administrators listed here. This should be a list of (name, email) tuples. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">ADMINS</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="p">[</span><span class="s1">&#39;Hank Hill&#39;</span><span class="p">,</span> <span class="s1">&#39;hhill@example.com&#39;</span><span class="p">],</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="p">[</span><span class="s1">&#39;Dale Gribble&#39;</span><span class="p">,</span> <span class="s1">&#39;dgribble@example.com&#39;</span><span class="p">],</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">]</span>
+</code></pre></div>
+<p>Please see the <a href="https://docs.djangoproject.com/en/stable/ref/settings/#admins">official Django documentation on <code>ADMINS</code></a> for more information.</p>
+<hr />
+<h3 id="csrf_trusted_origins">CSRF_TRUSTED_ORIGINS<a class="headerlink" href="#csrf_trusted_origins" title="Permanent link">&para;</a></h3>
+<p>Default: <code>[]</code></p>
+<p>A list of hosts (fully-qualified domain names (FQDNs) or subdomains) that are considered trusted origins for cross-site secure requests such as HTTPS POST.</p>
+<p>For more information, please see the <a href="https://docs.djangoproject.com/en/stable/ref/settings/#csrf-trusted-origins">official Django documentation on <code>CSRF_TRUSTED_ORIGINS</code></a> and more generally the <a href="https://docs.djangoproject.com/en/stable/ref/csrf/#how-it-works">official Django documentation on CSRF protection</a></p>
+<hr />
+<h3 id="date-and-time-formatting">Date and Time Formatting<a class="headerlink" href="#date-and-time-formatting" title="Permanent link">&para;</a></h3>
+<p>You may define custom formatting for date and times. For detailed instructions on writing format strings, please see <a href="https://docs.djangoproject.com/en/stable/ref/templates/builtins/#date">the Django documentation</a>. Default formats are listed below.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">DATE_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;N j, Y&#39;</span>               <span class="c1"># June 26, 2016</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">SHORT_DATE_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;Y-m-d&#39;</span>          <span class="c1"># 2016-06-26</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">TIME_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;g:i a&#39;</span>                <span class="c1"># 1:23 p.m.</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">DATETIME_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;N j, Y g:i a&#39;</span>     <span class="c1"># June 26, 2016 1:23 p.m.</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">SHORT_DATETIME_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;Y-m-d H:i&#39;</span>  <span class="c1"># 2016-06-26 13:23</span>
+</code></pre></div>
+<p>Environment Variables:</p>
+<ul>
+<li><code>NAUTOBOT_DATE_FORMAT</code></li>
+<li><code>NAUTOBOT_SHORT_DATE_FORMAT</code></li>
+<li><code>NAUTOBOT_TIME_FORMAT</code></li>
+<li><code>NAUTOBOT_SHORT_TIME_FORMAT</code></li>
+<li><code>NAUTOBOT_DATETIME_FORMAT</code></li>
+<li><code>NAUTOBOT_SHORT_DATETIME_FORMAT</code></li>
+</ul>
+<hr />
+<h3 id="debug">DEBUG<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h3>
+<p>Default: <code>False</code></p>
+<p>Environment Variable: <code>NAUTOBOT_DEBUG</code></p>
+<p>This setting enables debugging. Debugging should be enabled only during development or troubleshooting. Note that only
+clients which access Nautobot from a recognized <a href="#internal_ips">internal IP address</a> will see debugging tools in the user interface.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Never enable debugging on a production system, as it can expose sensitive data to unauthenticated users and impose a
+substantial performance penalty.</p>
+</div>
+<p>Please see the <a href="https://docs.djangoproject.com/en/stable/ref/settings/#debug">official Django documentation on <code>DEBUG</code></a> for more information.</p>
+<hr />
+<h3 id="force_script_name">FORCE_SCRIPT_NAME<a class="headerlink" href="#force_script_name" title="Permanent link">&para;</a></h3>
+<p>Default: <code>None</code></p>
+<p>If not <code>None</code>, this will be used as the value of the <code>SCRIPT_NAME</code> environment variable in any HTTP request. This setting can be used to override the server-provided value of <code>SCRIPT_NAME</code>, which is most commonly used for hosting Nautobot in a subdirectory (e.g. <em>example.com/nautobot/</em>).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To host Nautobot under a subdirectory you must set this value to match the same prefix configured on your HTTP server. For example, if you configure NGINX to serve Nautobot at <code>/nautobot/</code>, you must set <code>FORCE_SCRIPT_NAME = "/nautobot/"</code>.</p>
+</div>
+<p>Please see the <a href="https://docs.djangoproject.com/en/stable/ref/settings/#force-script-name">official Django documentation on <code>FORCE_SCRIPT_NAME</code></a> for more information.</p>
+<hr />
+<h3 id="internal_ips">INTERNAL_IPS<a class="headerlink" href="#internal_ips" title="Permanent link">&para;</a></h3>
+<p>Default: <code>('127.0.0.1', '::1')</code></p>
+<p>A list of IP addresses recognized as internal to the system, used to control the display of debugging output. For
+example, the <a href="https://django-debug-toolbar.readthedocs.io/">Django debugging toolbar</a>, if installed,
+will be viewable only when a client is accessing Nautobot from one of the listed IP
+addresses (and <a href="#debug"><code>DEBUG</code></a> is true).</p>
+<hr />
+<h3 id="logging">LOGGING<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
+<p>Default: <code>{}</code> (Empty dictionary)</p>
+<p>By default, all messages of INFO severity or higher will be logged to the console. Additionally, if <a href="#debug"><code>DEBUG</code></a> is False and email access has been configured, ERROR and CRITICAL messages will be emailed to the users defined in <a href="#admins"><code>ADMINS</code></a>.</p>
+<p>The Django framework on which Nautobot runs allows for the customization of logging format and destination. Please consult the <a href="https://docs.djangoproject.com/en/stable/topics/logging/">Django logging documentation</a> for more information on configuring this setting. Below is an example which will write all INFO and higher messages to a local file and log DEBUG and higher messages from Nautobot itself with higher verbosity:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">LOGGING</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="s1">&#39;disable_existing_loggers&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    <span class="s1">&#39;formatters&#39;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>        <span class="s1">&#39;normal&#39;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>            <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1">.</span><span class="si">%(msecs)03d</span><span class="s1"> </span><span class="si">%(levelname)-7s</span><span class="s1"> </span><span class="si">%(name)s</span><span class="s1"> : </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>            <span class="s1">&#39;datefmt&#39;</span><span class="p">:</span> <span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">,</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>        <span class="p">},</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>        <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>            <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1">.</span><span class="si">%(msecs)03d</span><span class="s1"> </span><span class="si">%(levelname)-7s</span><span class="s1"> </span><span class="si">%(name)-20s</span><span class="s1"> </span><span class="si">%(filename)-15s</span><span class="s1"> </span><span class="si">%(funcName)30s</span><span class="s1">() :</span><span class="se">\n</span><span class="s1">  </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>            <span class="s1">&#39;datefmt&#39;</span><span class="p">:</span> <span class="s1">&#39;%H:%M:%S&#39;</span><span class="p">,</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>        <span class="p">},</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>    <span class="p">},</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>    <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>        <span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;INFO&#39;</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;logging.FileHandler&#39;</span><span class="p">,</span> <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="s1">&#39;/var/log/nautobot.log&#39;</span><span class="p">,</span> <span class="s1">&#39;formatter&#39;</span><span class="p">:</span> <span class="s1">&#39;normal&#39;</span><span class="p">},</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>        <span class="s1">&#39;normal_console&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;INFO&#39;</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;logging.StreamHandler&#39;</span><span class="p">,</span> <span class="s1">&#39;formatter&#39;</span><span class="p">:</span> <span class="s1">&#39;normal&#39;</span><span class="p">},</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>        <span class="s1">&#39;verbose_console&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;logging.StreamHandler&#39;</span><span class="p">,</span> <span class="s1">&#39;formatter&#39;</span><span class="p">:</span> <span class="s1">&#39;verbose&#39;</span><span class="p">},</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>    <span class="p">},</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>    <span class="s1">&#39;loggers&#39;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>        <span class="s1">&#39;django&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;normal_console&#39;</span><span class="p">],</span> <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;INFO&#39;</span><span class="p">},</span>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>        <span class="s1">&#39;nautobot&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;verbose_console&#39;</span><span class="p">],</span> <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;DEBUG&#39;</span><span class="p">},</span>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>    <span class="p">},</span>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="p">}</span>
+</code></pre></div>
+<p>Additional examples are available in <a href="https://github.com/nautobot/nautobot/tree/develop/examples/logging"><code>/examples/logging</code></a>.</p>
+<h4 id="available-loggers">Available Loggers<a class="headerlink" href="#available-loggers" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>django.*</code> - Generic Django operations (HTTP requests/responses, etc.)</li>
+<li><code>nautobot.&lt;app&gt;.&lt;module&gt;</code> - Generic form for model- or module-specific log messages</li>
+<li><code>nautobot.auth.*</code> - Authentication events</li>
+<li><code>nautobot.api.views.*</code> - Views which handle business logic for the REST API</li>
+<li><code>nautobot.jobs.*</code> - Job execution (<code>* = JobClassName</code>)</li>
+<li><code>nautobot.graphql.*</code> - <a href="../additional-features/graphql.html">GraphQL</a> initialization and operation.</li>
+<li><code>nautobot.plugins.*</code> - Plugin loading and activity</li>
+<li><code>nautobot.views.*</code> - Views which handle business logic for the web UI</li>
+<li><code>rq.worker</code> - Background task handling</li>
+</ul>
+<hr />
+<h3 id="media_root">MEDIA_ROOT<a class="headerlink" href="#media_root" title="Permanent link">&para;</a></h3>
+<p>Default: <code>os.path.join(NAUTOBOT_ROOT, "media")</code></p>
+<p>The file path to the location where media files (such as <a href="../models/extras/imageattachment.html">image attachments</a>) are stored.</p>
+<p>Please see the <a href="https://docs.djangoproject.com/en/stable/ref/settings/#media-root">official Django documentation on <code>MEDIA_ROOT</code></a> for more information.</p>
+<hr />
+<h3 id="session_cookie_age">SESSION_COOKIE_AGE<a class="headerlink" href="#session_cookie_age" title="Permanent link">&para;</a></h3>
+<p>Default: <code>1209600</code> (2 weeks, in seconds)</p>
+<p>Environment Variable: <code>NAUTOBOT_SESSION_COOKIE_AGE</code></p>
+<p>The age of session cookies, in seconds.</p>
+<hr />
+<h3 id="session_engine">SESSION_ENGINE<a class="headerlink" href="#session_engine" title="Permanent link">&para;</a></h3>
+<p>Default: <code>'django.contrib.sessions.backends.db'</code></p>
+<p>Controls where Nautobot stores session data.</p>
+<p>To use cache-based sessions, set this to <code>'django.contrib.sessions.backends.cache'</code>.
+To use file-based sessions, set this to <code>'django.contrib.sessions.backends.file'</code>.</p>
+<p>See the official Django documentation on <a href="https://docs.djangoproject.com/en/stable/topics/http/sessions/#configuring-sessions">Configuring the session</a> engine for more details.</p>
+<hr />
+<h3 id="session_file_path">SESSION_FILE_PATH<a class="headerlink" href="#session_file_path" title="Permanent link">&para;</a></h3>
+<p>Default: <code>None</code></p>
+<p>Environment Variable: <code>NAUTOBOT_SESSION_FILE_PATH</code></p>
+<p>HTTP session data is used to track authenticated users when they access Nautobot. By default, Nautobot stores session data in its database. However, this inhibits authentication to a standby instance of Nautobot without write access to the database. Alternatively, a local file path may be specified here and Nautobot will store session data as files instead of using the database. Note that the Nautobot system user must have read and write permissions to this path.</p>
+<p>When the default value (<code>None</code>) is used, Nautobot will use the standard temporary directory for the system.</p>
+<p>If you set this value, you must also enable file-based sessions as explained above using <a href="#session_engine"><code>SESSION_ENGINE</code></a>.</p>
+<hr />
+<h3 id="static_root">STATIC_ROOT<a class="headerlink" href="#static_root" title="Permanent link">&para;</a></h3>
+<p>Default: <code>os.path.join(NAUTOBOT_ROOT, "static")</code></p>
+<p>The location where static files (such as CSS, JavaScript, fonts, or images) used to serve the web interface will be staged by the <code>nautobot-server collectstatic</code> command.</p>
+<p>Please see the <a href="https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-STATIC_ROOT">official Django documentation on <code>STATIC_ROOT</code></a> for more information.</p>
+<hr />
+<h3 id="time_zone">TIME_ZONE<a class="headerlink" href="#time_zone" title="Permanent link">&para;</a></h3>
+<p>Default: <code>"UTC"</code></p>
+<p>Environment Variable: <code>NAUTOBOT_TIME_ZONE</code></p>
+<p>The time zone Nautobot will use when dealing with dates and times. It is recommended to use UTC time unless you have a specific need to use a local time zone. Please see the <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">list of available time zones</a>.</p>
+<p>Please see the <a href="https://docs.djangoproject.com/en/stable/ref/settings/#time-zone">official Django documentation on <code>TIME_ZONE</code></a> for more information.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="required-settings.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Required Settings" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Required Settings
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="authentication/ldap.html" class="md-footer__link md-footer__link--next" aria-label="Next: LDAP" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              LDAP
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    
+    <div class="md-copyright__highlight">
+        Copyright &copy; The Authors
+    </div>
+    <a href="https://github.com/nautobot/nautobot/blob/main/LICENSE.txt">Apache-2.0 LICENSE</a>
+    
+</div>
+
+<div class="md-copyright">
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Made with Material for MkDocs</a>
+    | <a href="https://www.networktocode.com/community/" target="_blank" rel="noopener">Join Nautobot Slack</a>
+    
+    | <a href="https://networktocode.com" target="_blank" rel="noopener">Sponsored by <img
+            src=../assets/networktocode_bw.png class="copyright-logo"></a>
+    
+</div>
+
+<!-- RTD version flyout injected on live site -->
+<div id="readthedocs-embed-flyout"></div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://blog.networktocode.com/blog/tags/nautobot" target="_blank" rel="noopener" title="Network to Code Blog" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M25.57 176.1C12.41 175.4.912 185.2.052 198.4s9.173 24.65 22.39 25.5c120.1 7.875 225.7 112.7 233.6 233.6C256.9 470.3 267.4 480 279.1 480c.531 0 1.062-.031 1.594-.063 13.22-.843 23.25-12.28 22.39-25.5C294.6 310.3 169.7 185.4 25.57 176.1zM32 32C14.33 32 0 46.31 0 64s14.33 32 32 32c194.1 0 352 157.9 352 352 0 17.69 14.33 32 32 32s32-14.31 32-32C448 218.6 261.4 32 32 32zm31.1 319.9C28.63 351.9 0 380.6 0 416s28.63 64 63.1 64 64.08-28.62 64.08-64-27.81-64.1-64.08-64.1z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.youtube.com/playlist?list=PLjA0bhxgryJ2Ts4GJMDA-tPzVWEncv4pb" target="_blank" rel="noopener" title="Nautobot Videos" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.networktocode.com/community/" target="_blank" rel="noopener" title="Network to Code Community" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://github.com/nautobot/nautobot" target="_blank" rel="noopener" title="GitHub Repo" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://twitter.com/networktocode" target="_blank" rel="noopener" title="Network to Code Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      
+    
+  </body>
+</html>

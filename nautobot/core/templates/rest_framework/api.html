@@ -1,0 +1,21 @@
+{% extends 'rest_framework/base.html' %}
+{% load helpers %}
+{% load plugins %}
+{% load static %}
+
+{% block bootstrap_theme %}
+    {% include 'inc/media.html' %}
+{% endblock bootstrap_theme %}
+
+{% block navbar %}
+    {% include 'inc/nav_menu.html' %}
+{% endblock navbar %}
+
+{% block body %}
+    {{ block.super }}
+    {% include 'inc/footer.html' %}
+{% endblock body %}
+
+{% block script %}
+    {% include 'inc/javascript.html' %}
+{% endblock script %}

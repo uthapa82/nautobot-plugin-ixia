@@ -1,0 +1,44 @@
+{% extends 'generic/object_detail.html' %}
+{% load helpers %}
+
+{% block content_left_page %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>RIR</strong>
+            </div>
+            <table class="table table-hover panel-body attr-table">
+                <tr>
+                    <td>Description</td>
+                    <td>{{ object.description|placeholder }}</td>
+                </tr>
+                <tr>
+                    <td>Private</td>
+                    <td>{{ object.is_private | render_boolean }}</td>
+                </tr>
+                <tr>
+                    <td>Aggregates</td>
+                    <td>
+                        <a href="{% url 'ipam:aggregate_list' %}?rir={{ object.slug }}">{{ aggregate_table.rows|length }}</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+{% endblock content_left_page %}
+
+{% block content_full_width_page %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>Aggregates</strong>
+            </div>
+            {% include 'inc/table.html' with table=aggregate_table %}
+            {% if perms.ipam.add_aggregate %}
+                <div class="panel-footer text-right noprint">
+                    <a href="{% url 'ipam:aggregate_add' %}?rir={{ object.pk }}" class="btn btn-xs btn-primary">
+                        <span class="mdi mdi-plus-thick" aria-hidden="true"></span> Add aggregate
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+        {% include 'inc/paginator.html' with paginator=aggregate_table.paginator page=aggregate_table.page %}
+        <div class="row"></div>
+{% endblock content_full_width_page %}

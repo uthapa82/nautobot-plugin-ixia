@@ -1,0 +1,3879 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.nautobot.com/en/stable/release-notes/version-1.4.html">
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>Version 1.4 - Nautobot Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nautobot-v14" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Nautobot Documentation" class="md-header__button md-logo" aria-label="Nautobot Documentation" data-md-component="logo">
+      
+  <img src="../assets/nautobot_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nautobot Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Version 1.4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nautobot/nautobot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index.html" class="md-tabs__link">
+      Overview
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../installation/index.html" class="md-tabs__link">
+        Documentation
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../development/index.html" class="md-tabs__link">
+        Developer Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link md-tabs__link--active">
+        Release Notes
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../apps/index.html" class="md-tabs__link">
+        Nautobot Apps
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://docs.nautobot.com/" class="md-tabs__link">
+      Nautobot Docs Home ↗︎
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Nautobot Documentation" class="md-nav__button md-logo" aria-label="Nautobot Documentation" data-md-component="logo">
+      
+  <img src="../assets/nautobot_logo.svg" alt="logo">
+
+    </a>
+    Nautobot Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nautobot/nautobot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/index.html" class="md-nav__link">
+        Installing Prerequisites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/nautobot.html" class="md-nav__link">
+        Installing Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/services.html" class="md-nav__link">
+        Deploying Nautobot Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/http-server.html" class="md-nav__link">
+        Configuring an HTTP Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/external-authentication.html" class="md-nav__link">
+        External Authentication (Optional)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/index.html" class="md-nav__link">
+        Nautobot Docker Images
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Migration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Migration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Migration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/migrating-from-netbox.html" class="md-nav__link">
+        Migrating from NetBox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/upgrading.html" class="md-nav__link">
+        Upgrading Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/migrating-from-postgresql.html" class="md-nav__link">
+        Migrating from PostgreSQL to MySQL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configuration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/index.html" class="md-nav__link">
+        Configuring Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/required-settings.html" class="md-nav__link">
+        Required Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/optional-settings.html" class="md-nav__link">
+        Optional Settings
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          External Authentication
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="External Authentication" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          External Authentication
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/authentication/ldap.html" class="md-nav__link">
+        LDAP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/authentication/sso.html" class="md-nav__link">
+        SSO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/authentication/remote.html" class="md-nav__link">
+        Remote Header
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          Administration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Administration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Administration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/nautobot-server.html" class="md-nav__link">
+        Nautobot Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/nautobot-shell.html" class="md-nav__link">
+        Nautobot Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/permissions.html" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/replicating-nautobot.html" class="md-nav__link">
+        Replicating Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          User Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="User Guides" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          User Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/index.html" class="md-nav__link">
+        Getting Started In the Web UI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/creating-devices.html" class="md-nav__link">
+        Creating Devices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/regions.html" class="md-nav__link">
+        Regions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/platforms.html" class="md-nav__link">
+        Platforms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/tenants.html" class="md-nav__link">
+        Tenants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/interfaces.html" class="md-nav__link">
+        Interfaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/vlans-and-vlan-groups.html" class="md-nav__link">
+        VLANS and VLAN Groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/ipam.html" class="md-nav__link">
+        IP Address Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/getting-started/search-bar.html" class="md-nav__link">
+        The Search Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/git-data-source.html" class="md-nav__link">
+        Git as a Data Source
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guides/graphql.html" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          Core Functionality
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Core Functionality" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Core Functionality
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/circuits.html" class="md-nav__link">
+        Circuits
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/devices.html" class="md-nav__link">
+        Devices and Cabling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/device-types.html" class="md-nav__link">
+        Device Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/ipam.html" class="md-nav__link">
+        IP Address Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/power.html" class="md-nav__link">
+        Power Tracking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/secrets.html" class="md-nav__link">
+        Secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/services.html" class="md-nav__link">
+        Service Mapping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/sites-and-racks.html" class="md-nav__link">
+        Sites, Locations, and Racks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/tenancy.html" class="md-nav__link">
+        Tenancy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/virtualization.html" class="md-nav__link">
+        Virtualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core-functionality/vlans.html" class="md-nav__link">
+        VLAN Management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          Additional Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Additional Features" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Additional Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/caching.html" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/change-logging.html" class="md-nav__link">
+        Change Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/computedfield.html" class="md-nav__link">
+        Computed Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/config-contexts.html" class="md-nav__link">
+        Context Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/customfield.html" class="md-nav__link">
+        Custom Fields
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/customlink.html" class="md-nav__link">
+        Custom Links
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/dynamicgroup.html" class="md-nav__link">
+        Dynamic Groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/exporttemplate.html" class="md-nav__link">
+        Export Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/gitrepository.html" class="md-nav__link">
+        Git Repositories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/healthcheck.html" class="md-nav__link">
+        Health Check
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/jobs.html" class="md-nav__link">
+        Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/jobhook.html" class="md-nav__link">
+        Job Hooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/job-scheduling-and-approvals.html" class="md-nav__link">
+        Job Scheduling and Approvals
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/napalm.html" class="md-nav__link">
+        NAPALM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/note.html" class="md-nav__link">
+        Notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/prometheus-metrics.html" class="md-nav__link">
+        Prometheus Metrics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/relationship.html" class="md-nav__link">
+        Relationships
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/status.html" class="md-nav__link">
+        Statuses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/tag.html" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/template-filters.html" class="md-nav__link">
+        Template Filters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/extras/webhook.html" class="md-nav__link">
+        Webhooks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          REST API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="REST API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          REST API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/overview.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/filtering.html" class="md-nav__link">
+        Filtering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/authentication.html" class="md-nav__link">
+        Authentication
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_10">
+          GraphQL API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="GraphQL API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          GraphQL API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../additional-features/graphql.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/index.html" class="md-nav__link">
+        Installing and Using Plugins
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Developer Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Developer Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/index.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/getting-started.html" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/docker-compose-advanced-use-cases.html" class="md-nav__link">
+        Advanced Docker Compose Usage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Plugins
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Plugins" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/development.html" class="md-nav__link">
+        Developing Plugins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/porting-from-netbox.html" class="md-nav__link">
+        Porting NetBox Plugins to Nautobot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/best-practices.html" class="md-nav__link">
+        Best Practices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/style-guide.html" class="md-nav__link">
+        Style Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/extending-models.html" class="md-nav__link">
+        Extending Models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/application-registry.html" class="md-nav__link">
+        Application Registry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/templates.html" class="md-nav__link">
+        Page Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/navigation-menu.html" class="md-nav__link">
+        Navigation Menu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/homepage.html" class="md-nav__link">
+        Home Page Panels
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/user-preferences.html" class="md-nav__link">
+        User Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/release-checklist.html" class="md-nav__link">
+        Release Checklist
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Release Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Release Notes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Version 1.4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="version-1.4.html" class="md-nav__link md-nav__link--active">
+        Version 1.4
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#release-overview" class="md-nav__link">
+    Release Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Release Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    Added
+  </a>
+  
+    <nav class="md-nav" aria-label="Added">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-field-extended-filtering-1498" class="md-nav__link">
+    Custom Field Extended Filtering (#1498)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-field-slugs-1962" class="md-nav__link">
+    Custom Field Slugs (#1962)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-tabs-in-object-detail-views-1000" class="md-nav__link">
+    Custom Tabs in Object Detail Views (#1000)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-template-css-html-javascript-on-job-forms-1865" class="md-nav__link">
+    Custom Template (CSS, HTML, JavaScript) on Job Forms (#1865)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-groups-support-additional-models-2200" class="md-nav__link">
+    Dynamic Groups Support Additional Models (#2200)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dark-mode-ui-729" class="md-nav__link">
+    Dark Mode UI (#729)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved-filter-coverage-for-dcim-and-virtualization-models" class="md-nav__link">
+    Improved Filter Coverage for DCIM and Virtualization Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-hooks-1878" class="md-nav__link">
+    Job Hooks (#1878)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-re-runs-1875" class="md-nav__link">
+    Job Re-Runs (#1875)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#location-data-model-1052" class="md-nav__link">
+    Location Data Model (#1052)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parent-interfaces-and-bridge-interfaces-1455" class="md-nav__link">
+    Parent Interfaces and Bridge Interfaces (#1455)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rackview-ui-add-option-to-truncate-device-name-1119" class="md-nav__link">
+    Rackview UI - Add Option to Truncate Device Name (#1119)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-api-enhancements-1463" class="md-nav__link">
+    REST API Enhancements (#1463)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status-field-on-interface-vminterface-models-984" class="md-nav__link">
+    Status Field on Interface, VMInterface Models (#984)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nautobotuiviewset-1812" class="md-nav__link">
+    NautobotUIViewSet (#1812)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes-767" class="md-nav__link">
+    Notes (#767)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    Changed
+  </a>
+  
+    <nav class="md-nav" aria-label="Changed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-groups-of-dynamic-groups-1614" class="md-nav__link">
+    Dynamic Groups of Dynamic Groups (#1614)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renamed-mixin-classes-2135" class="md-nav__link">
+    Renamed Mixin Classes (#2135)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strict-filter-validation-by-default-1736" class="md-nav__link">
+    Strict Filter Validation by Default (#1736)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moved-registry-template-context-1945" class="md-nav__link">
+    Moved Registry Template Context (#1945)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v145-2022-10-03" class="md-nav__link">
+    v1.4.5 (2022-10-03)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.5 (2022-10-03)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_1" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v144-2022-09-26" class="md-nav__link">
+    v1.4.4 (2022-09-26)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.4 (2022-09-26)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_2" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_2" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_1" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v143-2022-09-19" class="md-nav__link">
+    v1.4.3 (2022-09-19)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.3 (2022-09-19)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_3" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_3" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_2" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v142-2022-09-05" class="md-nav__link">
+    v1.4.2 (2022-09-05)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.2 (2022-09-05)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_4" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_4" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_3" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v141-2022-08-22" class="md-nav__link">
+    v1.4.1 (2022-08-22)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.1 (2022-08-22)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_5" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_5" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_4" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v140-2022-08-15" class="md-nav__link">
+    v1.4.0 (2022-08-15)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.0 (2022-08-15)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_6" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_6" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_5" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v140rc1-2022-08-10" class="md-nav__link">
+    v1.4.0rc1 (2022-08-10)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.0rc1 (2022-08-10)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_7" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_7" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_6" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v140b1-2022-07-30" class="md-nav__link">
+    v1.4.0b1 (2022-07-30)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.0b1 (2022-07-30)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_8" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_8" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_7" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v140a2-2022-07-11" class="md-nav__link">
+    v1.4.0a2 (2022-07-11)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.0a2 (2022-07-11)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_9" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_9" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_8" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v140a1-2022-06-13" class="md-nav__link">
+    v1.4.0a1 (2022-06-13)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.0a1 (2022-06-13)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_10" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_10" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_9" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-1.3.html" class="md-nav__link">
+        Version 1.3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-1.2.html" class="md-nav__link">
+        Version 1.2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-1.1.html" class="md-nav__link">
+        Version 1.1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="version-1.0.html" class="md-nav__link">
+        Version 1.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Nautobot Apps
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Nautobot Apps" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Nautobot Apps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          Network to Code App Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Network to Code App Docs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Network to Code App Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.nautobot.com/projects/golden-config/" class="md-nav__link">
+        Nautobot Golden Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://nautobot-plugin-ssot.readthedocs.io/en/latest/" class="md-nav__link">
+        Nautobot Single Source of Truth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://nautobot-plugin-firewall-models.readthedocs.io/en/latest/" class="md-nav__link">
+        Nautobot Firewall Models
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apps/nautobot-apps.html" class="md-nav__link">
+        Community Apps
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.nautobot.com/" class="md-nav__link">
+        Nautobot Docs Home ↗︎
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#release-overview" class="md-nav__link">
+    Release Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Release Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    Added
+  </a>
+  
+    <nav class="md-nav" aria-label="Added">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-field-extended-filtering-1498" class="md-nav__link">
+    Custom Field Extended Filtering (#1498)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-field-slugs-1962" class="md-nav__link">
+    Custom Field Slugs (#1962)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-tabs-in-object-detail-views-1000" class="md-nav__link">
+    Custom Tabs in Object Detail Views (#1000)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-template-css-html-javascript-on-job-forms-1865" class="md-nav__link">
+    Custom Template (CSS, HTML, JavaScript) on Job Forms (#1865)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-groups-support-additional-models-2200" class="md-nav__link">
+    Dynamic Groups Support Additional Models (#2200)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dark-mode-ui-729" class="md-nav__link">
+    Dark Mode UI (#729)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved-filter-coverage-for-dcim-and-virtualization-models" class="md-nav__link">
+    Improved Filter Coverage for DCIM and Virtualization Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-hooks-1878" class="md-nav__link">
+    Job Hooks (#1878)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-re-runs-1875" class="md-nav__link">
+    Job Re-Runs (#1875)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#location-data-model-1052" class="md-nav__link">
+    Location Data Model (#1052)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parent-interfaces-and-bridge-interfaces-1455" class="md-nav__link">
+    Parent Interfaces and Bridge Interfaces (#1455)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rackview-ui-add-option-to-truncate-device-name-1119" class="md-nav__link">
+    Rackview UI - Add Option to Truncate Device Name (#1119)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-api-enhancements-1463" class="md-nav__link">
+    REST API Enhancements (#1463)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status-field-on-interface-vminterface-models-984" class="md-nav__link">
+    Status Field on Interface, VMInterface Models (#984)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nautobotuiviewset-1812" class="md-nav__link">
+    NautobotUIViewSet (#1812)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes-767" class="md-nav__link">
+    Notes (#767)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    Changed
+  </a>
+  
+    <nav class="md-nav" aria-label="Changed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-groups-of-dynamic-groups-1614" class="md-nav__link">
+    Dynamic Groups of Dynamic Groups (#1614)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renamed-mixin-classes-2135" class="md-nav__link">
+    Renamed Mixin Classes (#2135)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strict-filter-validation-by-default-1736" class="md-nav__link">
+    Strict Filter Validation by Default (#1736)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moved-registry-template-context-1945" class="md-nav__link">
+    Moved Registry Template Context (#1945)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v145-2022-10-03" class="md-nav__link">
+    v1.4.5 (2022-10-03)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.5 (2022-10-03)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_1" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v144-2022-09-26" class="md-nav__link">
+    v1.4.4 (2022-09-26)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.4 (2022-09-26)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_2" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_2" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_1" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v143-2022-09-19" class="md-nav__link">
+    v1.4.3 (2022-09-19)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.3 (2022-09-19)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_3" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_3" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_2" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v142-2022-09-05" class="md-nav__link">
+    v1.4.2 (2022-09-05)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.2 (2022-09-05)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_4" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_4" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_3" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v141-2022-08-22" class="md-nav__link">
+    v1.4.1 (2022-08-22)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.1 (2022-08-22)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_5" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_5" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_4" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v140-2022-08-15" class="md-nav__link">
+    v1.4.0 (2022-08-15)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.0 (2022-08-15)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_6" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_6" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_5" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v140rc1-2022-08-10" class="md-nav__link">
+    v1.4.0rc1 (2022-08-10)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.0rc1 (2022-08-10)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_7" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_7" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_6" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v140b1-2022-07-30" class="md-nav__link">
+    v1.4.0b1 (2022-07-30)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.0b1 (2022-07-30)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_8" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_8" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_7" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v140a2-2022-07-11" class="md-nav__link">
+    v1.4.0a2 (2022-07-11)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.0a2 (2022-07-11)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_9" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_9" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_8" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    Removed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v140a1-2022-06-13" class="md-nav__link">
+    v1.4.0a1 (2022-06-13)
+  </a>
+  
+    <nav class="md-nav" aria-label="v1.4.0a1 (2022-06-13)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_10" class="md-nav__link">
+    Added
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_10" class="md-nav__link">
+    Changed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed_9" class="md-nav__link">
+    Fixed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/nautobot/nautobot/edit/main/nautobot/docs/release-notes/version-1.4.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<!-- markdownlint-disable MD012 MD024 -->
+
+<h1 id="nautobot-v14">Nautobot v1.4<a class="headerlink" href="#nautobot-v14" title="Permanent link">&para;</a></h1>
+<p>This document describes all new features and changes in Nautobot 1.4.</p>
+<p>If you are a user migrating from NetBox to Nautobot, please refer to the <a href="../installation/migrating-from-netbox.html">"Migrating from NetBox"</a> documentation.</p>
+<h2 id="release-overview">Release Overview<a class="headerlink" href="#release-overview" title="Permanent link">&para;</a></h2>
+<h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
+<h4 id="custom-field-extended-filtering-1498">Custom Field Extended Filtering (<a href="https://github.com/nautobot/nautobot/issues/1498">#1498</a>)<a class="headerlink" href="#custom-field-extended-filtering-1498" title="Permanent link">&para;</a></h4>
+<p>Objects with custom fields now support <a href="../rest-api/filtering.html#lookup-expressions">filter lookup expressions</a> for filtering by custom field values, such as <code>cf_date_field__gte=2022-08-11</code> to select objects whose <code>date_field</code> custom field has a date of 2022-08-11 or later.</p>
+<h4 id="custom-field-slugs-1962">Custom Field Slugs (<a href="https://github.com/nautobot/nautobot/issues/1962">#1962</a>)<a class="headerlink" href="#custom-field-slugs-1962" title="Permanent link">&para;</a></h4>
+<p>Custom fields now have a distinct <code>slug</code> field. The custom field <code>name</code> attribute should be considered deprecated, and will be removed in a future major release (see also <a href="https://github.com/nautobot/nautobot/issues/824">#824</a>.) Additionally, the <code>label</code> attribute, while currently optional in the database, will become mandatory in that same future release as a consequence. When migrating from an earlier Nautobot release to version 1.4 or later, the <code>slug</code> and <code>label</code> for all existing custom fields will be automatically populated if not previously defined.</p>
+<p>A new version of the <code>/api/extras/custom-fields/</code> REST API endpoints has been implemented. By default this endpoint continues to demonstrate the pre-1.4 behavior (<code>name</code> required, <code>slug</code> and <code>label</code> optional; if unspecified, the <code>slug</code> and <code>label</code> will receive default values based on the provided <code>name</code>). A REST API client can request API version 1.4, in which case the updated API will require <code>slug</code> and <code>label</code> parameters in place of <code>name</code>.</p>
+<p>Additionally, REST API serialization of custom field data is itself now versioned. For <em>all</em> object endpoints that include custom field data under the <code>custom_fields</code> key, REST API versions 1.3 and earlier will continue the previous behavior of indexing the <code>custom_fields</code> dictionary by fields' <code>name</code> values, but when REST API version 1.4 or later is requested, the <code>custom_fields</code> data will be indexed by <code>slug</code> instead.</p>
+<p>For technical reasons of backwards-compatibility, the database (ORM) and GraphQL interfaces continue to access and store object custom field data exclusively under the <code>name</code> key; this will change to use the <code>slug</code> in a future major release. Again, watch <a href="https://github.com/nautobot/nautobot/issues/824">#824</a> for plans in that regard.</p>
+<h4 id="custom-tabs-in-object-detail-views-1000">Custom Tabs in Object Detail Views (<a href="https://github.com/nautobot/nautobot/issues/1000">#1000</a>)<a class="headerlink" href="#custom-tabs-in-object-detail-views-1000" title="Permanent link">&para;</a></h4>
+<p>A plugin may now define extra tabs which will be appended to the object view's list of tabs.</p>
+<p>You can refer to the <a href="../plugins/development.html#adding-extra-tabs">plugin development guide</a> on how to add tabs to existing object detail views.</p>
+<h4 id="custom-template-css-html-javascript-on-job-forms-1865">Custom Template (CSS, HTML, JavaScript) on Job Forms (<a href="https://github.com/nautobot/nautobot/issues/1865">#1865</a>)<a class="headerlink" href="#custom-template-css-html-javascript-on-job-forms-1865" title="Permanent link">&para;</a></h4>
+<p>Jobs can now specify a <code>template_name</code> property and provide a custom template with additional JavaScript and CSS to help with user input on the Job submission form.</p>
+<p>You can refer to the <a href="../additional-features/jobs.html#template_name">Job class metadata attribute documentation</a> on how to build and define this template.</p>
+<h4 id="dynamic-groups-support-additional-models-2200">Dynamic Groups Support Additional Models (<a href="https://github.com/nautobot/nautobot/pull/2200">#2200</a>)<a class="headerlink" href="#dynamic-groups-support-additional-models-2200" title="Permanent link">&para;</a></h4>
+<p>Cluster, IP Address, Prefix, and Rack models can now be filtered on in Dynamic Groups and can also support nested or groups of Dynamic Groups. Some fields have been excluded from filtering until a sensible widget can be provided.</p>
+<h4 id="dark-mode-ui-729">Dark Mode UI (<a href="https://github.com/nautobot/nautobot/issues/729">#729</a>)<a class="headerlink" href="#dark-mode-ui-729" title="Permanent link">&para;</a></h4>
+<p>Nautobot's UI now supports dark mode, both explicitly and via browser preference selection.</p>
+<p>The "Theme" link in the footer provides a modal popup to select the preferred theme. This preference is saved per browser via <code>localStorage</code>.</p>
+<h4 id="improved-filter-coverage-for-dcim-and-virtualization-models">Improved Filter Coverage for DCIM and Virtualization Models<a class="headerlink" href="#improved-filter-coverage-for-dcim-and-virtualization-models" title="Permanent link">&para;</a></h4>
+<ul>
+<li>DCIM: <a href="https://github.com/nautobot/nautobot/issues/1729">#1729</a></li>
+<li>Virtualization: <a href="https://github.com/nautobot/nautobot/issues/1735">#1735</a></li>
+</ul>
+<p>The DCIM, Virtualization FilterSets have been updated with over 150 new filters, including hybrid filters that support filtering on both <code>pk</code> and <code>slug</code> (or <code>pk</code> and <code>name</code> where <code>slug</code> is not available). A new filter class <code>NaturalKeyOrPKMultipleChoiceFilter</code> was added to <code>nautobot.utilities.filters</code> to support filtering on multiple fields of a related object.</p>
+<p>Please see the documentation on <a href="../development/best-practices.html#mapping-model-fields-to-filters">best practices for mapping model fields to filters</a> for more information.</p>
+<h4 id="job-hooks-1878">Job Hooks (<a href="https://github.com/nautobot/nautobot/issues/1878">#1878</a>)<a class="headerlink" href="#job-hooks-1878" title="Permanent link">&para;</a></h4>
+<p>Jobs can now be configured to run automatically when a change event occurs on a Nautobot object. Job hooks associate jobs to content types and actions to run jobs when a create, update or delete action occurs on the selected content type. A new job base class <code>JobHookReceiver</code> was introduced that jobs must subclass to be associated with a job hook.</p>
+<p>Please see the documentation on <a href="../models/extras/jobhook.html">Job Hooks</a> for more information.</p>
+<h4 id="job-re-runs-1875">Job Re-Runs (<a href="https://github.com/nautobot/nautobot/issues/1875">#1875</a>)<a class="headerlink" href="#job-re-runs-1875" title="Permanent link">&para;</a></h4>
+<p>JobResult records now save the arguments with which the Job was called, allowing for easy re-execution of the Job with the same arguments as before. A "re-run" button has been added to the JobResult list view and detail view.</p>
+<h4 id="location-data-model-1052">Location Data Model (<a href="https://github.com/nautobot/nautobot/issues/1052">#1052</a>)<a class="headerlink" href="#location-data-model-1052" title="Permanent link">&para;</a></h4>
+<p>To locate network information more precisely than a Site defines, you can now define a hierarchy of Location Types (for example, <code>Building</code> ← <code>Floor</code> ← <code>Room</code>) and then create Locations corresponding to these types within each Site. Data objects such as devices, prefixes, VLAN groups, etc. can thus be mapped or assigned to Location representing a specific building, wing, floor, room, etc. as appropriate to your needs.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>At present, Locations fill the conceptual space between the more abstract Region and Site models and the more concrete Rack Group model. In a future Nautobot release, some or all of these other models may be collapsed into Locations. That is to say, in the future you might not deal with Regions and Sites as distinct models, but instead your Location Type hierarchy might include these higher-level categories, becoming something like Country ← City ← Site ← Building ← Floor ← Room.</p>
+</div>
+<h4 id="parent-interfaces-and-bridge-interfaces-1455">Parent Interfaces and Bridge Interfaces (<a href="https://github.com/nautobot/nautobot/issues/1455">#1455</a>)<a class="headerlink" href="#parent-interfaces-and-bridge-interfaces-1455" title="Permanent link">&para;</a></h4>
+<p>Interface and VMInterface models now have <code>parent_interface</code> and <code>bridge</code> keys. An interface of type <code>Virtual</code> can now associate to a parent physical interface on the same device, virtual chassis, or virtual machine, and an interface of any type can specify another interface as its associated bridge interface. (A new <code>Bridge</code> interface type has also been added, but the <code>bridge</code> interface property is not restricted to interfaces of this type.)</p>
+<h4 id="rackview-ui-add-option-to-truncate-device-name-1119">Rackview UI - Add Option to Truncate Device Name (<a href="https://github.com/nautobot/nautobot/issues/1119">#1119</a>)<a class="headerlink" href="#rackview-ui-add-option-to-truncate-device-name-1119" title="Permanent link">&para;</a></h4>
+<p>Users can now toggle device full name and truncated name in the rack elevation view. The truncating function is customizable in <code>nautobot_config.py</code> via defining <code>UI_RACK_VIEW_TRUNCATE_FUNCTION</code>. Default behavior is to split on <code>.</code> and return the first item in the list.</p>
+<p>"Save SVG" link presents the same view as what is currently displayed on screen</p>
+<p>Current preferred toggle state is preserved across tabs (requires refresh) and persists in-browser until local storage is cleared. This presents a consistent behavior when browsing between multiple racks.</p>
+<h4 id="rest-api-enhancements-1463">REST API Enhancements (<a href="https://github.com/nautobot/nautobot/issues/1463">#1463</a>)<a class="headerlink" href="#rest-api-enhancements-1463" title="Permanent link">&para;</a></h4>
+<ul>
+<li>For all models that support Relationships, their corresponding list and detail REST API endpoints now include the option to include data on their associated Relationships and related objects by specifying <code>include=relationships</code> as a query parameter.</li>
+<li>Relationship associations on a model can be edited by a PATCH to the appropriate nested value, such as <code>"relationships" -&gt; &lt;relationship-slug&gt; -&gt; "source"</code> or <code>"relationships" -&gt; &lt;relationship-slug&gt; -&gt; "destination"</code>.</li>
+<li>For implementers of REST API serializers (core and/or plugins), a new <code>nautobot.extras.api.serializers.NautobotModelSerializer</code> base class has been added. Using this class guarantees support for relationships, custom fields, and computed fields on the serializer, and provides for a streamlined developer experience.</li>
+</ul>
+<h4 id="status-field-on-interface-vminterface-models-984">Status Field on Interface, VMInterface Models (<a href="https://github.com/nautobot/nautobot/issues/984">#984</a>)<a class="headerlink" href="#status-field-on-interface-vminterface-models-984" title="Permanent link">&para;</a></h4>
+<p>Interface and VMInterface models now support a status. Default statuses that are available to be set are: Active, Planned, Maintenance, Failed, and Decommissioned. During migration all existing interfaces will be set to the status of "Active".</p>
+<p>A new version of the <code>/dcim/interfaces/*</code> REST API endpoints have been implemented. By default this endpoint continues to demonstrate the pre-1.4 behavior unless the REST API client explicitly requests API version=1.4. If you continue to use the pre-1.4 API endpoints, status is defaulted to "Active".</p>
+<p>Visit the documentation on <a href="../rest-api/overview.html#versioning">REST API versioning</a> for more information on using the versioned APIs.</p>
+<h4 id="nautobotuiviewset-1812">NautobotUIViewSet (<a href="https://github.com/nautobot/nautobot/issues/1812">#1812</a>)<a class="headerlink" href="#nautobotuiviewset-1812" title="Permanent link">&para;</a></h4>
+<p>New in Nautobot 1.4 is the debut of <code>NautobotUIViewSet</code>: A powerful plugin development tool that can save plugin developer hundreds of lines of code compared to using legacy <code>generic.views</code>. Using it to gain access to default functionalities previous provided by <code>generic.views</code> such as <code>create()</code>, <code>bulk_create()</code>, <code>update()</code>, <code>partial_update()</code>, <code>bulk_update()</code>, <code>destroy()</code>, <code>bulk_destroy()</code>, <code>retrieve()</code> and <code>list()</code> actions.</p>
+<p>Note that this ViewSet is catered specifically to the UI, not the API.</p>
+<p>Concrete examples on how to use <code>NautobotUIViewSet</code> resides in <code>nautobot.circuits.views</code>.</p>
+<p>Please visit the <a href="../plugins/development.html#nautobotuiviewset">plugin development guide on <code>NautobotViewSet</code></a> for more information.</p>
+<h4 id="notes-767">Notes (<a href="https://github.com/nautobot/nautobot/issues/767">#767</a>)<a class="headerlink" href="#notes-767" title="Permanent link">&para;</a></h4>
+<p>Primary and Organizational models now support notes. A notes tab has been added to the Object Detail view for all models that inherit the Primary or Organizational base abstract models.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Any plugin that inherits from one of these two models and uses the <code>ViewTestCases.PrimaryObjectViewTestCase</code> or <code>ViewTestCases.OrganizationalObjectViewTestCase</code> for their test will need to add the <code>NotesObjectView</code> to the objects URLs.</p>
+</div>
+<p>Notes can also be used via the REST API at endpoint <code>/api/extras/notes/</code> or per object detail endpoint at the object's nested <code>/notes/</code> endpoint.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For implementers of REST API views (core and/or plugins), a new <code>nautobot.extras.api.views.NautobotModelViewSet</code> base class has been added. Use of this class ensures that all features from <code>PrimaryModel</code> or <code>OrganizationalModel</code> are accessible through the API. This includes custom fields and notes.</p>
+</div>
+<p>Please see the on <a href="../plugins/development.html#note-url-endpoint">plugin development guide on Notes</a> for more details.</p>
+<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
+<h4 id="dynamic-groups-of-dynamic-groups-1614">Dynamic Groups of Dynamic Groups (<a href="https://github.com/nautobot/nautobot/issues/1614">#1614</a>)<a class="headerlink" href="#dynamic-groups-of-dynamic-groups-1614" title="Permanent link">&para;</a></h4>
+<p>Dynamic Groups may now be nested in parent/child relationships. The Dynamic Group edit view now has a "Child Groups" tab that allows one to make other Dynamic Groups of the same content type children of the parent group. Any filters provided by the child groups are used to filter the members from the parent group using one of three operators: "Restrict (AND)", "Include (OR)", or "Exclude (NOT)". This allows for logical parenthetical grouping of nested groups by the operator you choose for that child group association to the parent.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The default behavior of Dynamic Groups with an empty filter (<code>{}</code>) has been inverted to include all objects matching the content type by default instead of matching no objects. This was necessary to implement the progressive layering of child filters similarly to how we use filters to reduce desired objects from basic list view filters.</p>
+</div>
+<p>Please see the greatly-expanded documentation on <a href="../models/extras/dynamicgroup.html">Dynamic Groups</a> for more information.</p>
+<h4 id="renamed-mixin-classes-2135">Renamed Mixin Classes (<a href="https://github.com/nautobot/nautobot/issues/2135">#2135</a>)<a class="headerlink" href="#renamed-mixin-classes-2135" title="Permanent link">&para;</a></h4>
+<p>A number of mixin classes have been renamed for improved self-consistency and clarity of usage. The former names of these mixins are still available for now as aliases, but inheriting from these mixins will raise a <code>DeprecationWarning</code>, and these aliases will be removed in a future major release.</p>
+<table>
+<thead>
+<tr>
+<th>Former Name</th>
+<th>New Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AddRemoveTagsForm</code></td>
+<td><code>TagsBulkEditFormMixin</code></td>
+</tr>
+<tr>
+<td><code>CustomFieldBulkCreateForm</code></td>
+<td><code>CustomFieldModelBulkEditFormMixin</code></td>
+</tr>
+<tr>
+<td><code>CustomFieldBulkEditForm</code></td>
+<td><code>CustomFieldModelBulkEditFormMixin</code></td>
+</tr>
+<tr>
+<td><code>CustomFieldFilterForm</code></td>
+<td><code>CustomFieldModelFilterFormMixin</code></td>
+</tr>
+<tr>
+<td><code>CustomFieldModelForm</code></td>
+<td><code>CustomFieldModelFormMixin</code></td>
+</tr>
+<tr>
+<td><code>RelationshipModelForm</code></td>
+<td><code>RelationshipModelFormMixin</code></td>
+</tr>
+<tr>
+<td><code>StatusBulkEditFormMixin</code></td>
+<td><code>StatusModelBulkEditFormMixin</code></td>
+</tr>
+<tr>
+<td><code>StatusFilterFormMixin</code></td>
+<td><code>StatusModelFilterFormMixin</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="strict-filter-validation-by-default-1736">Strict Filter Validation by Default (<a href="https://github.com/nautobot/nautobot/issues/1736">#1736</a>)<a class="headerlink" href="#strict-filter-validation-by-default-1736" title="Permanent link">&para;</a></h4>
+<p>Filtering of object lists in the UI and in the REST API will now report an error if an unknown or unrecognized filter parameter is specified. <em>This is a behavior change from previous Nautobot releases, in which unknown filter parameters would be silently discarded and ignored.</em></p>
+<p>A new configuration setting, <a href="../configuration/optional-settings.html#strict_filtering"><code>STRICT_FILTERING</code></a> has been added. It defaults to <code>True</code>, enabling strict validation of filter parameters, but can be set to <code>False</code> to disable this validation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Setting <a href="../configuration/optional-settings.html#strict_filtering"><code>STRICT_FILTERING</code></a> to <code>False</code> can result in unexpected filtering results in the case of user error, for example a request to <code>/api/dcim/devices/?has_primry_ip=false</code> (note the typo <code>primry</code>) will result in a list of all devices, rather than the intended list of only devices that lack a primary IP address. In the case of Jobs or external automation making use of such a filter, this could have wide-ranging consequences.</p>
+</div>
+<h4 id="moved-registry-template-context-1945">Moved Registry Template Context (<a href="https://github.com/nautobot/nautobot/issues/1945">#1945</a>)<a class="headerlink" href="#moved-registry-template-context-1945" title="Permanent link">&para;</a></h4>
+<p>The <code>settings_and_registry</code> default context processor was changed to purely <code>settings</code> - the (large) Nautobot application registry dictionary is no longer provided as part of the render context for all templates by default. Added a new <code>registry</code> template tag that can be invoked by specific templates to provide this variable where needed.</p>
+<!-- towncrier release notes start -->
+<h2 id="v145-2022-10-03">v1.4.5 (2022-10-03)<a class="headerlink" href="#v145-2022-10-03" title="Permanent link">&para;</a></h2>
+<h3 id="added_1">Added<a class="headerlink" href="#added_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/2330">#2330</a> - Added <code>created</code> and <code>last_updated</code> fields to Device <code>Component</code> and <code>ComponentTemplate</code> models.</li>
+</ul>
+<h3 id="changed_1">Changed<a class="headerlink" href="#changed_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/2490">#2490</a> - Added change log fragment checkbox to Github pull request template.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2508">#2508</a> - Updated dark mode theme to be less...dark.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2537">#2537</a> - Updated <code>django-extensions</code> to <code>3.2.1</code>, <code>drf-spectacular</code> to <code>0.24.2</code>, <code>drf-yasg</code> to <code>1.21.4</code>.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2544">#2544</a> - Updated towncrier template to convert multi-line change fragments into multiple release notes entries.</li>
+</ul>
+<h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/2326">#2326</a> - Fixed 500 error in Circuit Termination swap.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2330">#2330</a> - Fixed missing Change Log tab on device component detail views.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2445">#2445</a> - Fixed invalid Renovate config.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2466">#2466</a> - Fixed Jobs misleading sensitive variables or requiring approval error message.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2509">#2509</a> - Fixed template lookup logic in ObjectNotesView, ObjectDynamicGroupsView and ObjectChangeLogView.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2526">#2526</a> - Fixed error in rendering the example plugin's <code>AnotherExampleModel</code> list view by adding a <code>get_absolute_url()</code> method to the <code>AnotherExampleModel</code> class and adding an <code>AnotherExampleModel</code> detail view template.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2533">#2533</a> - Fixed <code>test_list_objects_unknown_filter_no_strict_filtering</code> failure if a filterset couldn't be found for a given model.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2539">#2539</a> - Updated links from nautobot.readthedocs.io to docs.nautobot.com.</li>
+</ul>
+<h2 id="v144-2022-09-26">v1.4.4 (2022-09-26)<a class="headerlink" href="#v144-2022-09-26" title="Permanent link">&para;</a></h2>
+<h3 id="added_2">Added<a class="headerlink" href="#added_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/2023">#2023</a> - Added reusable GitHub Action workflow for use by plugins to test against <code>next</code>, <code>develop</code> routinely.</li>
+</ul>
+<h3 id="changed_2">Changed<a class="headerlink" href="#changed_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/2153">#2153</a> - Updated optional settings documentation to provide clarity on Nautobot vs Django settings.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2235">#2235</a> - Added ancestor information to Location and LocationType display names to provide additional context in the UI.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2457">#2457</a> - Moved <code>towncrier_template.j2</code> from root to develop directory.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2468">#2468</a> - Upgraded CI gh-action-setup-poetry-environment action to v3</li>
+</ul>
+<h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/2353">#2353</a> - Fixed MultiSelect CustomField being emptied unintentionally after bulk update.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2375">#2375</a> - Fixed error in Cable list view filtering when <code>color</code> and <code>type</code> filters are not set.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2461">#2461</a> - Fixed an exception during OpenAPI schema generation when certain Nautobot apps (including <code>nautobot-firewall-models</code>) were installed.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2496">#2496</a> - Fixed failing CI due to #2468</li>
+</ul>
+<h2 id="v143-2022-09-19">v1.4.3 (2022-09-19)<a class="headerlink" href="#v143-2022-09-19" title="Permanent link">&para;</a></h2>
+<h3 id="added_3">Added<a class="headerlink" href="#added_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/2327">#2327</a> - Added help text to the Job scheduling datetime picker to indicate the applicable time zone.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2362">#2362</a> - Added documentation and automation for Nautobot Github project to use <code>towncrier</code> for changelog fragments.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2431">#2431</a> - Add section to the custom field documentation on ORM filtering.</li>
+</ul>
+<h3 id="changed_3">Changed<a class="headerlink" href="#changed_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/1619">#1619</a> - Updated <code>drf-spectacular</code> dependency to version 0.24.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2223">#2223</a> - Augment <code>get_route_for_model()</code> to support REST API routes.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2340">#2340</a> - Improved rendering of badges, labels, buttons, and color selection menus in dark mode.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2383">#2383</a> - Updated documentation link for Nautobot ChatOps plugin.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2392">#2392</a> - Un-group Renovate <code>next</code> updates to address code changes per package.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2400">#2400</a> - Improved formatting of version changes in the documentation.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2417">#2417</a> - Reworked Docker builds in CI to publish an intermediate "dependencies-only" image to speed up rebuild times.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2447">#2447</a> - Moved Dynamic Groups tab on object detail view to it's own view as a generic <code>ObjectDynamicGroupsView</code>.</li>
+</ul>
+<h3 id="fixed_2">Fixed<a class="headerlink" href="#fixed_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/138">#138</a> - Fixed lack of user-facing message when an exception occurs while discovering Jobs from a Git repository.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/950">#950</a> - Fixed database concurrency issues with uWSGI pre-forking.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1619">#1619</a> - Improved accuracy of OpenAPI schema for bulk REST API operations.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2299">#2299</a> - Remove <code>render_filter()</code> method and <code>filter</code> field from table columns</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2309">#2309</a> - Fixed 404 on ScheduledJobView, <code>job_class</code> no longer found behavior.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2324">#2324</a> - Fixed errors encountered when a job model is deleted while a job is running.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2338">#2338</a> - Fixed whitespace issue with Text File secrets and they are now stripped of leading/trailing whitespace and newlines.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2364">#2364</a> - Allow <code>invoke</code> tasks to be run even if <code>rich</code> is not installed.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2378">#2378</a> - Fix Job Result redirection on submit.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2382">#2382</a> - Removed extraneous cache and temporary files from the <code>dev</code> and <code>final-dev</code> Docker images to reduce image size.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2389">#2389</a> - Removed extraneous <code>inspect.getsource()</code> call from Job class.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2407">#2407</a> - Corrected SSO Backend reference for Azure AD Tenant.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2449">#2449</a> - CI: Moved dependency build to be a job, not a step.</li>
+</ul>
+<h2 id="v142-2022-09-05">v1.4.2 (2022-09-05)<a class="headerlink" href="#v142-2022-09-05" title="Permanent link">&para;</a></h2>
+<h3 id="added_4">Added<a class="headerlink" href="#added_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/983">#983</a> - Added functionalities to specify <code>args</code> and <code>kwargs</code> to <code>NavMenuItem</code>.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2250">#2250</a> - Added "Stats" and "Rack Groups" to Location detail view, added "Locations" to Site detail view.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2273">#2273</a> - Added custom markdownlint rule to check for invalid relative links in the documentation.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2307">#2307</a> - Added <code>dynamic_groups</code> field in GraphQL on objects that can belong to dynamic groups.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2314">#2314</a> - Added <code>pylint</code> to linting suite and CI.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2339">#2339</a> - Enabled and addressed additional <code>pylint</code> checkers.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2360">#2360</a> - Added Django natural key to <code>extras.Tag</code>.</li>
+</ul>
+<h3 id="changed_4">Changed<a class="headerlink" href="#changed_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/2011">#2011</a> - replaced all .format() strings and C format strings with fstrings.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2293">#2293</a> - Updated GitHub bug report template.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2296">#2296</a> - Updated <code>netutils</code> dependency from 1.1.x to 1.2.x.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2347">#2347</a> - Revamped documentation look and feel.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2349">#2349</a> - Docker images are now built with Poetry 1.2.0.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2360">#2360</a> - Django natural key for Status is now <code>name</code> rather than <code>slug</code>.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2363">#2363</a> - Update app icons for consistency</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2365">#2365</a> - Update Network to Code branding name</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2367">#2367</a> - Remove coming soon from projects that exists</li>
+</ul>
+<h3 id="fixed_3">Fixed<a class="headerlink" href="#fixed_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/449">#449</a> - Improved error checking and reporting when syncing Git repositories.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1227">#1227</a> - The NAUTOBOT_DOCKER_SKIP_INIT environment variable can now be set to "false" (case-insensitive),</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1807">#1807</a> - Fixed post_run method fails to add exceptions to job log.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2085">#2085</a> - The log entries table on a job result page can now be filtered by log level or message and hitting the return key has no effect.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2107">#2107</a> - Fixed a TypeError when a view defines <code>action_buttons = None</code>.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2237">#2237</a> - Fixed several issues with permissions enforcement for Note creation and viewing.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2268">#2268</a> - Fixed broken links in documentation.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2269">#2269</a> - Fixed missing JS code causing rendering errors on GraphQL Query and Rack Reservation detail views.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2278">#2278</a> - Fixed incorrect permissions check on "Installed Plugins" menu item.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2290">#2290</a> - Fixed inheritance of ObjectListViewMixin for CircuitTypeUIViewSet.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2311">#2311</a> - Fixed autopopulation of "Parent" selection when editing an existing Location.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2341">#2341</a> - Fixed omission of docs from published Python packages.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2342">#2342</a> - Reduced file size of <code>nautobot-dev</code> Docker images by clearing Poetry cache</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2350">#2350</a> - Fixed potential Redis deadlock if Nautobot server restarts at an unfortunate time.</li>
+</ul>
+<h2 id="v141-2022-08-22">v1.4.1 (2022-08-22)<a class="headerlink" href="#v141-2022-08-22" title="Permanent link">&para;</a></h2>
+<h3 id="added_5">Added<a class="headerlink" href="#added_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/1809">#1809</a> - Added Django natural key to <code>extras.Status</code> to simplify exporting and importing of database dumps for <code>Status</code> objects.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2202">#2202</a> - Added <code>validate_models</code> management command to validate each instance in the database.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2213">#2213</a> - Added a new <code>--pull</code> parameter for <code>invoke build</code> to tell Docker to pull images when building containers.</li>
+</ul>
+<h3 id="changed_5">Changed<a class="headerlink" href="#changed_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/2206">#2206</a> - Changed Run button on Job Result to always be displayed, "Re-Run" if available.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2252">#2252</a> - Updated Poetry install command for Development Getting Started guide.</li>
+</ul>
+<h3 id="fixed_4">Fixed<a class="headerlink" href="#fixed_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/2209">#2209</a> - Fixed lack of dark-mode support in GraphiQL page.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2215">#2215</a> - Fixed error seen in migration from 1.3.x if certain default Statuses had been modified.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2218">#2218</a> - Fixed typos/links in release notes and Dynamic Groups docs.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2219">#2219</a> - Fixed broken pagination in Dynamic Group detail "Members" tab.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2220">#2220</a> - Narrowed scope of auto-formatting in VSCode to only apply to Python files.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2222">#2222</a> - Fixed missing app headings in Swagger UI.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2229">#2229</a> - Fixed <code>render_form.html</code> include template to not render a duplicate <code>object_note</code> field.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2232">#2232</a> - Fixed incorrect API URLs and incorrect inclusion of Circuits UI URLs in Swagger UI.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2241">#2241</a> - Fixed <code>DynamicGroup.objects.get_for_model()</code> to support nested Dynamic Groups.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2259">#2259</a> - Fixed footer not bound to bottom of Device View.</li>
+</ul>
+<h2 id="v140-2022-08-15">v1.4.0 (2022-08-15)<a class="headerlink" href="#v140-2022-08-15" title="Permanent link">&para;</a></h2>
+<h3 id="added_6">Added<a class="headerlink" href="#added_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/1812">#1812</a> - Added <code>NautobotViewSet</code> and accompanying helper methods, documentation.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2173">#2173</a> - Added flake8 linting and black formatting settings to vscode workspace settings.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2105">#2105</a> - Added support for Notes in NautobotBulkEditForm and NautobotEditForm.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2200">#2200</a> - Added Dynamic Groups support for Cluster, IP Address, Prefix, and Rack.</li>
+</ul>
+<h3 id="changed_6">Changed<a class="headerlink" href="#changed_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/1812">#1812</a> - Changed Circuit app models to use <code>NautobotViewSet</code>s.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2029">#2029</a> - Updated optional settings docs to call out environment variable only settings.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2176">#2176</a> - Update invoke task output to use rich formatting, print full Docker Compose commands.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2183">#2183</a> - Update dependency django to ~3.2.15.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2193">#2193</a> - Updated Postgres/MySQL <code>dumpdata</code> docs to exclude <code>django_rq</code> exports.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2200">#2200</a> - Group of dynamic group membership links now link to the group's membership table view.</li>
+</ul>
+<h3 id="fixed_5">Fixed<a class="headerlink" href="#fixed_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/1304">#1304</a> - Fixed incorrect display of connection counts on home page.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1845">#1845</a> - Fixed not being able to schedule job with 'immediate' schedule via API.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1996">#1996</a> - Fixed Menu Item <code>link_text</code> render on top of buttons.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2178">#2178</a> - Fixed "invalid filter" error when filtering JobResults in the UI.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2184">#2184</a> - Fixed job re-run not honoring <code>has_sensitive_variables</code>.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2190">#2190</a> - Fixed tags missing from Location forms.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2191">#2191</a> - Fix widget for boolean filters fields when generating filter form for a Dynamic Group</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2178">#2192</a> - Fixed job.request removed from job instance in <code>v1.4.0b1</code>.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2197">#2197</a> - Fixed some display issues in the Dynamic Groups detail view.</li>
+</ul>
+<h2 id="v140rc1-2022-08-10">v1.4.0rc1 (2022-08-10)<a class="headerlink" href="#v140rc1-2022-08-10" title="Permanent link">&para;</a></h2>
+<h3 id="added_7">Added<a class="headerlink" href="#added_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/767">#767</a> - Added notes field to Primary and Organizational models.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1498">#1498</a> - Added extended lookup expression filters to custom fields.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1962">#1962</a> - Added <code>slug</code> field to Custom Field model, added 1.4 REST API version of the <code>api/extras/custom-fields/</code> endpoints.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2106">#2106</a> - Added support for listing/creating Notes via REST API.</li>
+</ul>
+<h3 id="changed_7">Changed<a class="headerlink" href="#changed_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/pull/2156">#2156</a> - Update network automation apps listed on overview of docs.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2168">#2168</a> - Added model toggle to skip adding missing Dynamic Group filter fields for use in easing integration of new models into Dynamic Groups.</li>
+</ul>
+<h3 id="fixed_6">Fixed<a class="headerlink" href="#fixed_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/2090">#2090</a> - Fixed an issue where a REST API PATCH of a Tag could inadvertently reset its associated content-types.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2150">#2150</a> - Fixed unit tests performance degradation.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2132">#2132</a> - Updated job hooks to use slugs in urls instead of pk.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2133">#2133</a> - Update documentation for job hooks, make it reachable from the Nautobot UI.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2135">#2135</a> - Fixed ImportError on <code>RelationshipModelForm</code>, renamed other mixins and added aliases for backwards compatibility.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2137">#2137</a> - Fixed incorrect parameter name in <code>NaturalKeyOrPKMultipleChoiceFilter</code> documentation.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2142">#2142</a> - Fixed incorrect URL field in REST API nested relationship representation.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2165">#2165</a> - Fix up relationship-association API test issue.</li>
+</ul>
+<h2 id="v140b1-2022-07-30">v1.4.0b1 (2022-07-30)<a class="headerlink" href="#v140b1-2022-07-30" title="Permanent link">&para;</a></h2>
+<h3 id="added_8">Added<a class="headerlink" href="#added_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/1463">#1463</a> - Added REST API support for opt-in <code>relationships</code> data on model endpoints; added <code>NautobotModelSerializer</code> base class.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1614">#1614</a> - Added support for nesting of Dynamic Groups, allowing inclusion/exclusion rules of sub-group members.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1735">#1735</a> - Added missing filters to model FilterSets for Virtualization models.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1865">#1865</a> - Added support for a custom template on Job forms.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1875">#1875</a> - Add ability to quickly re-submit a previously run <code>Job</code> with the same parameters.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1877">#1877</a> - Add new job base class JobHookReceiver to support triggering job execution from change events.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1878">#1878</a> - Add job hooks feature.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1883">#1883</a> - Add ability to filter objects by their relationships into the existing FilterSet.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1884">#1884</a> - Add ability to set the relationship filter via the filter form.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2035">#2035</a> - Added change source context to object change context manager.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2051">#2051</a> - Add changelog url for Relationships.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2061">#2061</a> - Add draggable child groups to Dynamic Groups edit view in UI, recompute and hide weights.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2072">#2072</a> - Expand on <code>query_params</code> for <code>ObjectVar</code> in Jobs documentation.</li>
+</ul>
+<h3 id="changed_8">Changed<a class="headerlink" href="#changed_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/pull/2049">#2049</a> - Moved <code>get_changelog_url</code> to a method on objects that support changelogs, updated template context.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/2116">#2116</a> - Updated package dependencies: Pillow <code>~9.1.1</code> -&gt; <code>~9.2.0</code>, black <code>~22.3.0</code> -&gt; <code>~22.6.0</code>, coverage <code>6.4.1</code> -&gt; <code>6.4.2</code>, django-cacheops <code>6.0</code> -&gt; <code>6.1</code>, django-cryptography <code>1.0</code> -&gt; <code>1.1</code>, django-debug-toolbar <code>~3.4.0</code> -&gt; <code>~3.5.0</code>, django-extensions <code>~3.1.5</code> -&gt; <code>~3.2.0</code>, drf-yasg <code>~1.20.0</code> -&gt; <code>^1.20.0</code>, importlib-metadata <code>~4.4</code> -&gt; <code>^4.4.0</code>, jsonschema <code>~4.4.0</code> -&gt; <code>~4.8.0</code>, mkdocs <code>1.3.0</code> -&gt; <code>1.3.1</code>, mkdocs <code>==1.3.0</code> -&gt; <code>==1.3.1</code>, mkdocs-include-markdown-plugin <code>~3.2.3</code> -&gt; <code>~3.6.0</code>, mkdocs-include-markdown-plugin <code>==3.2.3</code> -&gt; <code>==3.6.1</code>, social-auth-core <code>~4.2.0</code> -&gt; <code>~4.3.0</code>, svgwrite <code>1.4.2</code> -&gt; <code>1.4.3</code></li>
+</ul>
+<h3 id="fixed_7">Fixed<a class="headerlink" href="#fixed_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/1710">#1710</a> - Fixed invalid CSS when clicking "Add another" row buttons for formsets on Secrets Groups, Dynamic Groups edit view in the UI.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2069">#2069</a> - Addressed numerous UX improvements for Dynamic Groups of Dynamic Groups feature to ease usability of this feature.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2109">#2109</a> - Fixed Relationship Filters are not Applied with "And" Operator.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2111">#2111</a> - Fixed Invalid filter error thrown for <code>__source</code> with message: "" is not a valid UUID.</li>
+</ul>
+<h2 id="v140a2-2022-07-11">v1.4.0a2 (2022-07-11)<a class="headerlink" href="#v140a2-2022-07-11" title="Permanent link">&para;</a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The  <code>next</code> and <code>develop</code> branches introduced conflicting migration numbers during the release cycle. This necessitates reordering the migration in <code>next</code>. If you installed <code>v1.4.0a1</code>, you will need to roll back a migration before upgrading/installing <code>v1.4.0a2</code> and newer. If you have not installed <code>v1.4.0a</code> this will not be an issue.</p>
+<p>Before upgrading, run: <code>nautobot-server migrate extras 0033_add__optimized_indexing</code>. This will revert the reordered migration <code>0034_configcontextschema__remove_name_unique__create_constraint_unique_name_owner</code>, which is now number <code>0035</code>.</p>
+<p>Perform the Nautobot upgrade as usual and proceed with post-installation migration.</p>
+<p>No data loss is expected as the reordered migration only modified indexing on existing fields.</p>
+</div>
+<h3 id="added_9">Added<a class="headerlink" href="#added_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/1000">#1000</a> - Object detail views can now have extra UI tabs which are defined by a plugin.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1052">#1052</a> - Initial prototype implementation of Location data model.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1318">#1318</a> - Added <code>nautobot.extras.forms.NautobotBulkEditForm</code> base class. All bulk-edit forms for models that support both custom fields and relationships now inherit from this class.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1466">#1466</a> - Plugins can now override views.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1729">#1729</a> - Add new filter class <code>NaturalKeyOrPKMultipleChoiceFilter</code> to <code>nautobot.utilities.filters</code>.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1729">#1729</a> - Add 137 new filters to <code>nautobot.dcim.filters</code> FilterSets.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1729">#1729</a> - Add <code>cable_terminations</code> to the <code>model_features</code> registry.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1893">#1893</a> - Added an object detail view for Relationships.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1949">#1949</a> - Added TestCaseMixin for Helper Functions across all test case bases.</li>
+</ul>
+<h3 id="changed_9">Changed<a class="headerlink" href="#changed_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/pull/1908">#1908</a> - Update dependency Markdown to ~3.3.7</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1909">#1909</a> - Update dependency MarkupSafe to ~2.1.1</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1912">#1912</a> - Update dependency celery to ~5.2.7</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1913">#1913</a> - Update dependency django-jinja to ~2.10.2</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1915">#1915</a> - Update dependency invoke to ~1.7.1</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1917">#1917</a> - Update dependency svgwrite to ~1.4.2</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1919">#1919</a> - Update dependency Pillow to ~9.1.1</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1920">#1920</a> - Update dependency coverage to ~6.4.1</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1921">#1921</a> - Update dependency django-auth-ldap to ~4.1.0</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1924">#1924</a> - Update dependency django-cors-headers to ~3.13.0</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1925">#1925</a> - Update dependency django-debug-toolbar to ~3.4.0</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1928">#1928</a> - Update dependency napalm to ~3.4.1</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1929">#1929</a> - Update dependency selenium to ~4.2.0</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1945">#1945</a> - Change the <code>settings_and_registry</code> default context processor to purely <code>settings</code>, moving registry dictionary to be accessible via <code>registry</code> template tag.</li>
+</ul>
+<h3 id="fixed_8">Fixed<a class="headerlink" href="#fixed_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/1898">#1898</a> - Browsable API is now properly styled as the rest of the app.</li>
+</ul>
+<h3 id="removed">Removed<a class="headerlink" href="#removed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/1462">#1462</a> - Removed job source tab from Job and Job Result view.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2002">#2002</a> - Removed rqworker container from default Docker development environment.</li>
+</ul>
+<h2 id="v140a1-2022-06-13">v1.4.0a1 (2022-06-13)<a class="headerlink" href="#v140a1-2022-06-13" title="Permanent link">&para;</a></h2>
+<h3 id="added_10">Added<a class="headerlink" href="#added_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/729">#729</a> - Added UI dark mode.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/984">#984</a> - Added status field to Interface, VMInterface models.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1119">#1119</a> - Added truncated device name functionality to Rackview UI.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1455">#1455</a> - Added <code>parent_interface</code> and <code>bridge</code> fields to Interface and VMInterface models.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1833">#1833</a> - Added <code>hyperlinked_object</code> template filter to consistently reference objects in templates.</li>
+</ul>
+<h3 id="changed_10">Changed<a class="headerlink" href="#changed_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/1736">#1736</a> - <code>STRICT_FILTERING</code> setting is added and enabled by default.</li>
+<li><a href="https://github.com/nautobot/nautobot/pull/1793">#1793</a> - Added index notes to fields from analysis, relaxed ConfigContextSchema constraint (unique on <code>name</code>, <code>owner_content_type</code>, <code>owner_object_id</code> instead of just <code>name</code>).</li>
+</ul>
+<h3 id="fixed_9">Fixed<a class="headerlink" href="#fixed_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nautobot/nautobot/issues/1815">#1815</a> - Fix theme link style in footer.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/1831">#1831</a> - Fixed missing <code>parent_interface</code> and <code>bridge</code> from 1.4 serializer of Interfaces.</li>
+<li><a href="https://github.com/nautobot/nautobot/issues/2380">#1831</a> - Fix job from with <code>approval_required=True</code> and <code>has_sensitive_variables=True</code> can be scheduled.
+.</li>
+</ul>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Overview
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="version-1.3.html" class="md-footer__link md-footer__link--next" aria-label="Next: Version 1.3" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Version 1.3
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+    
+    <div class="md-copyright__highlight">
+        Copyright &copy; The Authors
+    </div>
+    <a href="https://github.com/nautobot/nautobot/blob/main/LICENSE.txt">Apache-2.0 LICENSE</a>
+    
+</div>
+
+<div class="md-copyright">
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Made with Material for MkDocs</a>
+    | <a href="https://www.networktocode.com/community/" target="_blank" rel="noopener">Join Nautobot Slack</a>
+    
+    | <a href="https://networktocode.com" target="_blank" rel="noopener">Sponsored by <img
+            src=../assets/networktocode_bw.png class="copyright-logo"></a>
+    
+</div>
+
+<!-- RTD version flyout injected on live site -->
+<div id="readthedocs-embed-flyout"></div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://blog.networktocode.com/blog/tags/nautobot" target="_blank" rel="noopener" title="Network to Code Blog" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M25.57 176.1C12.41 175.4.912 185.2.052 198.4s9.173 24.65 22.39 25.5c120.1 7.875 225.7 112.7 233.6 233.6C256.9 470.3 267.4 480 279.1 480c.531 0 1.062-.031 1.594-.063 13.22-.843 23.25-12.28 22.39-25.5C294.6 310.3 169.7 185.4 25.57 176.1zM32 32C14.33 32 0 46.31 0 64s14.33 32 32 32c194.1 0 352 157.9 352 352 0 17.69 14.33 32 32 32s32-14.31 32-32C448 218.6 261.4 32 32 32zm31.1 319.9C28.63 351.9 0 380.6 0 416s28.63 64 63.1 64 64.08-28.62 64.08-64-27.81-64.1-64.08-64.1z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.youtube.com/playlist?list=PLjA0bhxgryJ2Ts4GJMDA-tPzVWEncv4pb" target="_blank" rel="noopener" title="Nautobot Videos" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.networktocode.com/community/" target="_blank" rel="noopener" title="Network to Code Community" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://github.com/nautobot/nautobot" target="_blank" rel="noopener" title="GitHub Repo" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://twitter.com/networktocode" target="_blank" rel="noopener" title="Network to Code Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      
+    
+  </body>
+</html>
