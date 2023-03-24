@@ -18,6 +18,10 @@ A nautobot plugin for Ixia XGS12 Chassis Platform. The goal of this plugin is to
 The plugin will be available soon as a Python package in PyPI and can be installed with `pip`:
 
 	$ pip3 install nautobot-plugin-ixia
+
+currently available through test server
+
+	$ pip install -i https://test.pypi.org/simple/ nautobot-plugin-ixia
 	
 To ensure the nautobot-plugin-ixia is automatically re-installed during the future upgrades, create a file named *local_requirements.txt* (if not already existing) in the Nautobot root directory ( alongside **requirements.txt**) and list the nautobot-plugin-ixia packages :
 
